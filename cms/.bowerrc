@@ -1,0 +1,4 @@
+{
+ "proxy":"http://esraa.ali:esraa9874123456*@127.0.0.1:8080",
+ "https-proxy":"http://esraa.ali:esraa9874123456*@127.0.0.1:8080"
+}
