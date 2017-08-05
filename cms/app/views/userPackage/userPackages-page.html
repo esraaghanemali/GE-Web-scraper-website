@@ -26,7 +26,7 @@
             <td ui-sref="app.userPackage({ userPackage: row, packageId: row.id })">{{row.maxPagesNumber}}</td>
             <td ui-sref="app.userPackage({ userPackage: row, packageId: row.id })">{{row.maxItemsPerPageNumber}}</td>
             <td>
-                <md-button ng-if="currentUser.permissions.userPackage.edit" type="button" class="md-raised red-500" ng-click="remove(row)"><i
+                <md-button ng-if="currentUser.permissions.userPackage.remove" type="button" class="md-raised red-500" ng-click="remove(row)"><i
                         class="mdi mdi-content-block"></i></md-button>
             </td>
         </tr>

@@ -1,8 +1,8 @@
   <!-- aside -->
   <md-sidenav id="aside" class="app-aside" ng-class="{'folded': app.setting.asideFolded || $state.current.data.folded, 'md-sidenav-right rtl': app.setting.rtl, 'md-sidenav-left': !app.setting.rtl}" ui-view="aside@" md-component-id="aside">
-  </md-sidenav> 
+  </md-sidenav>
   <!-- / aside -->
-  
+
   <!-- content -->
   <div id="content" class="app-content" ng-class="{'rtl': app.setting.rtl}" role="main" ui-view="content@">
   </div>
@@ -17,4 +17,3 @@
   <div class="right w-xxl bg-white md-whiteframe-z2" ng-include="'views/partials/aside.tpl.chat.html'">
   </div>
 </div>
- -->

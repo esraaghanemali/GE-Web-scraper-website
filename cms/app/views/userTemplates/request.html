@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
+
+    <md-content layout-padding>
+        <form name="requesForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">
+
+
+            <md-input-container class="md-block" >
+              <h5>templete files</h5>
+                <md-select name="request" ng-model="user.request" class="md-default-theme" style="width: 100%"
+                           ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">
+                    <md-option ng-repeat="template in templates" ng-value="template"> {{template.fileName}}</md-option>
+                </md-select>
+            </md-input-container>
+
+
+
+
+            <md-input-container>
+                <md-button class="md-raised md-primary" translate="user.actions.save" ng-click="saveUser()"></md-button>
+            </md-input-container>
+        </form>
+    </md-content>
+</div>
+
+

@@ -1,46 +1,180 @@
-<form name="userForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">
-  <div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
-    <div class="card-heading">
-      <h2 translate="user.editPage.myProfile"></h2>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid"  style="margin-right: 47px;margin-left: 47px;">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        Menu <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand" href="index.html">Start GE Web Scraper</a>
     </div>
-    <md-content layout-padding>
-      <md-input-container class="md-block">
-        <label translate="user.username"></label>
-        <input required name="userName" ng-model="user.username" auto-focus readonly="true">
-      </md-input-container>
-      <md-input-container class="md-block">
-        <label translate="user.email"></label>
-        <input required name="userEmail" ng-model="user.email">
-        <div ng-messages="userForm.userEmail.$error">
-          <div ng-message="required">{{"user.errors.email.required" | translate}}</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a ui-sref="app.Index" translate="userApp.Home"></a>
+        </li>
+        <li>
+          <a ui-sref="app.About"  translate="userApp.About"></a>
+        </li>
+        <li>
+          <a ui-sref="app.Services"  translate="userApp.Services"></a>
+        </li>
+        <li>
+          <a ui-sref="app.Contact"  translate="userApp.Contact"></a>
+        </li>
+        <li>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+
+<header class="intro-header" style="background-image: url('../../images/img/home-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>GE Web Scraper</h1>
+          <hr class="small">
+          <span class="subheading">Hello Sam</span>
         </div>
-      </md-input-container>
-      <md-input-container>
-        <md-button class="md-raised md-primary" translate="user.actions.save" ng-click="saveUser()"></md-button>
-      </md-input-container>
-    </md-content>
-  </div>
-</form>
-  <div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
-    <div class="card-heading">
-      <h2 translate="user.editPage.changePassword"></h2>
+      </div>
     </div>
-    <md-content layout-padding>
-      <md-input-container class="md-block">
-        <label translate="user.oldPassword"></label>
-        <input name="userOldPassword" type="password" ng-model="oldPassword">
-      </md-input-container>
-      <md-input-container class="md-block">
-        <label translate="user.newPassword"></label>
-        <input name="userNewPassword" type="password" ng-model="newPassword">
-      </md-input-container>
-      <md-input-container class="md-block">
-        <label translate="user.rePassword"></label>
-        <input name="userRePassword" type="password" ng-model="rePassword">
-      </md-input-container>
-      <md-input-container>
-        <md-button class="md-raised md-primary" translate="user.actions.changePassword" ng-click="changePassword()"></md-button>
-      </md-input-container>
-    </md-content>
   </div>
-<!-- </form> -->
+</header>
+
+
+<div class="row row-sm">
+  <div class="col-sm-12">
+    <div class="panel panel-card">
+      <div class="r-t pos-rlt" md-ink-ripple style="background:url('../../images/img/home-bg.jpg') center center; background-size:cover">
+        <div class="p-lg bg-white-overlay text-center r-t" >
+          <a href class="w-xs inline">
+            <img src="images/a0.jpg" class="img-circle img-responsive">
+          </a>
+          <div class="m-b m-t-sm h2">
+            <span class="">David M.</span>
+          </div>
+          <a class="btn btn-sm btn-success m-b p-h no-border">Edit</a>
+          <p>
+            I am designing something.
+          </p>
+        </div>
+      </div>
+      <div class="list-group no-radius no-border" style="padding-right: 333px;padding-left: 333px;">
+        <a class="list-group-item">
+          <span class="pull-right badge">12</span>All Model Files
+        </a>
+        <a class="list-group-item">
+          <span class="pull-right badge">23</span>Requested Model Files
+        </a>
+        <a class="list-group-item">
+          <span class="pull-right badge">564</span>Extracted Model Files
+        </a>
+      </div>
+      <div class="text-center b-b b-light">
+        <a href class="inline m text-color">
+          <span class="h3 block font-bold">221</span>
+          <em class="text-xs">Followers</em>
+        </a>
+        <a href class="inline m text-color">
+          <span class="h3 block font-bold">250</span>
+          <em class="text-xs">Following</em>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<a ui-sref="app.modelFile({ modelFileId: 'new' })" md-ink-ripple class="md-btn md-fab md-fab-bottom-right pos-fix green"><i class="mdi-action-account-balance-wallet i-24"></i></a>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          <li>
+            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright text-muted">Scraping &copy; Your Website 2017</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--<form name="userForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">-->
+  <!--<div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">-->
+    <!--<div class="card-heading">-->
+      <!--<h2 translate="user.editPage.myProfile"></h2>-->
+    <!--</div>-->
+    <!--<md-content layout-padding>-->
+      <!--<md-input-container class="md-block">-->
+        <!--<label translate="user.username"></label>-->
+        <!--<input required name="userName" ng-model="user.username" auto-focus readonly="true">-->
+      <!--</md-input-container>-->
+      <!--<md-input-container class="md-block">-->
+        <!--<label translate="user.email"></label>-->
+        <!--<input required name="userEmail" ng-model="user.email">-->
+        <!--<div ng-messages="userForm.userEmail.$error">-->
+          <!--<div ng-message="required">{{"user.errors.email.required" | translate}}</div>-->
+        <!--</div>-->
+      <!--</md-input-container>-->
+      <!--<md-input-container>-->
+        <!--<md-button class="md-raised md-primary" translate="user.actions.save" ng-click="saveUser()"></md-button>-->
+      <!--</md-input-container>-->
+    <!--</md-content>-->
+  <!--</div>-->
+<!--</form>-->
+  <!--<div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">-->
+    <!--<div class="card-heading">-->
+      <!--<h2 translate="user.editPage.changePassword"></h2>-->
+    <!--</div>-->
+    <!--<md-content layout-padding>-->
+      <!--<md-input-container class="md-block">-->
+        <!--<label translate="user.oldPassword"></label>-->
+        <!--<input name="userOldPassword" type="password" ng-model="oldPassword">-->
+      <!--</md-input-container>-->
+      <!--<md-input-container class="md-block">-->
+        <!--<label translate="user.newPassword"></label>-->
+        <!--<input name="userNewPassword" type="password" ng-model="newPassword">-->
+      <!--</md-input-container>-->
+      <!--<md-input-container class="md-block">-->
+        <!--<label translate="user.rePassword"></label>-->
+        <!--<input name="userRePassword" type="password" ng-model="rePassword">-->
+      <!--</md-input-container>-->
+      <!--<md-input-container>-->
+        <!--<md-button class="md-raised md-primary" translate="user.actions.changePassword" ng-click="changePassword()"></md-button>-->
+      <!--</md-input-container>-->
+    <!--</md-content>-->
+  <!--</div>-->
+<!--&lt;!&ndash; </form> &ndash;&gt;-->

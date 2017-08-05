@@ -18,7 +18,7 @@ angular.module('webScraperCMS.users', [])
   }).state('app.profile', {
     url: '/users/profile',
     templateUrl: 'views/users/profile.html',
-    controller: 'UserCtrl',
+    controller: 'ProfileCtrl',
     data: {
       requiredPermission: true
     },
@@ -35,7 +35,8 @@ angular.module('webScraperCMS.users', [])
     templateUrl: 'views/users/user-page.html',
     controller: 'UserCtrl',
     params: {
-      user: null
+      user: null,
+        userPackages:null
     },
     data: {
       requiredPermission: 'users.edit',
@@ -61,7 +62,10 @@ angular.module('webScraperCMS.users', [])
             deferred.reject();
           }
           else if ($stateParams.userId === 'new') {
-            deferred.resolve(models.user.one(''));
+            console.log("in new user")
+              console.log(models.user)
+
+              deferred.resolve(models.user.one(''));
           }
           else {
             models.user.get($stateParams.userId).then(function(user) {
@@ -70,7 +74,14 @@ angular.module('webScraperCMS.users', [])
           }
           return deferred.promise;
         });
-      }
+      },
+        userPackages:  function ($q, models) {
+            var deferred = $q.defer();
+            models.userPackage.getAllPackages().then(function (userPackages) {
+                deferred.resolve(userPackages);
+            }, deferred.reject);
+            return deferred.promise;
+        }
     }
   });
 });

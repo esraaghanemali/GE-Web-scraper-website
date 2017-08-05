@@ -11,30 +11,23 @@ angular.module('webScraperCMS.login')
     var user = {
       isAdmin: isAdmin,
       permissions: {
+          userPackage : {
+              list: isAdmin,
+              view: isAdmin,
+              edit: isAdmin,
+              remove: isAdmin
+          },
         users: {
           list: isAdmin,
           view: isAdmin,
-          edit: isAdmin
-        },
-        buses: {
-          list: true,
-          view: true,
-          edit: isAdmin
-        },
-        stops: {
-          list: true,
-          view: true,
-          edit: isAdmin
-        },
-        issue: {
-          list: true,
-          view: true,
-          edit: true
+          edit: isAdmin,
+            remove: isAdmin
         },
           modelFiles: {
-              list: true,
-              view: true,
-              edit: true
+              list: isAdmin,
+              view: isAdmin,
+              edit: isAdmin,
+              remove: isAdmin
           }
       }
     };

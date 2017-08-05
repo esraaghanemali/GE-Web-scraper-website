@@ -1,21 +1,29 @@
 
 
-angular.module('trafficCMS.issues')
-    .controller('issueCtrl', function ($scope, $state, stops, issue) {
-        $scope.isNew =angular.isUndefined(issue.id) || issue.id == null || issue.id == '';
-        $scope.stops = stops;
-        $scope.issue = $scope.isNew ? {} : issue;
-        if(!$scope.isNew){
-            $scope.issue.origin = _.find($scope.stops, {id: $scope.issue.origin.id});
-            $scope.issue.destination = _.find($scope.stops, {id: $scope.issue.destination.id});
-        }
-        $scope.types = ['danger', 'traffic', 'blocked'];
-        $scope.saveIssue = function () {
-            $scope.issue.save().then(function () {
-                $state.go('app.issues', {
-                    replace: true
-                })
-            });
+angular.module('webScraperCMS.userPackage')
+    .controller('UserPackageCtrl', function ($rootScope, $scope, $filter, $state, models, notifyService, userPackage) {
+        $scope.isNew =angular.isUndefined(userPackage.id) || userPackage.id == null || userPackage.id == '';
+        $scope.userPackage = $scope.isNew ? {} : userPackage;
+
+        $scope.saveUserPackage = function () {
+            if ($scope.isLoading) {
+                return;
+            }
+            // if (!$scope.userPackageForm.$valid) {
+            //     return notifyService.notify($filter('translate')('user.errors.formNotValid'), {
+            //         type: 'danger'
+            //     });
+            // }
+            $scope.isLoading = true;
+            console.log('user pac')
+
+            console.log($scope.userPackage)
+          // return  $scope.userPackage.save().then(function (newPackage) {
+          //
+          //       $state.go('app.userPackages', {}, {
+          //           location: 'replace'
+          //       });
+          //   });
         }
 
     });

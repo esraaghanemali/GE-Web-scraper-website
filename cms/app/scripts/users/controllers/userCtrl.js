@@ -1,11 +1,20 @@
 'use strict';
 
 angular.module('webScraperCMS.users')
-.controller('UserCtrl', function($rootScope, $scope, $filter, $state, models, notifyService, user) {
+.controller('UserCtrl', function($rootScope, $scope, $filter, $state, models,userPackages, notifyService, user) {
   $scope.user = user;
   $scope.isNew = angular.isUndefined($scope.user.id) || $scope.user.id === '';
   $scope.password = '';
   $scope.rePassword = '';
+    $scope.userPackages = userPackages;
+    if(!$scope.isNew){
+        console.log('user')
+        console.log($scope.user)
+        console.log('user pac')
+        console.log($scope.user.userPackage)
+         $scope.user.userPackage = _.find($scope.userPackages, {id: $scope.user.userPackage.id});
+
+    }
 
   $scope.saveUser = function() {
     if ($scope.isLoading) {
@@ -20,8 +29,19 @@ angular.module('webScraperCMS.users')
       $scope.user.password = $scope.password;
     }
     $scope.isLoading = true;
-    return $scope.user.save().then(function(newUser) {
-      $scope.isLoading = false;
+    // console.log( $scope.user)
+    //   console.log('packagee')
+    //   console.log($scope.user.userPackage)
+    //   $scope.user.userPackage = _.find($scope.userPackages, {id: $scope.user.userPackage.id});
+    //   console.log('packagee22222')
+    //   console.log($scope.user.userPackage)
+      return $scope.user.save().then(function(newUser) {
+        console.log("i am in save "+ newUser )
+        console.log( newUser )
+        console.log(" save use"+ $scope.user )
+        console.log( $scope.user )
+
+        $scope.isLoading = false;
       notifyService.notify($filter('translate')('user.save.success'));
       $state.go('app.users', {}, {
         location: 'replace'

@@ -6,6 +6,13 @@ const Promise = require('bluebird');
 
 
 module.exports = {
+
+
+    saveModelFiles : function (req, res, next) {
+        console.log("im in save")
+        console.log(req)
+        res.json({r:5});
+    },
     getModelFiles: function (req, res, next) {
 
 
@@ -13,27 +20,18 @@ module.exports = {
         limit = isNaN(limit) ? 10 : limit;
         var offset = Number(req.query.skip);
         offset = isNaN(offset) ? 0 : offset;
-        models.modelFiles.getList({
+        models.model.getList({
             skip: offset,
             limit: limit,
-            projection: constants.modelFiles.defaultFields
+            populate: [
+                {
+                    path: 'user'
+                }
+            ],
+            projection: constants.model.defaultFields
         }).then(function(modelFiles){
             res.json(modelFiles);
         }).catch(next);
-
-
-
-        // var limit = Number(req.query.limit);
-        // limit = isNaN(limit) ? 10 : limit;
-        // var offset = Number(req.query.offset);
-        // offset = isNaN(offset) ? 0 : offset;
-        // models.modelFiles.getList({
-        //     skip: offset,
-        //     limit: limit,
-        //     projection: constants.modelFiles.defaultFields
-        // }).then(function (modelFiles) {
-        //     res.json(modelFiles);
-        // }).catch(next);
     },
     getModelFileById: function (req, res, next) {
         models.modelFiles.getModelFileById(req.params.modelFileId)
@@ -43,14 +41,16 @@ module.exports = {
             }).catch(next);
     },
     createModelFile: function (req, res, next) {
-        models.modelFiles.createModelFile({
-            modelFileId:req.body.modelFileId,
-            fileName: req.body.fileName
-
-        }).then(function (modelFile) {
-                res.json(modelFile);
-            }
-        ).catch(next);
+        console.log("i am in crea")
+        console.log(req.body.file)
+        // models.model.createModel({
+        //     modelId:new Date().getTime(),
+        //     fileName: req.body.fileName,
+        //     user:req.registeredUser.id,
+        // }).then(function (modelFile) {
+        //         res.json(modelFile);
+        //     }
+        // ).catch(next);
     },
     getModelFilesByUsername: function (req, res, next) {
         models.user.find({username: req.params.username})
@@ -60,6 +60,16 @@ module.exports = {
                 }).catch(next);
 
     }
+    ,
+    removeModeleById: function (req, res, next){
+    // console.log("in remove "+req.params.packageId)
+
+    models.model.removePackageById(req.params.modelId).then(function (data) {
+            // console.log("the id "+req.params.packageId)
+            res.json(data);
+        }
+    ).catch(next);
+}
     //,
     // getBusesByStopId: function (req, res, next) {
     //     models.busStop.find({stopId: req.params.stopId})

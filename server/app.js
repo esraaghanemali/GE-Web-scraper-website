@@ -8,14 +8,17 @@ var mongoose = require('mongoose');
 var config = require('./config/config');
 var models = require('./models/index');
 var utils = require('./utils');
-var parseFile = require('./utils/tempFile');
-var graphModule = require('./utils/graphModule');
 
+//defines models routes
 var usersRoutes = require('./routes/users');
-
+var extractedDataRoutes = require('./routes/extracted-data');
+var scrapeRequestRoutes = require('./routes/scrape-request');
+var statusRoutes = require('./routes/status');
+var userPackageRoutes = require('./routes/user-package');
+var webScraperConstantsRoutes = require('./routes/webScraper-constants');
 var modelFilesRoutes = require('./routes/modelFiles');
-var app = express();
 
+var app = express();
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -25,11 +28,15 @@ app.use(cookieParser());
 app.use(require('cors')());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//user routes in app
 app.use('/users', usersRoutes);
-
 app.use('/modelFiles', modelFilesRoutes);
-
-
+app.use('/status', statusRoutes);
+app.use('/webScraperConstants', webScraperConstantsRoutes);
+app.use('/userPackage', userPackageRoutes);
+app.use('/scrapreRequest', scrapeRequestRoutes);
+app.use('/extractedData', extractedDataRoutes);
 
 
 // catch 404 and forward to error handler

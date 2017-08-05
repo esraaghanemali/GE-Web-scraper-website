@@ -1,20 +1,20 @@
 'use strict';
 
 
-angular.module('webScraperCMS.modelFiles', [])
+angular.module('webScraperCMS.home', [])
     .config(function ($stateProvider) {
-        $stateProvider.state('app.modelFiles', {
-            url: '/modelFiles?page&count',
-            templateUrl: 'views/modelFiles/modelFiles-page.html',
-            controller: 'ModelFilesCtrl',
+        $stateProvider.state('app.home', {
+            url: '/home',
+            templateUrl: 'views/home/home-page.html',
+             controller: 'ChartCtrl',
             data: {
-                requiredPermission: 'modelFiles.list'
+                requiredPermission: true
             }
-            ,
-            resolve: {
-                authorize: function (authorization) {
-                    return authorization.authorize();
-                }
-            }
+            // ,
+            // resolve: {
+            //     authorize: function (authorization) {
+            //         return authorization.authorize();
+            //     }
+            // }
         })
     });

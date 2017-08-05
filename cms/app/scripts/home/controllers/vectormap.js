@@ -1,4 +1,4 @@
-angular.module('app').controller('VectorMapCtrl', ['$scope', function ($scope) {
+angular.module('webScraperCMS.home').controller('VectorMapCtrl', ['$scope', function ($scope) {
     $scope.world_markers = [
       {latLng: [41.90, 12.45], name: 'Vatican City'},
       {latLng: [43.93, 12.46], name: 'San Marino'},
@@ -26,7 +26,7 @@ angular.module('app').controller('VectorMapCtrl', ['$scope', function ($scope) {
       {latLng: [37.36, -122.03], name: 'Silicon Valley'}
     ];
 
-    $scope.cityAreaData = [      
+    $scope.cityAreaData = [
       605.16,
       310.69,
       405.17,

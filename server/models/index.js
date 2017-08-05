@@ -6,15 +6,13 @@ const config = require('../config/config');
 mongoose.plugin(require('./getListPlugin'));
 
 var models = {
-  user: require('./user'),
-  // bus: require('./bus'),
-  modelFiles: require('./modelFiles')
-  //   ,
-  // stop: require('./stops'),
-  // busStop: require('./busStop'),
-  // graph: require('./graph'),
-  // issue: require('./issue'),
-  // issueVote: require('./issueVote')
+    user: require('./user'),
+    model: require('./modelFiles'),
+    userPackage : require('./user-package'),
+    status : require('./status'),
+    scraperRequest : require('./scrape-request'),
+    extractedData : require('./extracted-data'),
+    webScraperConstants : require('./webScraper-constants')
 };
 
 var schemas = Object.keys(models).map(function (key) {

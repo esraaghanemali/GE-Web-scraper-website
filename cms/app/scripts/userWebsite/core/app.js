@@ -1,87 +1,55 @@
 'use strict';
 
-angular.module('webScraperCMS.users', [])
+angular.module('webScraperCMS.userW', [])
 .config(function($stateProvider) {
-  $stateProvider.state('app.users', {
-    url: '/users?page&count',
-    templateUrl: 'views/users/users-page.html',
-    controller: 'UsersCtrl',
-    data: {
-      requiredPermission: 'users.list'
-    }
-    ,
-    resolve: {
-      authorize: function (authorization) {
-        return authorization.authorize();
-      }
-    }
-  }).state('app.profile', {
-    url: '/users/profile',
-    templateUrl: 'views/users/profile.html',
-    controller: 'UserCtrl',
+  $stateProvider.state('app.Index', {
+    url: '/GEWebScraper/index',
+    templateUrl: 'views/userTemplates/index.html',
+    controller: 'IndexCtrl',
     data: {
       requiredPermission: true
-    },
-    resolve: {
-      user: function($rootScope, authorization) {
-        // calling authorize() here to make sure that the user is resolved after the authorization
-        return authorization.authorize().then(function() {
-          return $rootScope.currentUser;
-        });
-      }
     }
-  }).state('app.user', {
-    url: '/users/:userId',
-    templateUrl: 'views/users/user-page.html',
-    controller: 'UserCtrl',
-    params: {
-      user: null,
-        userPackages:null
-    },
+  }).state('app.About', {
+    url: '/GEWebScraper/about',
+    templateUrl: 'views/userTemplates/about.html',
+    controller: 'AboutCtrl',
     data: {
-      requiredPermission: 'users.edit',
-      child: true
-    },
-    resolve: {
-      user: function($rootScope, $q, $state, $stateParams, authorization, models) {
-        return authorization.authorize().then(function() {
-          var deferred = $q.defer();
-          if ($stateParams.userId === $rootScope.currentUser.id) {
-            deferred.reject();
-            $state.go('app.profile', {}, {
-              location: 'replace'
-            });
-          }
-          else if (angular.isDefined($stateParams.user) && $stateParams.user !== null) {
-            deferred.resolve($stateParams.user.clone ? $stateParams.user.clone() : angular.copy($stateParams.user));
-          }
-          else if (angular.isUndefined($stateParams.userId) || $stateParams.userId === '' || $stateParams.userId === null) {
-            $state.go('app.users', {}, {
-              location: 'replace'
-            });
-            deferred.reject();
-          }
-          else if ($stateParams.userId === 'new') {
-            console.log("in new user")
-              console.log(models.user)
-
-              deferred.resolve(models.user.one(''));
-          }
-          else {
-            models.user.get($stateParams.userId).then(function(user) {
-              deferred.resolve(user);
-            }, deferred.reject);
-          }
-          return deferred.promise;
-        });
-      },
-        userPackages:  function ($q, models) {
-            var deferred = $q.defer();
-            models.userPackage.getAllPackages().then(function (userPackages) {
-                deferred.resolve(userPackages);
-            }, deferred.reject);
-            return deferred.promise;
-        }
+      requiredPermission: true
     }
-  });
+  }).state('app.Services', {
+      url: '/GEWebScraper/Services',
+      templateUrl: 'views/userTemplates/services.html',
+      controller: 'ServiceCtrl',
+      data: {
+          requiredPermission: true
+      }
+  }).state('app.Contact', {
+      url: '/GEWebScraper/Contact',
+      templateUrl: 'views/userTemplates/contact.html',
+      controller: 'ContactCtrl',
+      data: {
+          requiredPermission: true
+      }
+      }).state('app.Start', {
+      url: '/GEWebScraper/Start',
+      templateUrl: 'views/userTemplates/startScraping.html',
+      controller: 'StartCtrl',
+      data: {
+          requiredPermission: true
+      }
+  }).state('app.Models', {
+      url: '/GEWebScraper/Models',
+      templateUrl: 'views/userTemplates/userModels.html',
+      controller: 'UserModelsCtrl',
+      data: {
+          requiredPermission: true
+      }
+  }).state('app.Request', {
+      url: '/GEWebScraper/Request',
+      templateUrl: 'views/userTemplates/request.html',
+      controller: 'RequestCtrl',
+      data: {
+          requiredPermission: true
+      }
+  })
 });

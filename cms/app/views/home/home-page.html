@@ -7,19 +7,6 @@
                         <h2>GE Web Scrape</h2>
                         <small>Welcome to the web scraper website</small>
                     </div>
-                    <!--<div class="card-tools">-->
-                    <!--<ul class="list-inline">-->
-                    <!--<li class="dropdown">-->
-                    <!--<a md-ink-ripple data-toggle="dropdown" class="md-btn md-flat md-btn-circle">-->
-                    <!--<i class="mdi-navigation-more-vert text-md"></i>-->
-                    <!--</a>-->
-                    <!--<ul class="dropdown-menu dropdown-menu-scale pull-right pull-up top text-color">-->
-                    <!--<li><a href>Action</a></li>-->
-                    <!--<li><a href>Another action</a></li>-->
-                    <!--</ul>-->
-                    <!--</li>-->
-                    <!--</ul>-->
-                    <!--</div>-->
                     <div class="card-body">
                         <div class="row" ng-controller="ChartCtrl">
                             <div class="col-sm-6">
@@ -31,7 +18,7 @@
                       [
                         { data: {{plot_line}} },
                         { data: {{plot_line_2}} }
-                      ], 
+                      ],
                       {
                         bars: { show: true, fill: true,  barWidth: 0.4, lineWidth: 1, order: 1, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] } },
                         colors: ['{{app.color.primary}}','{{app.color.success}}'],
@@ -56,7 +43,7 @@
                       {
                         series: { pie: { show: true, innerRadius: 0.55, stroke: { width: 3 }, label: { show: true, threshold: 0.05 } } },
                         colors: ['{{app.color.primary}}','{{app.color.success}}'],
-                        grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },   
+                        grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
                         tooltip: true,
                         tooltipOpts: { content: '%s: %p.0%' }
                       }

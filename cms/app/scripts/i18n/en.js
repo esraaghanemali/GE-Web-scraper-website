@@ -3,6 +3,7 @@
 angular.module('webScraperCMS.i18n')
 .constant('en', {
   global: {
+      userWebsite: 'User Website',
     loadingData: 'Loading data...',
     errorData: 'An error occured. Please try again.',
     actions: {
@@ -22,7 +23,15 @@ angular.module('webScraperCMS.i18n')
         required: 'This field is required!'
       }
     }
+      ,
+      userPackage: 'User Package'
   },
+    userApp: {
+        Home:'Home',
+        About:'About',
+        Services:'Our Services',
+        Contact:'Contact Us',
+    },
   aside: {
     profile: 'My Profile',
     settings: 'Settings',
@@ -35,7 +44,7 @@ angular.module('webScraperCMS.i18n')
       maps: 'Maps',
       users: 'Users',
       buses: 'Buses',
-      ModelFiles: 'Model Files en',
+      ModelFiles: 'Models',
       stops: 'Stops'
     }
   },
@@ -71,12 +80,29 @@ angular.module('webScraperCMS.i18n')
       offers: 'Offers Sold'
     }
   },
+    userPackage: {
+        listPage: {
+            title: 'Packages List',
+            noData: 'No Packages yet. You can create one by using the button at the top.',
+            loadingData: 'Loading Data',
+            errorData : 'Error while loading data.'
+        },
+        actions: {
+            new: 'New package',
+            edit: 'Edit',
+            save: 'Save',
+            addPackage: 'Add New package File'
+        },
+        length: 'Length'
+    },
   user: {
     username: 'Username',
     firstName: 'First Name',
     lastName: 'last Name',
     email: 'Email',
-    password: 'Password',
+      phone: ' phone',
+      userPackage: 'Package',
+      password: 'Password',
     oldPassword: 'Old Password',
     newPassword: 'New Password',
     rePassword: 'Retype New Password',
@@ -146,8 +172,9 @@ angular.module('webScraperCMS.i18n')
             save: 'Save',
             addModelFile: 'Add New Model File'
         },
-        fileName: 'Bus Name',
-        length: 'Length'
+        fileName: 'Model Name',
+        length: 'Length',
+        fileLocation : 'file Location'
     },
   bus: {
     listPage: {

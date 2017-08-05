@@ -28,7 +28,38 @@ var server = http.createServer(app);
 
 models.connect().then(function(){
   models.user.createAdmin();
+  //   models.model.createModel(
+  //     {
+  //         modelId:1,
+  //         fileName: 'ghassaaaaaaaaaaaan'
+  //
+  //
+  //     }
+  // )
+// //     // models.userPackage.getPackageById(4)
+// models.userPackage.createUserPackage({
+//     packageId : 4,
+//     packageName:'Default User',
+//     maxPagesNumber: 1,
+//     maxItemsPerPageNumber: 50
+// }).catch(function (err) {
+//   console.log(err)
+// })
+//
+//     models.userPackage.updatePackage(4,{
+//     packageName:'esraa3',
+//     max_pages_number: 1,
+//     max_items_per_page_number: 50
+// })
 
+
+   // models.userPackage.getPackageById(4).catch(function (err) {
+    //     console.log(err)
+    // })
+//     models.userPackage.removePackageById(4).catch(function (err) {
+//         console.log(err)
+//     })
+//     models.userPackage.getPackageById(4)
 
 // for(var i =0 ; i<5;i++)
 // {

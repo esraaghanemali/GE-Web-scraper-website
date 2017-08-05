@@ -4,8 +4,12 @@ var jwt = require('jsonwebtoken');
 const Promise = require('bluebird');
 const config = require('../config/config');
 const errors = require('../utils/errors');
-
+const models = require('./user-package')
 var userSchema = new mongoose.Schema({
+    userPackage : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'userPackage'
+    },
   username: {
     type: String,
     required: true,
@@ -19,7 +23,7 @@ var userSchema = new mongoose.Schema({
   },
   phone: {
     type: String,
-    unique: true,
+    // unique: true,
     trim: true
   },
   email: {
@@ -53,6 +57,7 @@ var userSchema = new mongoose.Schema({
     enum: ['client', 'admin'],
     default: 'client'
   },
+
   devices: [String]
 });
 
@@ -98,6 +103,7 @@ userSchema.statics.getUserByToken = function (token) {
 };
 
 userSchema.statics.createUser = function (user) {
+  console.log(user)
   return this.create(user);
 };
 
@@ -134,6 +140,7 @@ userSchema.statics.createAdmin = function () {
     username: 'admin'
   }).then(function (admin) {
     if (!admin) {
+
       return userModel.createUser({
         username: 'admin',
         email: 'admin@admin.com',
@@ -142,7 +149,8 @@ userSchema.statics.createAdmin = function () {
         lastName: 'Admin',
         role: 'admin',
         phone: '123456789',
-        isActive: true
+        isActive: true,
+          userPackage:'5981ed63aee770324ec6fa1b'
       });
     }
     return Promise.resolve();

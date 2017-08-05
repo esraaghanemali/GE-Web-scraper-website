@@ -1,7 +1,8 @@
 <div class="box bg-white">
-  <div class="navbar md-whiteframe-z1 no-radius" ng-class="$state.current.data.theme ? $state.current.data.theme.primary : app.setting.theme.primary">
+  <div class="navbar md-whiteframe-z1 no-radius indigo" ng-class="$state.current.data.theme ? $state.current.data.theme.primary : app.setting.theme.primary">
       <!-- brand -->
       <a class="navbar-brand" ng-class="{'rtl': app.setting.rtl}">
+
         <img src="images/small-logo.png" alt="{{app.name}}" class="small-logo">
         <span class="hidden-folded inline" ng-class="{'m-l': !app.setting.rtl, 'm-r': app.setting.rtl}">{{app.name}}</span>
       </a>
@@ -102,7 +103,7 @@
                     <span class="amber-300 col-xs-4 box-col"></span>
                   </div>
                   <div class="pointer box m-b-sm" style="width:32px;height:16px" ng-click="app.setting.theme = {primary: 'bg-white', accent: 'green', warn: 'teal'}" ng-class="{'pull-right m-l-sm': app.setting.rtl, 'pull-left m-r-sm': !app.setting.rtl}">
-                    <span class="bg-white col-xs-4 box-col"></span>
+                    <span class="col-xs-4 box-col"></span>
                     <span class="green col-xs-4 box-col"></span>
                     <span class="teal col-xs-4 box-col"></span>
                   </div>

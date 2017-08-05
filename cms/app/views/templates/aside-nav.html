@@ -1,6 +1,18 @@
 <nav ui-nav>
   <ul class="nav" ng-class="{'rtl': app.setting.rtl}">
     <li ui-sref-active="active">
+      <a md-ink-ripple ui-sref="app.home" ng-class="{'rtl': app.setting.rtl}">
+        <i class="icon mdi-social-people i-20"></i>
+        <span class="font-normal">Home</span>
+      </a>
+    </li>
+    <li ui-sref-active="active">
+      <a md-ink-ripple ui-sref="app.userPackages" ng-class="{'rtl': app.setting.rtl}">
+        <i class="icon mdi-social-people i-20"></i>
+        <span class="font-normal">packages </span>
+      </a>
+    </li>
+    <li ui-sref-active="active">
       <a md-ink-ripple ui-sref="app.users" ng-class="{'rtl': app.setting.rtl}">
         <i class="icon mdi-social-people i-20"></i>
         <span class="font-normal" translate="aside.nav.users"></span>
@@ -10,6 +22,13 @@
       <a md-ink-ripple ui-sref="app.modelFiles" ng-class="{'rtl': app.setting.rtl}">
         <i class="icon mdi-maps-beenhere i-20"></i>
         <span class="font-normal" translate="aside.nav.ModelFiles"></span>
+      </a>
+    </li>
+
+    <li ui-sref-active="active">
+      <a md-ink-ripple ui-sref="app.Index" ng-class="{'rtl': app.setting.rtl}">
+        <i class="icon mdi-maps-beenhere i-20"></i>
+        <span class="font-normal" translate="global.userWebsite">user website</span>
       </a>
     </li>
 

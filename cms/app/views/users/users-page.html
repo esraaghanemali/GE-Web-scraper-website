@@ -12,6 +12,8 @@
       <th translate="user.firstName"></th>
       <th translate="user.lastName"></th>
       <th translate="user.email"></th>
+      <th translate="user.phone"></th>
+      <th translate="user.userPackage"></th>
       <th translate="user.isActive.title"></th>
       <th></th>
     </tr>
@@ -21,6 +23,8 @@
       <td>{{row.firstName}}</td>
       <td>{{row.lastName}}</td>
       <td>{{row.email}}</td>
+      <td>{{row.phone}}</td>
+      <td>{{row.userPackage.packageName}}</td>
       <td>{{'user.isActive.' + row.isActive | translate}}</td>
       <td>
         <md-button type="button" class="md-raised" ng-if="row._id !== currentUser._id"

@@ -16,20 +16,23 @@ angular.module('webScraperCMS.models', [])
     return extractedData;
   });
 })
-    .factory('models', function(User,ModelFiles) {
+
+    .factory('models', function(User,ModelFiles,UserPackage) {
         return {
             user: User,
-            modelFiles: ModelFiles
-
+            modelFiles: ModelFiles,
+            userPackage:UserPackage
         };
     });
-
-// .factory('models', function(User,ModelFiles, Bus, Stop, Issue) {
-//   return {
-//     user: User,
-//     modelFiles: ModelFiles,
-//     bus: Bus,
-//     stop: Stop,
-//     issue: Issue
-//   };
-// });
+    // .factory('models', function(userPackage,User,ModelFiles,scrapeRequest,status,extractedData,webScraperConstant) {
+    //     return {
+    //         userPackage:userPackage,
+    //         user: User,
+    //         modelFiles: ModelFiles,
+    //         scrapeRequest:scrapeRequest,
+    //         status:status,
+    //         extractedData:extractedData,
+    //         webScraperConstant:webScraperConstant
+    //
+    //     };
+    // });

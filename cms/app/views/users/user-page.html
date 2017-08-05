@@ -11,6 +11,14 @@
           <div ng-message="required">{{"user.errors.username.required" | translate}}</div>
         </div>
       </md-input-container>
+
+      <md-input-container class="md-block">
+        <label translate="global.userPackage"></label>
+        <md-select name="userPackage" ng-model="user.userPackage" class="md-default-theme" style="width: 100%"
+                   ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">
+          <md-option ng-repeat="userPackage in userPackages" ng-value="userPackage"> {{userPackage.packageName}}</md-option>
+        </md-select>
+      </md-input-container>
       <md-input-container class="md-block">
         <label translate="user.firstName"></label>
         <input required name="firstName" ng-model="user.firstName" ng-readonly="!isNew">
@@ -25,6 +33,17 @@
           <div ng-message="required">{{"user.errors.lastName.required" | translate}}</div>
         </div>
       </md-input-container>
+
+
+
+
+      <md-input-container class="md-block">
+        <label translate="user.phone"></label>
+        <input required name="userPhone" ng-model="user.phone">
+        <div ng-messages="userForm.userPhone.$error">
+          <div ng-message="required">{{"user.errors.Phone.required" | translate}}</div>
+        </div>
+      </md-input-container>
       <md-input-container class="md-block">
         <label translate="user.email"></label>
         <input required name="userEmail" ng-model="user.email">
@@ -32,6 +51,10 @@
           <div ng-message="required">{{"user.errors.email.required" | translate}}</div>
         </div>
       </md-input-container>
+
+
+
+
       <md-input-container class="md-block">
         <label translate="user.password"></label>
         <input required name="userPassword" ng-model="password" type="password">
@@ -47,6 +70,8 @@
           <div ng-message="match">{{"user.errors.password.notMatch" | translate}}</div>
         </div>
       </md-input-container>
+
+
       <md-input-container>
         <md-button class="md-raised md-primary" translate="user.actions.save" ng-click="saveUser()"></md-button>
       </md-input-container>

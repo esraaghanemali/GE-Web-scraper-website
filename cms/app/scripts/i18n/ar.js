@@ -3,6 +3,7 @@
 angular.module('webScraperCMS.i18n')
 .constant('ar', {
   global: {
+      userWebsite: 'موقع المستخدم',
     loadingData: 'جاري التحميل...',
     errorData: 'حصل خطأ أثناء التحميل. يرحى المحاولة مجدداً.',
     actions: {
@@ -16,8 +17,15 @@ angular.module('webScraperCMS.i18n')
       selectImage: 'اختر صورة',
       changeImage: 'تغيير',
       removeImage: 'إزالة'
-    }
+    },
+      userPackage: 'حزمة المستخدم'
   },
+    userApp: {
+        Home:'الرئيسية',
+        About:'من نحن',
+Services:'خدماتنا',
+    Contact:'اتصل بنا',
+    },
   aside: {
     profile: 'صفحتي الشخصية',
     settings: 'الإعدادات',
@@ -28,7 +36,7 @@ angular.module('webScraperCMS.i18n')
     nav: {
       dashboard: 'الصفحة الرئيسية',
       maps: 'الخرائط',
-      ModelFiles: 'files ar',
+      ModelFiles: 'models ar',
       users: 'المستخدمون',
       categories: 'الفئات'
     }
@@ -67,27 +75,45 @@ angular.module('webScraperCMS.i18n')
   },
     modelFiles: {
         listPage: {
-            title: 'Model Files List',
-            noData: 'No files yet. You can create one by using the button at the top.',
-            loadingData: 'Loading Data',
-            errorData : 'Error while loading data.'
+            title: 'قائمة الملفات',
+            noData: 'لا يوجد ملفات بعد. يمكنك اضافة ملف بالضغط على الزر فوق.',
+            loadingData: 'يتم التحميل',
+            errorData : 'حدث خطأ اثناء تحميل المعطيات.'
         },
         actions: {
-            new: 'New Fil',
-            edit: 'Edit',
-            save: 'Save',
-            addModelFile: 'Add New Model File'
+            new: 'ملف جديد',
+            edit: 'تعديل',
+            save: 'حفظ',
+            addModelFile: 'أضف ملفاَ جدياَ'
         },
-        fileName: 'Bus Name',
-        length: 'Length'
+        fileName: 'ملف النموذج',
+        length: 'الطول',
+        fileLocation : 'موقع الملف'
+    },
+    userPackage: {
+        listPage: {
+            title: 'قائمة الحزم',
+            noData: 'لا يوجد حزم بعد، يمكنك إضافة حزمة جديدة بالضغط على الزر فوق.',
+            loadingData: 'تحميل المعطيات',
+            errorData : 'حدث خطأ اثناء تحميل الملفات'
+        },
+        actions: {
+            new: 'حزمة جديدة',
+            edit: 'تعديل',
+            save: 'حفظ',
+            addPackage: 'إضف حزمة جديدة'
+        },
+        length: 'الطول'
     },
   user: {
     username: 'اسم المستخدم',
-    firstName: 'First Name',
-    lastName: 'last Name',
+    firstName: ' الاسم الاول',
+    lastName: 'الاسم الاخر',
     email: 'البريد الإلكتروني',
     password: 'كلمة المرور',
-    oldPassword: 'كلمة المرور القديمة',
+      userPackage: 'الحزمة',
+      phone: 'الهاتف',
+      oldPassword: 'كلمة المرور القديمة',
     newPassword: 'كلمة المرور الجديدة',
     rePassword: 'إعادة كلمة المرور الجديدة',
     isActive: {

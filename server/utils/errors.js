@@ -91,5 +91,91 @@ module.exports = {
     error: 'missing_data',
     code: 114,
     status: 400
-  }
+  },
+    userPackage : {
+    //code 190
+    notFound : {
+        error: 'no such package found',
+        code: 190,
+        status: 404
+    }, update : {
+            error: 'unable to update',
+            code: 191,
+            status: 400
+        }
+        , create : {
+            error: 'unable to create',
+            code: 192,
+            status: 400
+        }
+    },
+    status : {
+        //code 180
+        notFound : {
+            error: 'no such status found',
+            code: 180,
+            status: 404
+        }, update : {
+            error: 'unable to update',
+            code: 181,
+            status: 400
+        }
+        , create : {
+            error: 'unable to create',
+            code: 182,
+            status: 400
+        }
+    },
+    extractedData : {
+        //code 170
+        notFound : {
+            error: 'no such extracted Data found',
+            code: 170,
+            status: 404
+        }, update : {
+            error: 'unable to update',
+            code: 171,
+            status: 400
+        }
+        , create : {
+            error: 'unable to create',
+            code: 172,
+            status: 400
+        }
+    },
+    scrapeRequest :{
+        //code 160
+        notFound : {
+            error: 'no such scraping request found',
+            code: 160,
+            status: 404
+        }, update : {
+            error: 'unable to update',
+            code: 161,
+            status: 400
+        }
+        , create : {
+            error: 'unable to create',
+            code: 162,
+            status: 400
+        }
+    },
+    webScraperConstants:
+        {
+            //code 150
+            notFound : {
+                error: 'no such scraping variable found',
+                code: 150,
+                status: 404
+            }, update : {
+            error: 'unable to update',
+            code: 151,
+            status: 400
+        }
+            , create : {
+            error: 'unable to create',
+            code: 152,
+            status: 400
+        }
+        }
 };

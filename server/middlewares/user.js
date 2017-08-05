@@ -29,6 +29,9 @@ module.exports = {
       }).catch(next);
   },
   createUser: function (req, res, next) {
+    // console.log("paccc")
+      // console.log( req.body.userPackage._id)
+
     models.user.createUser({
       username: req.body.username,
       email: req.body.email,
@@ -36,6 +39,7 @@ module.exports = {
       language: req.body.language,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
+        userPackage:  req.body.userPackage,
       phone: req.body.phone
     }).then(function (user) {
         res.json(user);
@@ -53,6 +57,11 @@ module.exports = {
     models.user.getList({
       skip: offset,
       limit: limit,
+        populate: [
+            {
+                path: 'userPackage'
+            }
+        ],
       projection: constants.user.defaultFields
     }).then(function(users){
       res.json(users);

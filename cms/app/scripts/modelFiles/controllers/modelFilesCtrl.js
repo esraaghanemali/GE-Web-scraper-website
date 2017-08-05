@@ -20,6 +20,9 @@ angular.module('webScraperCMS.modelFiles')
                         notify: false
                     });
                 }
+                console.log("in ctrl model ")
+                console.log(models.modelFiles)
+
                 var offset = (params.page() - 1) * params.count();
                 return models.modelFiles.getList({
                     offset: offset,
@@ -38,39 +41,39 @@ angular.module('webScraperCMS.modelFiles')
         $scope.remove = function (row) {
             var confirm = $mdDialog.confirm()
                 .title('Are you sure')
-                .textContent('Are you sure to delete the bus: ' + row.arName + ' ?')
+                .textContent('Are you sure to delete the modelFile: ' + row.fileName + ' ?')
                 .ok('Delete it!')
                 .cancel('Cancel');
 
             $mdDialog.show(confirm).then(function () {
-                models.bus.removeBus(row.id)
+                models.modelFiles.remove(row.id)
                     .then(function () {
-                        $scope.buses = _.filter($scope.buses, function (bus) {
-                            return bus.id != row.id;
+                        $scope.modelFiles = _.filter($scope.modelFiles, function (modelFile) {
+                            return modelFile.id != modelFile.id;
                         })
                         // $scope.stops.splice(index, index + 1);
-                        $scope.busesTable.reload();
+                        $scope.modelFilesTable.reload();
                     });
             });
         };
-
-        $scope.newBus = function (ev) {
-            // Appending dialog to document.body to cover sidenav in docs app
-            var confirm = $mdDialog.prompt()
-                .title('What is the new bus called?')
-                .placeholder('Bus name')
-                .ariaLabel('Bus name')
-                .initialValue('')
-                .targetEvent(ev)
-                .ok('Save')
-                .cancel('cancel');
-
-            $mdDialog.show(confirm).then(function(result) {
-                if(result != '')
-                    models.bus.new(result)
-                        .then(function () {
-                            $scope.busesTable.reload();
-                        });
-            });
-        }
+        //
+        // $scope.newBus = function (ev) {
+        //     // Appending dialog to document.body to cover sidenav in docs app
+        //     var confirm = $mdDialog.prompt()
+        //         .title('What is the new bus called?')
+        //         .placeholder('Bus name')
+        //         .ariaLabel('Bus name')
+        //         .initialValue('')
+        //         .targetEvent(ev)
+        //         .ok('Save')
+        //         .cancel('cancel');
+        //
+        //     $mdDialog.show(confirm).then(function(result) {
+        //         if(result != '')
+        //             models.bus.new(result)
+        //                 .then(function () {
+        //                     $scope.busesTable.reload();
+        //                 });
+        //     });
+        // }
     })

@@ -24,6 +24,21 @@
     <link rel="stylesheet" href="styles/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="styles/material-design-icons.css" type="text/css" />
     <link rel="stylesheet" href="styles/style.css" type="text/css" />
+
+<!--core -->
+    <!-- Bootstrap Core CSS -->
+    <!--<link href="views/userTemplates/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Theme CSS -->
+    <link href="views/userTemplates/css/clean-blog.css" rel="stylesheet">
+    <link href="views/userTemplates/css/agency.css" rel="stylesheet">
+
+    <!--&lt;!&ndash; Custom Fonts &ndash;&gt;-->
+    <!--<link href="views/userTemplates/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+
+<!--core -->
+
+
     <!-- endbuild -->
   </head>
   <body ng-app="webScraperCMS" ng-class="{'rtl': app.setting.rtl}">
@@ -69,8 +84,8 @@
     <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
     <!-- endbower -->
     <script src="vendors/marcj-css-element/src/ResizeSensor.js"></script>
-    <script src="vendors/load-google-maps.js"></script>
-    <script src="http://maps.google.com/maps/api/js?v=3&key=AIzaSyCxdXLXt3PyZSyTXDhS_lrtN_nXvGfW8xQ"></script>
+    <!--<script src="vendors/load-google-maps.js"></script>-->
+    <!--<script src="http://maps.google.com/maps/api/js?v=3&key=AIzaSyCxdXLXt3PyZSyTXDhS_lrtN_nXvGfW8xQ"></script>-->
 
 
     <!-- endbuild -->
@@ -95,6 +110,9 @@
     <script src="scripts/basic/services/notifyService.js"></script>
     <script src="scripts/basic/utils.js"></script>
     <script src="scripts/config.js"></script>
+    <script src="scripts/home/app.js"></script>
+    <script src="scripts/home/controllers/chart.js"></script>
+    <script src="scripts/home/controllers/vectormap.js"></script>
     <script src="scripts/i18n/app.js"></script>
     <script src="scripts/i18n/ar.js"></script>
     <script src="scripts/i18n/en.js"></script>
@@ -107,13 +125,40 @@
     <script src="scripts/modelFiles/controllers/modelFileCtrl.js"></script>
     <script src="scripts/modelFiles/controllers/modelFilesCtrl.js"></script>
     <script src="scripts/models/app.js"></script>
+    <script src="scripts/models/extracted-data.js"></script>
     <script src="scripts/models/modelFiles.js"></script>
+    <script src="scripts/models/scrape-request.js"></script>
+    <script src="scripts/models/status.js"></script>
+    <script src="scripts/models/user-package.js"></script>
     <script src="scripts/models/users.js"></script>
+    <script src="scripts/models/webScraper-constants.js"></script>
+    <script src="scripts/userPackage/app.js"></script>
+    <script src="scripts/userPackage/controllers/userPackageCtrl.js"></script>
+    <script src="scripts/userPackage/controllers/userPackagesCtrl.js"></script>
+    <script src="scripts/userWebsite/core/app.js"></script>
+    <script src="scripts/userWebsite/core/controllers/aboutCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/contactCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/indexCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/requestCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/servicesCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/startCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/userModels.js"></script>
     <script src="scripts/users/app.js"></script>
+    <script src="scripts/users/controllers/profileCtrl.js"></script>
     <script src="scripts/users/controllers/userCtrl.js"></script>
     <script src="scripts/users/controllers/usersCtrl.js"></script>
-    <script src="scripts/users/hani.js"></script>
     <!-- scriptinject end -->
+
+    <!--user website scripts-->
+    <script src="scripts/userWebsite/core/app.js"></script>
+    <script src="scripts/userWebsite/core/controllers/indexCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/aboutCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/contactCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/servicesCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/startCtrl.js"></script>
+    <script src="scripts/userWebsite/core/controllers/requestCtrl.js"></script>
+
+
     <!-- endbuild -->
 
   </body>

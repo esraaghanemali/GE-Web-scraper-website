@@ -14,7 +14,6 @@ angular.module('webScraperCMS', [
   'ngMessages',
   'ngSanitize',
   'ngMaterial',
-  'ngMap',
   'ngStorage',
   'ui.router',
   'ui.utils',
@@ -32,13 +31,15 @@ angular.module('webScraperCMS', [
   'webScraperCMS.models',
   'webScraperCMS.login',
   'webScraperCMS.basic',
+    'webScraperCMS.userPackage',
   'webScraperCMS.users',
-  'webScraperCMS.modelFiles'
-
+  'webScraperCMS.modelFiles',
+   'webScraperCMS.home',
+    'webScraperCMS.userW'
 ]).constant('_', _)
   .config(function($stateProvider, $urlRouterProvider, $localStorageProvider, $mdDateLocaleProvider) {
   $localStorageProvider.setKeyPrefix('webScraperCMS');
-  $urlRouterProvider.otherwise('/app/users');
+  $urlRouterProvider.otherwise('/app/home');
   $stateProvider.state('app', {
     abstract: true,
     url: '/app',
@@ -53,7 +54,7 @@ angular.module('webScraperCMS', [
         templateUrl: 'views/templates/content.html'
       }
     }
-  });
+  })
 
   $mdDateLocaleProvider.formatDate = function(date) {
     return moment(date).format('YYYY-MM-DD');
@@ -99,12 +100,12 @@ angular.module('webScraperCMS', [
     },
     setting: {
       theme: {
-        primary: 'bg-white',
-        accent: 'green',
-        warn: 'teal'
+        primary: 'indigo',
+        accent: 'purple',
+        warn: 'amber'
       },
       asideFolded: false,
-      rtl: false
+      // rtl: false
     },
     search: {
       content: '',

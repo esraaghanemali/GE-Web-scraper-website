@@ -1,52 +1,76 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
+const errors = require('../utils/errors')
 
 
-var modelFilesSchema = new mongoose.Schema({
+var modelSchema = new mongoose.Schema({
 
-    modelFileId: {
-        type: Number
+    modelId: {
+        type: Number,
+        unique: true
     },
     fileName: {
         type: String,
         required: true,
         defautl: 'default'
     }
+    ,
+    fileLocation: {
+        type: String,
+        // required: true,
+        defautl: 'default'
+    }
+    ,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    }
 });
-modelFilesSchema.statics.createModelFile = function (modelFile) {
-    return this.create(modelFile);
+modelSchema.statics.createModel = function (model) {
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+        thisModel.create(model).then(function () {
+            // console.log('created pac')
+            resolve();
+        })
+            .catch(function (err) {
+                 console.log(err)
+                reject(errors.modelFiles.create)
+            });
+
+    })
 };
 
-modelFilesSchema.statics.createFile = function () {
-   console.log("created file")
-    var fileModel = this;
-    return this.findOne({
-        modelFileId: 1
+// modelSchema.statics.create = function () {
+//    console.log("created file")
+//     var fileModel = this;
+//     return this.findOne({
+//         modelId: 1
+//
+//     }).then(function (model) {
+//
+//         if (!model) {
+//             // console.log("cant find ")
+//             return fileModel.createModel({
+//                 modelId: 1,
+//                 fileName: 'test file'
+//             });
+//         }
+//         console.log(" find " + model)
+//         return Promise.resolve();
+//     });
+// }
 
-    }).then(function (modelFile) {
-
-        if (!modelFile) {
-            // console.log("cant find ")
-            return fileModel.createModelFile({
-                modelFileId: 1,
-                fileName: 'test file'
-            });
-        }
-        console.log(" find " + modelFile)
-        return Promise.resolve();
-    });
-}
-
-modelFilesSchema.statics.getModelFileById = function (ModelFileId) {
-    if(! ModelFileId || ModelFileId === '')
+modelSchema.statics.getModelById = function (ModelId) {
+    if(! ModelId || ModelId === '')
         return Promise.reject(errors.missingData);
-    return this.findById(ModelFileId)
-        .then(function(modelFile){
-            if(! modelFile)
+    return this.findById(ModelId)
+        .then(function(model){
+            if(! model)
                 return Promise.reject();
-            modelFile = modelFile.toObject();
-            delete modelFile.modelFileId;
-            return modelFile;
+            model = model.toObject();
+            delete model.modelId;
+            return model;
         });
 };
 
@@ -72,5 +96,28 @@ modelFilesSchema.statics.getModelFileById = function (ModelFileId) {
 //     });
 // }
 
+modelSchema.statics.removeModeleById = function (id) {
 
-module.exports = mongoose.model('modelFiles', modelFilesSchema, 'modelFiles');
+    if(!id || packaidgeId=='' )
+    {
+        console.log('error remove')
+        return  Promise.reject(errors.missingData)
+
+    }
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+        // console.log("findd package "+ package)
+        thisModel.remove({ _id: modelId}).then(function (data) {
+            console.log(data)
+            console.log('removed')
+            resolve();
+        })
+            .catch(function (err) {
+                return  reject(err)
+            })
+
+    }).catch(function (err) {
+        return  reject(err)
+    })
+}
+module.exports = mongoose.model('model', modelSchema, 'model');

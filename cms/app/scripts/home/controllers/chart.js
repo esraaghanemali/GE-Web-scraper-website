@@ -1,4 +1,4 @@
-angular.module('app').controller('ChartCtrl', ['$scope', function($scope) {
+angular.module('webScraperCMS.home').controller('ChartCtrl', ['$scope', function($scope) {
   $scope.plot_pie = [];
   var series = Math.floor(Math.random() * 4) + 3;
 
