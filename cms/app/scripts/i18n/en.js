@@ -157,7 +157,8 @@ angular.module('webScraperCMS.i18n')
         maxPages: 'Max Pages',
         maxItemsPerPage : 'Max Items Per Page',
         length: 'Length',
-        'save.success': 'Request saved successfully'
+        'save.success': 'Request saved successfully',
+        'remove.success': 'Request removed successfully',
     },
   user: {
     username: 'Username',
@@ -238,7 +239,25 @@ angular.module('webScraperCMS.i18n')
         },
         fileName: 'Model Name',
         length: 'Length',
-        fileLocation : 'file Location'
+        fileLocation : 'file Location',
+        'save.success': 'the model has been saved succefuly.',
+        'remove.success': 'the model has been remove succefuly.',
+        'request.success':'the model has been requested succefuly.',
+        errors: {
+
+            // 'username.required': 'Username is required',
+            // 'firstName.required': 'First name is required',
+            // 'lastName.required': 'Last name is required',
+            // 'email.required': 'Email is required',
+            // 'password.required': 'Password is required',
+            // 'password.notMatch': 'Passwords are not match!',
+            request: 'error while request, please try again.',
+            saveError: 'error while deleting.',
+            // changePassword: 'An error occurred while changing the password. Please try again.',
+            // oldNewPassReq: 'Old password and new password are required',
+            // noMatch: 'New password does not match the retyped password',
+            // oldPassWrong: 'Old password is incorrect'
+        },
     },
   bus: {
     listPage: {

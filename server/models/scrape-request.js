@@ -26,6 +26,11 @@ var scrapeRequestSchema = new mongoose.Schema({
     status : {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'status'
+    },
+    date :{
+        type:Date,
+        default : Date.now()
+
     }
 });
 scrapeRequestSchema.statics.createScrapeRequest = function (Request) {
@@ -112,26 +117,52 @@ scrapeRequestSchema.statics.removeScrapeRequestById = function (id) {
     if(!id || id=='' )
     {
         console.log('error remove')
-        return  promise.reject(errors.missingData)
+        return  Promise.reject(errors.missingData)
 
     }
     var thisModel = this;
     return new Promise(function (resolve, reject) {
-        thisModel.getScrapeRequestById.then(function (data) {
-            console.log("findd "+ data)
-            thisModel.remove({scrapeRequestId: id})
-                .catch(reject);
-            console.log('removed')
-            resolve();
-        }).catch(function (err) {
-            return  reject(err)
-        })
 
+
+        thisModel.remove({ _id: id}).then(function (data) {
+            console.log(data)
+            console.log('removed')
+            resolve(data);
+        })
+            .catch(function (err) {
+                return  reject(err)
+            })
+
+
+    }).catch(function (err) {
+        return  reject(err)
     })
 
 
 
 }
-
+// modelSchema.statics.makeRequest = function (model,maxPages,maxItemsPerPage) {
+//
+//     if(!model )
+//     {
+//         console.log('error make request model')
+//         return  Promise.reject(errors.missingData)
+//     }
+//     var thisModel = this;
+//     return new Promise(function (resolve, reject) {
+//         // console.log("findd package "+ package)
+//         thisModel.remove({ _id: id}).then(function (data) {
+//             console.log(data)
+//             console.log('removed')
+//             resolve(data);
+//         })
+//             .catch(function (err) {
+//                 return  reject(err)
+//             })
+//
+//     }).catch(function (err) {
+//         return  reject(err)
+//     })
+// }
 
 module.exports = mongoose.model('scrapeRequest', scrapeRequestSchema, 'scrapeRequest');

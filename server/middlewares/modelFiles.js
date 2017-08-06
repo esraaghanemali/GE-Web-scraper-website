@@ -11,7 +11,7 @@ var storage = multer.diskStorage({
         console.log(path.join(__dirname) +'/uploads')
         cb (null ,path.join(__dirname) +'/uploads')
     }, filename : function (req , file , cb) {
-        console.log(file)
+        // console.log(file)
         var id = new Date().getTime()
         cb(null, file.fileName+'-'+ id+path.extname(file.originalname))
     }
@@ -25,26 +25,43 @@ module.exports = {
         var upload = multer ({
             storage : storage,
 
-        }).single('file')
+        }).any()
 
 
-         upload(req,res,function (err) {
-             console.log((err))
-         })
-        console.log(upload)
-        console.log(req.body.files)
-        console.log("body name")
-console.log(req.body.fileName)
-        models.model.createModel({
-            modelId:new Date().getTime(),
-            fileName: req.body.fileName,
-            user:req.registeredUser.id,
-            desc : req.body.desc
+        upload(req,res,function(err) {
+            if(err) {
+                console.log(err);
+                return res.end("Error uploading file.");
+            } else {
+                console.log("body");
 
-        }).then(function (modelFile) {
-                res.json(modelFile);
+                console.log(req.body);
+                console.log("files");
+
+                console.log(req.files);
+                // console.log(req.data);
+                req.files.forEach( function(f) {
+                    console.log(f);
+                    // and move file to final destination...
+                });
+                res.end("File has been uploaded");
             }
-        ).catch(next);
+        });
+
+        // console.log("im in fileName")
+        // console.log(req.body.fileName)
+
+// console.log(req.body.fileName)
+//         models.model.createModel({
+//             modelId:new Date().getTime(),
+//             fileName: req.body.fileName,
+//             user:req.registeredUser.id,
+//             desc : req.body.desc
+//
+//         }).then(function (modelFile) {
+//                 res.json(modelFile);
+//             }
+//         ).catch(next);
 
 
         res.json({r:5});
@@ -76,27 +93,42 @@ console.log(req.body.fileName)
                 res.json(modelFile);
             }).catch(next);
     },
+//     makeRequest : function (req, res, next) {
+//     console.log(req.body.maxPages)
+//         console.log(req.body.model)
+//     // models.model.makeRequest({
+//     //     // modelId:new Date().getTime(),
+//     //     // modelFile: req.body.model,
+//     //     user:req.registeredUser.id,
+//     //     modelId:req.body.modelId,
+//     //     maxPages : req.body.maxPages,
+//     //     maxItemsPerPage : req.body.maxItemsPerPage
+//     // }).then(function (modelFile) {
+//     //         res.json(modelFile);
+//     //     }
+//     // ).catch(next);
+// },
     createModelFile: function (req, res, next) {
-        console.log("i am in crea")
-         console.log(req.body.files)
-        var upload = multer ({
-            storage : storage,
-
-        }).single('file')
-
-
-        upload(req,res,function (err) {
-            console.log((err))
-        })
-        // models.model.createModel({
-        //     modelId:new Date().getTime(),
-        //     fileName: req.body.fileName,
-        //     user:req.registeredUser.id,
-        //     desc : req.body.desc
-        // }).then(function (modelFile) {
-        //         res.json(modelFile);
-        //     }
-        // ).catch(next);
+        // console.log("i am in crea")
+        //  console.log(req.body.files)
+        // var upload = multer ({
+        //     storage : storage,
+        //
+        // }).single('file')
+        //
+        //
+        // upload(req,res,function (err) {
+        //     console.log((err))
+        // })
+        models.model.createModel({
+            modelId:new Date().getTime(),
+            fileName: req.body.fileName,
+            user:req.registeredUser.id,
+            desc : req.body.desc
+        }).then(function (modelFile) {
+                res.json(modelFile);
+            }
+        ).catch(next);
     },
     getModelFilesByUsername: function (req, res, next) {
         models.model.getModelFilesByUsername(req.registeredUser)
@@ -117,10 +149,12 @@ console.log(req.body.fileName)
 
 },
     removeModeleById: function (req, res, next){
-    // console.log("in remove "+req.params.packageId)
+        console.log("the id "+req.params.modelId)
 
-    models.model.removePackageById(req.params.modelId).then(function (data) {
-            // console.log("the id "+req.params.packageId)
+        console.log("in remove "+req.params.modelId)
+
+    models.model.removeModeleById(req.params.modelId).then(function (data) {
+
             res.json(data);
         }
     ).catch(next);

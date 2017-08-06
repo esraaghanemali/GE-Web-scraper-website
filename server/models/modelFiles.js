@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const errors = require('../utils/errors')
 const users = require('./user')
+const requests = require('./scrape-request')
 
 var modelSchema = new mongoose.Schema({
 
@@ -146,10 +147,33 @@ modelSchema.statics.getModelById = function (ModelId) {
 //             });
 //     });
 // }
+// modelSchema.statics.makeRequest = function (model,maxPages,maxItemsPerPage) {
+//
+//     if(!model )
+//     {
+//         console.log('error make request model')
+//         return  Promise.reject(errors.missingData)
+//     }
+//     var thisModel = this;
+//     return new Promise(function (resolve, reject) {
+//         // console.log("findd package "+ package)
+//         thisModel.remove({ _id: id}).then(function (data) {
+//             console.log(data)
+//             console.log('removed')
+//             resolve(data);
+//         })
+//             .catch(function (err) {
+//                 return  reject(err)
+//             })
+//
+//     }).catch(function (err) {
+//         return  reject(err)
+//     })
+// }
 
 modelSchema.statics.removeModeleById = function (id) {
 
-    if(!id || packaidgeId=='' )
+    if(!id || id=='' )
     {
         console.log('error remove')
         return  Promise.reject(errors.missingData)
@@ -158,10 +182,10 @@ modelSchema.statics.removeModeleById = function (id) {
     var thisModel = this;
     return new Promise(function (resolve, reject) {
         // console.log("findd package "+ package)
-        thisModel.remove({ _id: modelId}).then(function (data) {
+        thisModel.remove({ _id: id}).then(function (data) {
             console.log(data)
             console.log('removed')
-            resolve();
+            resolve(data);
         })
             .catch(function (err) {
                 return  reject(err)

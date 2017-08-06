@@ -90,7 +90,25 @@ Services:'خدماتنا',
         },
         fileName: 'ملف النموذج',
         length: 'الطول',
-        fileLocation : 'موقع الملف'
+        fileLocation : 'موقع الملف',
+        'save.success': 'تم حفظ الملف  بنجاح',
+        'remove.success': 'تم حذف الملف  بنجاح',
+        'request.success':'تم طلب الملف  بنجاح',
+
+        errors: {
+            // 'username.required': 'Username is required',
+            // 'firstName.required': 'First name is required',
+            // 'lastName.required': 'Last name is required',
+            // 'email.required': 'Email is required',
+            // 'password.required': 'Password is required',
+            // 'password.notMatch': 'Passwords are not match!',
+            request: 'حدث خطأ اثناء تقديم الطلب، رجاءاً حاول مجددا.',
+            saveError: 'حدث خطأ اثناء الحذف، رجاءاً حاول مجددا.',
+            // changePassword: 'An error occurred while changing the password. Please try again.',
+            // oldNewPassReq: 'Old password and new password are required',
+            // noMatch: 'New password does not match the retyped password',
+            // oldPassWrong: 'Old password is incorrect'
+        },
     },
     userPackage: {
         listPage: {
@@ -151,6 +169,7 @@ Services:'خدماتنا',
             save: 'حفظ',
             addPackage: 'إضف طلب جديدة'
         },
+        'remove.success': 'تم حذف الطلب  بنجاح',
         errors: {
             // 'username.required': 'Username is required',
             // 'firstName.required': 'First name is required',

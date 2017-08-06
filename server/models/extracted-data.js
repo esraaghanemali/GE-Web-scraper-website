@@ -80,24 +80,24 @@ extractedDataSchema.statics.removeExtractedDataById = function (extractedDataId)
     if(!extractedDataId || extractedDataId=='' )
     {
         console.log('error remove')
-        return  promise.reject(errors.missingData)
+        return  Promise.reject(errors.missingData)
 
     }
     var thisModel = this;
     return new Promise(function (resolve, reject) {
-        thisModel.getExtractedDataById(extractedDataId).then(function (extractedData) {
-            console.log("findd "+ extractedData)
-            thisModel.remove({extractedDataId: extractedDataId})
-                .catch(reject);
+        // console.log("findd package "+ package)
+        thisModel.remove({ _id: extractedDataId}).then(function (data) {
+            console.log(data)
             console.log('removed')
-            resolve();
-        }).catch(function (err) {
-            return  reject(err)
+            resolve(data);
         })
+            .catch(function (err) {
+                return  reject(err)
+            })
 
+    }).catch(function (err) {
+        return  reject(err)
     })
-
-
 
 }
 

@@ -4,6 +4,7 @@ const userMiddleware = require('../middlewares/user');
 const router = express.Router();
 
 router.use(userMiddleware.checkLogin);
+router.delete('/:modelId',middleware.removeModeleById)
 
 router.get('/', middleware.getModelFiles)
     .get('/model/:modelFileId', middleware.getModelFileById)
@@ -12,5 +13,4 @@ router.get('/', middleware.getModelFiles)
 
 router.post('/', middleware.createModelFile)
 router.post('/save/',middleware.saveModelFiles)
-router.delete(':/modelId/',middleware.removeModeleById)
 module.exports = router;

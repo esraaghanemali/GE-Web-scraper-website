@@ -13,5 +13,17 @@ angular.module('webScraperCMS.models')
         ModelFiles.getUserModelFiles = function () {
             return Restangular.one(route).one('/User').get();
         };
+
+        ModelFiles.removeModelFile = function (Id) {
+            return Restangular.one(route).one(Id).remove();
+        };
+
+        // ModelFiles.new= function (model,maxPages,maxItemsPerPage) {
+        //     return Restangular.one(route).one('Request').customPOST({
+        //         model: model,
+        //         maxPages:maxPages,
+        //         maxItemsPerPage:maxItemsPerPage
+        //     });
+        // };
         return ModelFiles;
     });

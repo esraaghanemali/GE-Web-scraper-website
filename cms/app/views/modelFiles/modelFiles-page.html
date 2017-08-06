@@ -15,16 +15,19 @@
                 <!--&gt;File Name</label></div>-->
             <!--</th>-->
             <th>file Name</th>
+            <th>file Description</th>
             <th>file Url</th>
             <th>User</th>
-            <th></th>
+            <th>Remove</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in $data" ng-if="$data.length" ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">
-            <td>{{row.fileName}}</td>
-            <td>{{row.fileLocation}}</td>
-            <td>{{row.user.firstName}}</td>
+        <tr ng-repeat="row in $data" ng-if="$data.length" >
+            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.fileName}}</td>
+            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.desc}}</td>
+
+            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.fileLocation}}</td>
+            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.user.firstName}}</td>
             <td>
                 <md-button ng-if="currentUser.permissions.modelFiles.edit" type="button" class="md-raised red-500"
                            ng-click="remove(row)"><i

@@ -2,149 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce717e77-0b2f-4736-a400-d1aa66059b29" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cms/app/scripts/extractedData/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cms/app/scripts/scrapeRequest/app.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/AUTHORS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/COPYING" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/HISTORY.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/component.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/config/jshint.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/src/check-types.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/src/check-types.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/test/check-types.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/check-types/test/check-types.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/config/constants.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/config/getDefault.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/directions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/distance.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/elevationFromLocations.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/geocode.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/placeAutocomplete.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/placeDetails.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/placeSearchNearby.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/placeSearchText.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/reverseGeocode.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/staticMap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/streetView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/timezone.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/utils/assignParams.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/utils/encodeNumber.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/utils/encodePolylines.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/utils/jsonParser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/utils/makeRequest.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/utils/parseMarkers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/utils/parsePaths.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/utils/parseStyles.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/lib/utils/travelUtils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/.eslintignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/lib/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/lib/parse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/lib/stringify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/lib/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/test/parse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/test/stringify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/node_modules/qs/test/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/googlemaps/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/waitress/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/waitress/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/waitress/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/node_modules/waitress/test.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/index.html" afterPath="$PROJECT_DIR$/cms/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/app.js" afterPath="$PROJECT_DIR$/cms/app/scripts/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/i18n/ar.js" afterPath="$PROJECT_DIR$/cms/app/scripts/i18n/ar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/i18n/en.js" afterPath="$PROJECT_DIR$/cms/app/scripts/i18n/en.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/login/app.js" afterPath="$PROJECT_DIR$/cms/app/scripts/login/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/login/services/session.js" afterPath="$PROJECT_DIR$/cms/app/scripts/login/services/session.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/modelFiles/app.js" afterPath="$PROJECT_DIR$/cms/app/scripts/modelFiles/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFileCtrl.js" afterPath="$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFileCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/models/app.js" afterPath="$PROJECT_DIR$/cms/app/scripts/models/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFilesCtrl.js" afterPath="$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFilesCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/models/extracted-data.js" afterPath="$PROJECT_DIR$/cms/app/scripts/models/extracted-data.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/models/modelFiles.js" afterPath="$PROJECT_DIR$/cms/app/scripts/models/modelFiles.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/models/scrape-request.js" afterPath="$PROJECT_DIR$/cms/app/scripts/models/scrape-request.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/app.js" afterPath="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/requestCtrl.js" afterPath="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/requestCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/userModels.js" afterPath="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/userModels.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/views/modelFiles/modelFile-page.html" afterPath="$PROJECT_DIR$/cms/app/views/modelFiles/modelFile-page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/views/templates/accessDenied.html" afterPath="$PROJECT_DIR$/cms/app/views/templates/accessDenied.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/views/templates/aside-nav.html" afterPath="$PROJECT_DIR$/cms/app/views/templates/aside-nav.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/scripts/users/controllers/userCtrl.js" afterPath="$PROJECT_DIR$/cms/app/scripts/users/controllers/userCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/views/modelFiles/modelFiles-page.html" afterPath="$PROJECT_DIR$/cms/app/views/modelFiles/modelFiles-page.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/views/userTemplates/request.html" afterPath="$PROJECT_DIR$/cms/app/views/userTemplates/request.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/app/views/userTemplates/userModels.html" afterPath="$PROJECT_DIR$/cms/app/views/userTemplates/userModels.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/package-lock.json" afterPath="$PROJECT_DIR$/cms/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cms/package.json" afterPath="$PROJECT_DIR$/cms/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/app.js" afterPath="$PROJECT_DIR$/server/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/middlewares/extracted-data.js" afterPath="$PROJECT_DIR$/server/middlewares/extracted-data.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/middlewares/modelFiles.js" afterPath="$PROJECT_DIR$/server/middlewares/modelFiles.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/middlewares/scrape-request.js" afterPath="$PROJECT_DIR$/server/middlewares/scrape-request.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/extracted-data.js" afterPath="$PROJECT_DIR$/server/models/extracted-data.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/modelFiles.js" afterPath="$PROJECT_DIR$/server/models/modelFiles.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/models/scrape-request.js" afterPath="$PROJECT_DIR$/server/models/scrape-request.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/body-parser/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/server/node_modules/body-parser/node_modules/debug/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/cfb/node_modules/commander/package.json" afterPath="$PROJECT_DIR$/server/node_modules/cfb/node_modules/commander/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/clean-css/node_modules/commander/package.json" afterPath="$PROJECT_DIR$/server/node_modules/clean-css/node_modules/commander/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/cliui/node_modules/wordwrap/package.json" afterPath="$PROJECT_DIR$/server/node_modules/cliui/node_modules/wordwrap/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/configstore/node_modules/uuid/package.json" afterPath="$PROJECT_DIR$/server/node_modules/configstore/node_modules/uuid/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/dashdash/node_modules/assert-plus/package.json" afterPath="$PROJECT_DIR$/server/node_modules/dashdash/node_modules/assert-plus/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/duplexify/node_modules/end-of-stream/package.json" afterPath="$PROJECT_DIR$/server/node_modules/duplexify/node_modules/end-of-stream/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/duplexify/node_modules/once/package.json" afterPath="$PROJECT_DIR$/server/node_modules/duplexify/node_modules/once/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/express/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/server/node_modules/express/node_modules/debug/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/finalhandler/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/server/node_modules/finalhandler/node_modules/debug/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/fstream/node_modules/graceful-fs/package.json" afterPath="$PROJECT_DIR$/server/node_modules/fstream/node_modules/graceful-fs/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/getpass/node_modules/assert-plus/package.json" afterPath="$PROJECT_DIR$/server/node_modules/getpass/node_modules/assert-plus/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/got/node_modules/object-assign/package.json" afterPath="$PROJECT_DIR$/server/node_modules/got/node_modules/object-assign/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/jsprim/node_modules/assert-plus/package.json" afterPath="$PROJECT_DIR$/server/node_modules/jsprim/node_modules/assert-plus/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/jszip/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/server/node_modules/jszip/node_modules/readable-stream/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/jszip/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/server/node_modules/jszip/node_modules/string_decoder/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/match-stream/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/server/node_modules/match-stream/node_modules/isarray/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/match-stream/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/server/node_modules/match-stream/node_modules/readable-stream/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/match-stream/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/server/node_modules/match-stream/node_modules/string_decoder/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/mongodb/node_modules/es6-promise/package.json" afterPath="$PROJECT_DIR$/server/node_modules/mongodb/node_modules/es6-promise/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/mongodb/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/server/node_modules/mongodb/node_modules/readable-stream/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/mongoose-fill/node_modules/async/package.json" afterPath="$PROJECT_DIR$/server/node_modules/mongoose-fill/node_modules/async/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/mongoose/node_modules/async/package.json" afterPath="$PROJECT_DIR$/server/node_modules/mongoose/node_modules/async/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/mquery/node_modules/bluebird/package.json" afterPath="$PROJECT_DIR$/server/node_modules/mquery/node_modules/bluebird/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/mquery/node_modules/sliced/package.json" afterPath="$PROJECT_DIR$/server/node_modules/mquery/node_modules/sliced/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/pullstream/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/server/node_modules/pullstream/node_modules/isarray/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/pullstream/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/server/node_modules/pullstream/node_modules/readable-stream/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/pullstream/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/server/node_modules/pullstream/node_modules/string_decoder/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/randomatic/node_modules/is-number/package.json" afterPath="$PROJECT_DIR$/server/node_modules/randomatic/node_modules/is-number/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/randomatic/node_modules/kind-of/package.json" afterPath="$PROJECT_DIR$/server/node_modules/randomatic/node_modules/kind-of/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/rc/node_modules/minimist/package.json" afterPath="$PROJECT_DIR$/server/node_modules/rc/node_modules/minimist/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/send/node_modules/debug/package.json" afterPath="$PROJECT_DIR$/server/node_modules/send/node_modules/debug/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/serve-favicon/node_modules/safe-buffer/package.json" afterPath="$PROJECT_DIR$/server/node_modules/serve-favicon/node_modules/safe-buffer/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/slice-stream/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/server/node_modules/slice-stream/node_modules/isarray/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/slice-stream/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/server/node_modules/slice-stream/node_modules/readable-stream/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/slice-stream/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/server/node_modules/slice-stream/node_modules/string_decoder/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/sshpk/node_modules/assert-plus/package.json" afterPath="$PROJECT_DIR$/server/node_modules/sshpk/node_modules/assert-plus/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/transformers/node_modules/is-promise/package.json" afterPath="$PROJECT_DIR$/server/node_modules/transformers/node_modules/is-promise/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/transformers/node_modules/promise/package.json" afterPath="$PROJECT_DIR$/server/node_modules/transformers/node_modules/promise/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/transformers/node_modules/source-map/package.json" afterPath="$PROJECT_DIR$/server/node_modules/transformers/node_modules/source-map/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/transformers/node_modules/uglify-js/package.json" afterPath="$PROJECT_DIR$/server/node_modules/transformers/node_modules/uglify-js/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/uglify-js/node_modules/source-map/package.json" afterPath="$PROJECT_DIR$/server/node_modules/uglify-js/node_modules/source-map/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/unzip2/node_modules/isarray/package.json" afterPath="$PROJECT_DIR$/server/node_modules/unzip2/node_modules/isarray/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/unzip2/node_modules/readable-stream/package.json" afterPath="$PROJECT_DIR$/server/node_modules/unzip2/node_modules/readable-stream/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/unzip2/node_modules/string_decoder/package.json" afterPath="$PROJECT_DIR$/server/node_modules/unzip2/node_modules/string_decoder/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/with/node_modules/acorn/package.json" afterPath="$PROJECT_DIR$/server/node_modules/with/node_modules/acorn/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/node_modules/xlsx/node_modules/commander/package.json" afterPath="$PROJECT_DIR$/server/node_modules/xlsx/node_modules/commander/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/package-lock.json" afterPath="$PROJECT_DIR$/server/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/package.json" afterPath="$PROJECT_DIR$/server/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/extracted-data.js" afterPath="$PROJECT_DIR$/server/routes/extracted-data.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/modelFiles.js" afterPath="$PROJECT_DIR$/server/routes/modelFiles.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/scrape-request.js" afterPath="$PROJECT_DIR$/server/routes/scrape-request.js" />
@@ -161,45 +38,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="modelFileCtrl.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFileCtrl.js">
+      <file leaf-file-name="extracted-data.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/extracted-data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+            <state relative-caret-position="288">
+              <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notifyService.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cms/app/scripts/basic/services/notifyService.js">
+      <file leaf-file-name="userModels.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cms/app/views/userTemplates/userModels.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="344">
+              <caret line="185" column="67" lean-forward="false" selection-start-line="185" selection-start-column="58" selection-end-line="185" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modelFile-page.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cms/app/views/modelFiles/modelFile-page.html">
+      <file leaf-file-name="userModels.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/userModels.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-              <folding>
-                <element signature="n#style#0;n#li#0;n#ul#0;n#md-input-container#2;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#span#0;n#li#0;n#ul#0;n#md-input-container#2;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#1;n#ul#0;n#md-input-container#2;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modelFiles.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/middlewares/modelFiles.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="128" column="25" lean-forward="true" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
+            <state relative-caret-position="452">
+              <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -208,28 +71,28 @@
       <file leaf-file-name="modelFiles.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/models/modelFiles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-270">
-              <caret line="57" column="21" lean-forward="false" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+            <state relative-caret-position="470">
+              <caret line="184" column="34" lean-forward="false" selection-start-line="184" selection-start-column="32" selection-end-line="184" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fileUploader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cms/app/scripts/basic/services/fileUploader.js">
+      <file leaf-file-name="scrape-request.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/routes/scrape-request.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            <state relative-caret-position="693">
+              <caret line="193" column="30" lean-forward="false" selection-start-line="193" selection-start-column="15" selection-end-line="193" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="undefined-1501976786885.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/middlewares/uploads/undefined-1501976786885.html">
+      <file leaf-file-name="scrape-request.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/models/scrape-request.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="126" column="59" lean-forward="true" selection-start-line="126" selection-start-column="59" selection-end-line="126" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -248,22 +111,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>REMOVE</find>
-      <find>remove</find>
-      <find>upload</find>
-      <find>uploa</find>
-      <find>filrup</find>
-      <find>modelFile</find>
-      <find>uploadFiles</find>
-      <find>rgba(254, 209, 54, 0.9)</find>
-      <find>#fed136</find>
-      <find>body</find>
       <find>timeline-image</find>
       <find>src</find>
       <find>selectedPeopleWithGroupBy</find>
       <find>userPackages</find>
       <find>content</find>
-      <find>request</find>
       <find>scraperRequest</find>
       <find>model</find>
       <find>package</find>
@@ -276,8 +128,19 @@
       <find>getScrapeRequestByUser</find>
       <find>models</find>
       <find>:</find>
-      <find>scrapeRequest</find>
       <find>ime</find>
+      <find>modelFile.fileName</find>
+      <find>removeModeleById</find>
+      <find>files</find>
+      <find>success</find>
+      <find>modelFiles</find>
+      <find>modelFilesTable</find>
+      <find>scrapeRequest</find>
+      <find>removeScrapeRequestById</find>
+      <find>request</find>
+      <find>create</find>
+      <find>modelFile</find>
+      <find>params</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -293,8 +156,6 @@
         <option value="$PROJECT_DIR$/cms/app/views/userTemplates/services.html" />
         <option value="$PROJECT_DIR$/cms/app/scripts/basic/services/fileUploader.js" />
         <option value="$PROJECT_DIR$/cms/vendors/load-google-maps.js" />
-        <option value="$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFilesCtrl.js" />
-        <option value="$PROJECT_DIR$/cms/app/views/modelFiles/modelFiles-page.html" />
         <option value="$PROJECT_DIR$/cms/app/styles/style.css" />
         <option value="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/startCtrl.js" />
         <option value="$PROJECT_DIR$/cms/app/views/userTemplates/index.html" />
@@ -306,37 +167,39 @@
         <option value="$PROJECT_DIR$/cms/app/scripts/home/app.js" />
         <option value="$PROJECT_DIR$/cms/app/scripts/scrapeRequest/app.js" />
         <option value="$PROJECT_DIR$/server/app.js" />
-        <option value="$PROJECT_DIR$/cms/app/scripts/users/controllers/userCtrl.js" />
-        <option value="$PROJECT_DIR$/cms/app/scripts/models/modelFiles.js" />
-        <option value="$PROJECT_DIR$/server/routes/modelFiles.js" />
         <option value="$PROJECT_DIR$/cms/app/scripts/login/app.js" />
         <option value="$PROJECT_DIR$/cms/app/views/templates/accessDenied.html" />
         <option value="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/requestCtrl.js" />
-        <option value="$PROJECT_DIR$/server/models/modelFiles.js" />
-        <option value="$PROJECT_DIR$/cms/app/views/userTemplates/request.html" />
         <option value="$PROJECT_DIR$/cms/app/views/templates/aside-nav.html" />
-        <option value="$PROJECT_DIR$/cms/app/scripts/i18n/ar.js" />
-        <option value="$PROJECT_DIR$/cms/app/scripts/i18n/en.js" />
-        <option value="$PROJECT_DIR$/server/routes/scrape-request.js" />
-        <option value="$PROJECT_DIR$/server/middlewares/scrape-request.js" />
-        <option value="$PROJECT_DIR$/server/models/scrape-request.js" />
-        <option value="$PROJECT_DIR$/server/routes/extracted-data.js" />
         <option value="$PROJECT_DIR$/cms/app/scripts/models/app.js" />
         <option value="$PROJECT_DIR$/cms/app/scripts/extractedData/app.js" />
         <option value="$PROJECT_DIR$/cms/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/cms/app/index.html" />
+        <option value="$PROJECT_DIR$/cms/app/scripts/modelFiles/app.js" />
+        <option value="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/app.js" />
+        <option value="$PROJECT_DIR$/cms/app/views/modelFiles/modelFile-page.html" />
+        <option value="$PROJECT_DIR$/cms/app/scripts/users/controllers/userCtrl.js" />
+        <option value="$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFilesCtrl.js" />
+        <option value="$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFileCtrl.js" />
+        <option value="$PROJECT_DIR$/server/models/modelFiles.js" />
+        <option value="$PROJECT_DIR$/server/middlewares/modelFiles.js" />
+        <option value="$PROJECT_DIR$/server/routes/modelFiles.js" />
+        <option value="$PROJECT_DIR$/server/routes/scrape-request.js" />
+        <option value="$PROJECT_DIR$/cms/app/scripts/models/modelFiles.js" />
+        <option value="$PROJECT_DIR$/cms/app/scripts/i18n/ar.js" />
+        <option value="$PROJECT_DIR$/cms/app/scripts/i18n/en.js" />
         <option value="$PROJECT_DIR$/cms/app/scripts/models/scrape-request.js" />
-        <option value="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/userModels.js" />
+        <option value="$PROJECT_DIR$/server/models/scrape-request.js" />
+        <option value="$PROJECT_DIR$/server/middlewares/scrape-request.js" />
+        <option value="$PROJECT_DIR$/cms/app/views/modelFiles/modelFiles-page.html" />
+        <option value="$PROJECT_DIR$/cms/app/views/userTemplates/request.html" />
+        <option value="$PROJECT_DIR$/cms/app/views/userTemplates/userModels.html" />
         <option value="$PROJECT_DIR$/cms/app/scripts/models/extracted-data.js" />
+        <option value="$PROJECT_DIR$/server/routes/extracted-data.js" />
         <option value="$PROJECT_DIR$/server/middlewares/extracted-data.js" />
         <option value="$PROJECT_DIR$/server/models/extracted-data.js" />
         <option value="$PROJECT_DIR$/cms/app/scripts/login/services/session.js" />
-        <option value="$PROJECT_DIR$/cms/app/scripts/modelFiles/app.js" />
-        <option value="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/app.js" />
-        <option value="$PROJECT_DIR$/cms/app/views/userTemplates/userModels.html" />
-        <option value="$PROJECT_DIR$/cms/app/views/modelFiles/modelFile-page.html" />
-        <option value="$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFileCtrl.js" />
-        <option value="$PROJECT_DIR$/server/middlewares/modelFiles.js" />
+        <option value="$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/userModels.js" />
       </list>
     </option>
   </component>
@@ -358,8 +221,8 @@
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="57" />
-    <option name="y" value="400" />
+    <option name="x" value="41" />
+    <option name="y" value="531" />
     <option name="width" value="1204" />
     <option name="height" value="448" />
   </component>
@@ -410,7 +273,7 @@
               <item name="cms" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="basic" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GE-Web-scraper-website" type="b2602c69:ProjectViewProjectNode" />
@@ -418,7 +281,7 @@
               <item name="cms" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="basic" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -427,23 +290,6 @@
               <item name="cms" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="modelFiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GE-Web-scraper-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GE-Web-scraper-website" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="modelFiles" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GE-Web-scraper-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GE-Web-scraper-website" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
               <item name="userWebsite" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -471,14 +317,6 @@
               <item name="cms" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GE-Web-scraper-website" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GE-Web-scraper-website" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="modelFiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GE-Web-scraper-website" type="b2602c69:ProjectViewProjectNode" />
@@ -497,7 +335,19 @@
               <item name="GE-Web-scraper-website" type="b2602c69:ProjectViewProjectNode" />
               <item name="GE-Web-scraper-website" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="middlewares" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GE-Web-scraper-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GE-Web-scraper-website" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GE-Web-scraper-website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GE-Web-scraper-website" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -569,12 +419,14 @@
       <workItem from="1501751201194" duration="19596000" />
       <workItem from="1501833908666" duration="12069000" />
       <workItem from="1501929317566" duration="964000" />
-      <workItem from="1501938930387" duration="28854000" />
+      <workItem from="1501938930387" duration="32224000" />
+      <workItem from="1502006550724" duration="2270000" />
+      <workItem from="1502009152629" duration="16248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192425000" />
+    <option name="totallyTimeSpent" value="214313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-4" width="1223" height="1028" extended-state="6" />
@@ -583,12 +435,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26583335" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -629,35 +481,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/users/controllers/userCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/user-package.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="42" column="41" lean-forward="false" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/views/users/user-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="27" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cms/app/scripts/models/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +492,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-376">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,7 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -681,7 +506,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="149" column="22" lean-forward="false" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -689,7 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -697,7 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -705,7 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,23 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
           <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFilesCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="7" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="4" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/views/modelFiles/modelFiles-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,23 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
           <caret line="44" column="58" lean-forward="false" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/i18n/ar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/i18n/en.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="6" lean-forward="false" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,15 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="145" column="17" lean-forward="false" selection-start-line="145" selection-start-column="4" selection-end-line="145" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/modelFiles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -785,31 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
           <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/scrape-request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="74" column="4" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/middlewares/scrape-request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/scrape-request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="95" column="93" lean-forward="false" selection-start-line="95" selection-start-column="93" selection-end-line="95" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,15 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/extracted-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,7 +576,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/models/status.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="163" column="64" lean-forward="false" selection-start-line="163" selection-start-column="58" selection-end-line="163" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/scrapeRequest/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/requestCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/userWebsite/core/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/modelFiles/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/login/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/middlewares/uploads/undefined-1501976786885.html" />
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/basic/services/fileUploader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/basic/services/notifyService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -845,7 +658,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/models/status.js">
+    <entry file="file://$PROJECT_DIR$/server/routes/user-package.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -853,192 +666,198 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/index.html">
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/userPackage/controllers/userPackagesCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="727">
-          <caret line="163" column="64" lean-forward="false" selection-start-line="163" selection-start-column="58" selection-end-line="163" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/scrapeRequest/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/models/modelFiles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="62" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/models/extracted-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/middlewares/extracted-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/models/scrape-request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/userModels.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="101" column="44" lean-forward="true" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/login/services/session.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/requestCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/userWebsite/core/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/views/userTemplates/request.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#md-select#0;n#md-input-container#0;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/views/userTemplates/userModels.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="181" column="30" lean-forward="false" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/modelFiles/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/login/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/extracted-data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/middlewares/uploads/undefined-1501976786885.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/basic/services/fileUploader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cms/app/scripts/basic/services/notifyService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        <state relative-caret-position="18">
+          <caret line="47" column="42" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cms/app/views/modelFiles/modelFile-page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+        <state relative-caret-position="162">
+          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="46" />
           <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#md-input-container#2;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#span#0;n#li#0;n#ul#0;n#md-input-container#2;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#md-input-container#2;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#md-input-container#2;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#span#0;n#li#0;n#ul#0;n#md-input-container#2;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#md-input-container#2;n#form#0;n#md-content#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/middlewares/modelFiles.js">
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/users/controllers/userCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="128" column="25" lean-forward="true" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="25" />
+        <state relative-caret-position="398">
+          <caret line="53" column="9" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="53" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/modelFiles.js">
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFilesCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="57" column="21" lean-forward="false" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+        <state relative-caret-position="72">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="75" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cms/app/scripts/modelFiles/controllers/modelFileCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        <state relative-caret-position="110">
+          <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/modelFiles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/i18n/ar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="171" column="39" lean-forward="false" selection-start-line="171" selection-start-column="39" selection-end-line="171" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/models/modelFiles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/middlewares/modelFiles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="103" column="14" lean-forward="true" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/i18n/en.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="160" column="41" lean-forward="false" selection-start-line="160" selection-start-column="41" selection-end-line="160" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/middlewares/scrape-request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="85" column="40" lean-forward="false" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/views/modelFiles/modelFiles-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/views/userTemplates/request.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/models/scrape-request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="19" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/models/extracted-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/extracted-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="157" column="30" lean-forward="false" selection-start-line="157" selection-start-column="15" selection-end-line="157" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/middlewares/extracted-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="51" column="24" lean-forward="false" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/login/services/session.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/views/userTemplates/userModels.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="185" column="67" lean-forward="false" selection-start-line="185" selection-start-column="58" selection-end-line="185" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cms/app/scripts/userWebsite/core/controllers/userModels.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="226" column="0" lean-forward="true" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/extracted-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/modelFiles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="184" column="34" lean-forward="false" selection-start-line="184" selection-start-column="32" selection-end-line="184" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/scrape-request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="193" column="30" lean-forward="false" selection-start-line="193" selection-start-column="15" selection-end-line="193" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/scrape-request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="126" column="59" lean-forward="true" selection-start-line="126" selection-start-column="59" selection-end-line="126" selection-end-column="59" />
           <folding />
         </state>
       </provider>

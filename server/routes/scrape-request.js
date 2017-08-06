@@ -82,6 +82,8 @@ router.get('/', middleware.getAllScrapeRequest)
  *     "error": "user_inactive"
  *   }
  */
+router.post('/Request/', middleware.makeRequest)
+
 router.get('/User/', middleware.getScrapeRequestByUser)
 /**
  * @api {post} /users signup with email & password

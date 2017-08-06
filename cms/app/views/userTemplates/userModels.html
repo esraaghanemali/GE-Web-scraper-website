@@ -75,12 +75,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in $data" ng-if="$data.length" ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">
+        <tr ng-repeat="row in $data" ng-if="$data.length" ui-sref="app.Models({ modelFile: row, modelId: row.id})">
             <td>{{row.fileName}}</td>
             <td>{{row.desc}}</td>
             <td>
                 <md-button  type="button" class="md-raised green-500"
-                           ng-click="request(row)"><i
+                           ng-click="request(row,$event)"><i
                         class="mdi mdi-content-block"></i></md-button>
             </td>
             <td>
@@ -125,17 +125,19 @@
             <th>file Name</th>
             <th>status</th>
             <th>user</th>
-            <th></th>
+            <th>Time</th>
+            <th>Remove</th>
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in $data" ng-if="$data.length">
+        <tr ng-repeat="row in $data" ng-if="$data.length" ui-sref="app.Models({ modelFile: row, modelId: row.id})">
             <td>{{row.model.fileName}}</td>
             <td>{{row.status.statusName}}</td>
             <td>{{row.user.firstName}}</td>
+            <td>{{row.date}}</td>
             <td>
                 <md-button ng-if="currentUser.permissions.modelFiles.remove" type="button" class="md-raised red-500"
-                           ng-click="remove(row)"><i
+                           ng-click="removeRequest(row)"><i
                         class="mdi mdi-content-block"></i></md-button>
             </td>
         </tr>
@@ -176,13 +178,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in $data" ng-if="$data.length">
+        <tr ng-repeat="row in $data" ng-if="$data.length" ui-sref="app.Models({ modelFile: row, modelId: row.id})">
             <td>{{row.scrapeRequest.model.fileName}}</td>
             <a> <td>{{row.url}}</td> </a>
             <td>{{row.maxPages}}</td>
             <td>
-                <md-button ng-if="currentUser.permissions.scrapeRequest.remove" type="button" class="md-raised red-500"
-                           ng-click="remove(row)"><i
+                <md-button ng-if="currentUser.permissions.extracted.remove" type="button" class="md-raised red-500"
+                           ng-click="removeExtractedData(row)"><i
                         class="mdi mdi-content-block"></i></md-button>
             </td>
         </tr>

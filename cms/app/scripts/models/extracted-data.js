@@ -12,6 +12,12 @@ angular.module('webScraperCMS.models')
         extractedData.getExtractedDataByUser = function () {
             return Restangular.one(route).one('/User').get();;
         };
+
+
+        extractedData.removeExtractedData = function (Id) {
+
+            return Restangular.one(route).one(Id).remove();
+        };
         // extractedData.getAllExtractedDataByUser = function () {
         //     return Restangular.one(route).one('User');
         // };

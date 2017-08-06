@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('webScraperCMS.userW')
-    .controller('UserModelsCtrl', function($scope, $filter, $mdDialog, $state, $stateParams, NgTableParams, models) {
+    .controller('UserModelsCtrl', function($scope, $filter, $mdDialog, $state, $stateParams,notifyService, NgTableParams, models) {
 
 
         $scope.modelFilesTable = new NgTableParams({
@@ -22,8 +22,8 @@ angular.module('webScraperCMS.userW')
                         notify: false
                     });
                 }
-                console.log("in ctrl model ")
-                console.log(models.modelFiles)
+                // console.log("in ctrl model ")
+                // console.log(models.modelFiles)
 
                 var offset = (params.page() - 1) * params.count();
                 return models.modelFiles.getUserModelFiles(
@@ -109,5 +109,163 @@ angular.module('webScraperCMS.userW')
                 });
             }
         });
+
+
+        $scope.remove = function (row) {
+
+            var confirm = $mdDialog.confirm()
+                .title('Are you sure')
+                .textContent('Are you sure to delete the modelFile: ' + row.fileName + ' ?')
+                .ok('Delete it!')
+                .cancel('Cancel');
+
+
+            $mdDialog.show(confirm).then(function () {
+                models.modelFiles.removeModelFile(row.id)
+                    .then(function () {
+
+                        $scope.isLoading = false;
+                        notifyService.notify($filter('translate')('modelFiles.remove.success'));
+                        $state.go('app.Models', {}, {
+                            location: 'replace'
+                        });
+
+                        $scope.modelFile = _.filter($scope.modelFile, function (modelFile) {
+                            return modelFile.id != row.id;
+                        })
+                        // $scope.stops.splice(index, index + 1);
+                        $scope.modelFilesTable.reload();
+                        $scope.extractedDataTable.reload();
+                        $scope.requestedFilesTable.reload();
+
+                    });
+            }, function (err) {
+                $scope.isLoading = false;
+                var msg = 'modelFiles.errors.remove';
+                if (err.data && err.data.code === 202) {
+                    msg = 'modelFiles.errors.nameFound';
+                }
+                notifyService.notify($filter('translate')(msg), {
+                    type: 'danger'
+                });
+            });
+        };
+
+
+        $scope.request = function (row,ev) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            var confirm = $mdDialog.prompt()
+                .title('What is the max Pages ?')
+                .placeholder('Max Pages')
+                .ariaLabel('Max Pages')
+                .initialValue('')
+                // .title('What is the max Items Per Page ?')
+                // .placeholder('Max Items Per Page')
+                // .ariaLabel('Max Items Per Page')
+                // .initialValue('')
+                .targetEvent(ev)
+                .ok('Save')
+                .cancel('cancel');
+
+            $mdDialog.show(confirm).then(function(result) {
+                if(result == '')
+                    result=1
+                console.log(result)
+       var maxItemPerPage = 3
+
+                models.scrapeRequest.new(row,result,maxItemPerPage)
+                        .then(function () {
+
+                            $scope.isLoading = false;
+                            notifyService.notify($filter('translate')('modelFiles.request.success'));
+                            $state.go('app.Models', {}, {
+                                location: 'replace'
+                            });
+
+
+                            $scope.requestedFilesTable.reload();
+                        },function (err) {
+                            var msg = 'modelFiles.errors.request';
+
+                            notifyService.notify($filter('translate')(msg), {
+                                type: 'danger'
+                            });
+                        });
+            });
+        }
+
+        $scope.removeRequest = function (row) {
+
+            var confirm = $mdDialog.confirm()
+                .title('Are you sure')
+                .textContent('Are you sure to delete the request model file: ' + row.model.fileName + ' ?')
+                .ok('Delete it!')
+                .cancel('Cancel');
+
+
+            $mdDialog.show(confirm).then(function () {
+                models.scrapeRequest.removeModelRequest(row.id)
+                    .then(function () {
+
+                        $scope.isLoading = false;
+                        notifyService.notify($filter('translate')('request.remove.success'));
+                        $state.go('app.Models', {}, {
+                            location: 'replace'
+                        });
+
+                        // $scope.modelFile = _.filter($scope.modelFile, function (modelFile) {
+                        //     return modelFile.id != row.id;
+                        // })
+                        // $scope.stops.splice(index, index + 1);
+                        $scope.requestedFilesTable.reload();
+                        $scope.extractedDataTable.reload();
+
+                    });
+            }, function (err) {
+                $scope.isLoading = false;
+                var msg = 'modelFiles.errors.remove';
+
+                notifyService.notify($filter('translate')(msg), {
+                    type: 'danger'
+                });
+            });
+        };
+
+        $scope.removeExtractedData = function (row) {
+
+            var confirm = $mdDialog.confirm()
+                .title('Are you sure')
+                .textContent('Are you sure to delete the extracted data? ' )
+                .ok('Delete it!')
+                .cancel('Cancel');
+
+
+            $mdDialog.show(confirm).then(function () {
+                models.extractedData.removeExtractedData(row.id)
+                    .then(function () {
+
+                        $scope.isLoading = false;
+                        notifyService.notify($filter('translate')('request.remove.success'));
+                        $state.go('app.Models', {}, {
+                            location: 'replace'
+                        });
+
+                        // $scope.modelFile = _.filter($scope.modelFile, function (modelFile) {
+                        //     return modelFile.id != row.id;
+                        // })
+                        // $scope.stops.splice(index, index + 1);
+                        $scope.extractedDataTable.reload();
+                    });
+            }, function (err) {
+                $scope.isLoading = false;
+                var msg = 'modelFiles.errors.remove';
+
+                notifyService.notify($filter('translate')(msg), {
+                    type: 'danger'
+                });
+            });
+        };
+
+
 
     });

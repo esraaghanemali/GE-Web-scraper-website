@@ -43,18 +43,12 @@ module.exports = {
                 scrapeRequestId:new Date().getTime(),
                 maxPages: req.body.maxPages,
                 maxItemsPerPage : req.body.maxItemsPerPage,
-                model : req.body.requestModel,
-                user:req.registeredUser
+                model : req.body.temptModel,
+                user:req.registeredUser,
+                date : new Date().getTime(),
 
             }).then(function (data) {
-                    models.scraperRequest.createScrapeRequest({
-                        scrapeRequestId:new Date().getTime(),
-                        maxPages: req.body.maxPages,
-                        maxItemsPerPage : req.body.maxItemsPerPage,
-                        model : req.body.temptModel,
-                        user:req.registeredUser
 
-                    })
                     res.json(data);
                 }
             ).catch(next);
@@ -68,22 +62,34 @@ module.exports = {
                 maxPages: req.body.maxPages,
                 maxItemsPerPage : req.body.maxItemsPerPage,
                 model : req.body.requestModel,
-                user:req.registeredUser
+                user:req.registeredUser,
+                date : new Date().getTime(),
 
             }).then(function (data) {
-                    models.scraperRequest.createScrapeRequest({
-                        scrapeRequestId:new Date().getTime(),
-                        maxPages: req.body.maxPages,
-                        maxItemsPerPage : req.body.maxItemsPerPage,
-                        model : req.body.requestModel,
-                        user:req.registeredUser
 
-                    })
                     res.json(data);
                 }
             ).catch(next);
         }
 
+    },
+    makeRequest : function (req, res, next) {
+        console.log("in req make heeeeeeeeeeee")
+        console.log(req.body.maxPages)
+        console.log(req.body.model)
+        models.scraperRequest.createScrapeRequest({
+            scrapeRequestId:new Date().getTime(),
+            maxPages: req.body.maxPages,
+            maxItemsPerPage : req.body.maxItemsPerPage,
+            model : req.body.model,
+            user:req.registeredUser,
+            date : new Date().getTime(),
+
+        }).then(function (data) {
+
+                res.json(data);
+            }
+        ).catch(next);
     },
     getScrapeRequestByUser: function (req, res, next) {
         console.log(req.registeredUser)
@@ -105,7 +111,10 @@ module.exports = {
         ).catch(next);
     },
     removeScrapeRequestById: function (req, res, next){
-        models.scraperRequest.removeScrapeRequestById(req.body.scrapeRequestId).then(function (data) {
+        console.log("i am in remove request")
+        console.log(req.params.scrapeRequestId)
+
+        models.scraperRequest.removeScrapeRequestById(req.params.scrapeRequestId).then(function (data) {
                 res.json(data);
             }
         ).catch(next);

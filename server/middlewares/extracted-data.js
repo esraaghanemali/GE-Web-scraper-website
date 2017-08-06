@@ -49,7 +49,7 @@ module.exports = {
         ).catch(next);
     },
     removeExtractedDataById: function (req, res, next){
-        models.extractedData.removeExtractedDataById(req.body.extractedDataId).then(function (data) {
+        models.extractedData.removeExtractedDataById(req.params.extractedDataId).then(function (data) {
                 res.json(data);
             }
         ).catch(next);

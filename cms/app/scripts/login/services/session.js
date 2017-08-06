@@ -43,6 +43,12 @@ angular.module('webScraperCMS.login')
               view: both,
               edit: both,
               remove: both
+          },
+          extracted : {
+              list: both,
+              view: both,
+              edit: both,
+              remove: both
           }
       }
     };

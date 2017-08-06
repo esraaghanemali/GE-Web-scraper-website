@@ -36,10 +36,7 @@ angular.module('webScraperCMS.users')
     //   console.log('packagee22222')
     //   console.log($scope.user.userPackage)
       return $scope.user.save().then(function(newUser) {
-        console.log("i am in save "+ newUser )
-        console.log( newUser )
-        console.log(" save use"+ $scope.user )
-        console.log( $scope.user )
+
 
         $scope.isLoading = false;
       notifyService.notify($filter('translate')('user.save.success'));

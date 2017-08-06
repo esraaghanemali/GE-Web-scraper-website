@@ -155,6 +155,6 @@ router.get('/', middleware.getAllExtractedData)
  *
  * @apiUse AuthRequiredError
  */
-    .delete('/:exrctedDataId', middleware.removeExtractedDataById)
+    .delete('/:extractedDataId', middleware.removeExtractedDataById)
 
 module.exports = router;

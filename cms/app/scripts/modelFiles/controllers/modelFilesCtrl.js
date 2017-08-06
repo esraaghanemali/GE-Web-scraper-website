@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('webScraperCMS.modelFiles')
-    .controller('ModelFilesCtrl', function ($scope, $filter, $mdDialog, $state, $stateParams, NgTableParams, models) {
+    .controller('ModelFilesCtrl', function ($scope, $filter, $mdDialog, $state, $stateParams, notifyService,NgTableParams, models) {
         $scope.modelFilesTable = new NgTableParams({
             page: $stateParams.page || 1,
             count: $stateParams.count || 10,
@@ -39,21 +39,39 @@ angular.module('webScraperCMS.modelFiles')
         });
 
         $scope.remove = function (row) {
+
             var confirm = $mdDialog.confirm()
                 .title('Are you sure')
                 .textContent('Are you sure to delete the modelFile: ' + row.fileName + ' ?')
                 .ok('Delete it!')
                 .cancel('Cancel');
 
+
             $mdDialog.show(confirm).then(function () {
-                models.modelFiles.remove(row.id)
+                models.modelFiles.removeModelFile(row.id)
                     .then(function () {
-                        $scope.modelFiles = _.filter($scope.modelFiles, function (modelFile) {
-                            return modelFile.id != modelFile.id;
+
+                        $scope.isLoading = false;
+                        notifyService.notify($filter('translate')('modelFiles.remove.success'));
+                        $state.go('app.modelFiles', {}, {
+                            location: 'replace'
+                        });
+
+                        $scope.modelFile = _.filter($scope.modelFile, function (modelFile) {
+                            return modelFile.id != row.id;
                         })
                         // $scope.stops.splice(index, index + 1);
                         $scope.modelFilesTable.reload();
                     });
+            }, function (err) {
+                $scope.isLoading = false;
+                var msg = 'modelFiles.errors.remove';
+                if (err.data && err.data.code === 202) {
+                    msg = 'modelFiles.errors.nameFound';
+                }
+                notifyService.notify($filter('translate')(msg), {
+                    type: 'danger'
+                });
             });
         };
         //
