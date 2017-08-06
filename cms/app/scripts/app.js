@@ -35,7 +35,9 @@ angular.module('webScraperCMS', [
   'webScraperCMS.users',
   'webScraperCMS.modelFiles',
    'webScraperCMS.home',
-    'webScraperCMS.userW'
+    'webScraperCMS.userW',
+    'webScraperCMS.scrapeRequest',
+    'webScraperCMS.extractedData'
 ]).constant('_', _)
   .config(function($stateProvider, $urlRouterProvider, $localStorageProvider, $mdDateLocaleProvider) {
   $localStorageProvider.setKeyPrefix('webScraperCMS');

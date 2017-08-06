@@ -82,7 +82,7 @@ router.get('/', middleware.getAllScrapeRequest)
  *     "error": "user_inactive"
  *   }
  */
-router.get('/:scrapeRequestId', middleware.getScrapeRequestById)
+router.get('/User/', middleware.getScrapeRequestByUser)
 /**
  * @api {post} /users signup with email & password
  * @apiName UserSignup
@@ -121,7 +121,7 @@ router.get('/:scrapeRequestId', middleware.getScrapeRequestById)
  * @apiUse InvalidInputErrorExample
  * @apiUse EmailExistsError
  */
-    .post('/:maxPages/maxItemsPerPage/model', middleware.createScrapeRequest)
+    .post('/', middleware.createScrapeRequest)
     /**
      * @api {post} /users signup with email & password
      * @apiName UserSignup
@@ -160,7 +160,7 @@ router.get('/:scrapeRequestId', middleware.getScrapeRequestById)
      * @apiUse InvalidInputErrorExample
      * @apiUse EmailExistsError
      */
-    .put('/:scrapeRequestId/maxPages/maxItemsPerPage/model', middleware.updateScrapeRequest)
+    .put('/', middleware.updateScrapeRequest)
 
 
     /**

@@ -83,7 +83,10 @@ router.use(usermiddleware.checkLogin);
  *     "error": "user_inactive"
  *   }
  */
+router.get('/User', middleware.getExtractedDataByUser)
+
 router.get('/', middleware.getAllExtractedData)
+
 /**
  * @api {post} /users signup with email & password
  * @apiName UserSignup
@@ -122,19 +125,10 @@ router.get('/', middleware.getAllExtractedData)
  * @apiUse InvalidInputErrorExample
  * @apiUse EmailExistsError
  */
-    .post('/:maxPages/url/scrapeRequest', middleware.createExtractedData);
+    .post('/', middleware.createExtractedData)
 
 
-/**
- * @api {get} /users/me Get the logged in user
- * @apiName CMSGetMe
- * @apiGroup Users
- *
- * @apiUse AccessTokenParams
- * @apiSuccess {User} user The logged in user
- * @apiUse AuthRequiredError
- */
-router.get('/:exrctedDataId', middleware.getExtractedDataById)
+
 /**
  * @api {get} /users Get list of users
  * @apiName UserList

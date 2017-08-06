@@ -42,14 +42,53 @@ angular.module('webScraperCMS.userW', [])
       templateUrl: 'views/userTemplates/userModels.html',
       controller: 'UserModelsCtrl',
       data: {
-          requiredPermission: true
+          requiredPermission: 'models.list',
+          child: true
       }
+      ,
+      resolve: {
+          authorize: function (authorization) {
+              return authorization.authorize();
+          }}
   }).state('app.Request', {
       url: '/GEWebScraper/Request',
       templateUrl: 'views/userTemplates/request.html',
       controller: 'RequestCtrl',
       data: {
-          requiredPermission: true
+          requiredPermission: true,
+          child: true
+      },
+      params: {
+          request: null,
+          modelFiles:null,
+          temptModels:null
+      },
+      resolve:{
+          request: function($rootScope, $q, $state, $stateParams, authorization, models) {
+                  return authorization.authorize().then(function() {
+                      var deferred = $q.defer();
+                      console.log(models.scrapeRequest)
+                      deferred.resolve(models.scrapeRequest.one(''));
+
+                      return deferred.promise;
+                  });
+
+          },
+          modelFiles:  function ($q, models) {
+              var deferred = $q.defer();
+              models.modelFiles.getUserModelFiles().then(function (modelFiles) {
+                  deferred.resolve(modelFiles);
+              }, deferred.reject);
+              return deferred.promise;
+          }
+          ,
+          temptModels:  function ($q, models) {
+              var deferred = $q.defer();
+              models.modelFiles.getAdminModelFiles().then(function (modelFiles) {
+                  deferred.resolve(modelFiles);
+              }, deferred.reject);
+              return deferred.promise;
+          }
       }
   })
 });

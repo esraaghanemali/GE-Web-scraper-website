@@ -1,22 +1,45 @@
 <div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
+    <div class="card-heading">
+        <h2>Make Requst</h2>
+    </div>
 
     <md-content layout-padding>
         <form name="requesForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">
 
 
             <md-input-container class="md-block" >
-              <h5>templete files</h5>
-                <md-select name="request" ng-model="user.request" class="md-default-theme" style="width: 100%"
+              <h5>Choose from Templete Files</h5>
+                <md-select name="temptModel" ng-model="request.temptModel" class="md-default-theme" style="width: 100%"
                            ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">
-                    <md-option ng-repeat="template in templates" ng-value="template"> {{template.fileName}}</md-option>
+                    <md-option ng-repeat="temptModel in temptModels" ng-value="temptModel"> {{temptModel.fileName}}</md-option>
+                </md-select>
+            </md-input-container>
+
+
+            <md-input-container class="md-block" >
+                <h5>Choose from your files</h5>
+                <md-select name="requestModel" ng-model="request.requestModel" class="md-default-theme" style="width: 100%"
+                           ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">
+                    <md-option ng-repeat="requestModel in requestModels" ng-value="requestModel"> {{requestModel.fileName}}</md-option>
                 </md-select>
             </md-input-container>
 
 
 
+            <md-input-container class="md-block">
+                <label translate="request.maxPages"></label>
+                <input name="maxPages" ng-model="request.maxPages">
+
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label translate="request.maxItemsPerPage"></label>
+                <input name="maxItemsPerPage" ng-model="request.maxItemsPerPage">
+
+            </md-input-container>
 
             <md-input-container>
-                <md-button class="md-raised md-primary" translate="user.actions.save" ng-click="saveUser()"></md-button>
+                <md-button class="md-raised md-primary" translate="request.actions.save" ng-click="saveRequest()"></md-button>
             </md-input-container>
         </form>
     </md-content>

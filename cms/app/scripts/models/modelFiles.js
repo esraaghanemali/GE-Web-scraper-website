@@ -7,5 +7,11 @@ angular.module('webScraperCMS.models')
         ModelFiles.getAllModelFiles = function () {
             return Restangular.one(route).get();
         };
+        ModelFiles.getAdminModelFiles = function () {
+            return Restangular.one(route).one('/Admin').get();
+        };
+        ModelFiles.getUserModelFiles = function () {
+            return Restangular.one(route).one('/User').get();
+        };
         return ModelFiles;
     });

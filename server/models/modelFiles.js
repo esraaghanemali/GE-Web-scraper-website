@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const errors = require('../utils/errors')
-
+const users = require('./user')
 
 var modelSchema = new mongoose.Schema({
 
@@ -19,6 +19,11 @@ var modelSchema = new mongoose.Schema({
         type: String,
         // required: true,
         defautl: 'default'
+    } ,
+    desc: {
+        type: String,
+        // required: true,
+        defautl: 'Model filedescription.'
     }
     ,
     user: {
@@ -35,6 +40,52 @@ modelSchema.statics.createModel = function (model) {
         })
             .catch(function (err) {
                  console.log(err)
+                reject(errors.modelFiles.create)
+            });
+
+    })
+};
+
+
+modelSchema.statics.getAdminModelFiles = function () {
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+        // thisModel.find({'user.role' : 'admin'}).then(function (modelFiles) {
+        //      console.log('find pac')
+        //     console.log(modelFiles)
+        //     resolve(modelFiles);
+        // })
+        //     .catch(function (err) {
+        //         console.log(err)
+        //         reject(errors.modelFiles.create)
+        //     });
+
+        users.find({role:'admin'}).then(function (admins) {
+            thisModel.find({user : {$in : admins}}).then(function (modelFiles) {
+                // console.log(modelFiles)
+                resolve(modelFiles);
+            }) .catch(function (err) {
+                        // console.log(err)
+                        reject(errors.modelFiles.create)
+                    });
+
+        }) .catch(function (err) {
+                    console.log(err)
+                    reject(errors.modelFiles.create)
+                });
+
+    })
+};
+
+modelSchema.statics.getModelFilesByUsername = function (user) {
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+        thisModel.find({user : user}).then(function (modelFiles) {
+            // console.log('created pac')
+            resolve(modelFiles);
+        })
+            .catch(function (err) {
+                console.log(err)
                 reject(errors.modelFiles.create)
             });
 

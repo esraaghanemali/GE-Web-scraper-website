@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const errors = require('../utils/errors')
-
+const requests = require('./scrape-request')
 var extractedDataSchema = new mongoose.Schema({
 
     extractedDataId: {
@@ -32,6 +32,8 @@ extractedDataSchema.statics.createExtractedData = function (extractedData) {
 
     })
 };
+
+
 extractedDataSchema.statics.getExtractedDataById = function (extractedDataId) {
     if(! extractedDataId || extractedDataId === '')
         return Promise.reject(errors.missingData)
@@ -47,6 +49,30 @@ extractedDataSchema.statics.getExtractedDataById = function (extractedDataId) {
             console.log(extractedData)
             return extractedData;
         });
+};
+extractedDataSchema.statics.getExtractedDataByUser = function (user) {
+    if(! user || user === '')
+        return Promise.reject(errors.missingData)
+        var thisModel = this;
+    return new Promise(function (resolve, reject) {
+// console.log("i am in models>>>>>>>>>>>>>>>>>>>>>>>>" + user.firstName)
+
+        requests.find({user:user}).then(function (scrapeRequests) {
+            thisModel.find({scrapeRequest : {$in : scrapeRequests}}).populate({path:'scrapeRequest', populate: {path : 'model'}}).then(function (requests) {
+                // console.log(requests)
+                resolve(requests);
+            }) .catch(function (err) {
+                // console.log(err)
+                reject(errors.extractedData.create)
+            });
+
+        }) .catch(function (err) {
+            console.log(err)
+            reject(errors.extractedData.create)
+        });
+
+    })
+
 };
 
 extractedDataSchema.statics.removeExtractedDataById = function (extractedDataId) {

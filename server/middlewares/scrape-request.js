@@ -14,6 +14,13 @@ module.exports = {
         models.scraperRequest.getList({
             skip: offset,
             limit: limit,
+            populate: [
+                {
+                    path: 'user',
+                    path : 'model',
+                    path: 'status'
+                }
+            ],
             projection: constants.scrapeRequest.defaultFields
         }).then(function(data){
             res.json(data);
@@ -28,16 +35,63 @@ module.exports = {
             }).catch(next);
     },
     createScrapeRequest: function (req, res, next) {
-        models.scraperRequest.createScrapeRequest({
-            scrapeRequestId:new Date().getTime(),
-            maxPages: req.body.maxPages,
-            maxItemsPerPage : req.body.maxItemsPerPage,
-            model : req.body.model.modelId,
 
-        }).then(function (data) {
+        if( req.body.temptModel)
+        {
+            console.log("in admin")
+            models.scraperRequest.createScrapeRequest({
+                scrapeRequestId:new Date().getTime(),
+                maxPages: req.body.maxPages,
+                maxItemsPerPage : req.body.maxItemsPerPage,
+                model : req.body.requestModel,
+                user:req.registeredUser
+
+            }).then(function (data) {
+                    models.scraperRequest.createScrapeRequest({
+                        scrapeRequestId:new Date().getTime(),
+                        maxPages: req.body.maxPages,
+                        maxItemsPerPage : req.body.maxItemsPerPage,
+                        model : req.body.temptModel,
+                        user:req.registeredUser
+
+                    })
+                    res.json(data);
+                }
+            ).catch(next);
+        }
+            else
+        {
+            console.log("in user")
+
+            models.scraperRequest.createScrapeRequest({
+                scrapeRequestId:new Date().getTime(),
+                maxPages: req.body.maxPages,
+                maxItemsPerPage : req.body.maxItemsPerPage,
+                model : req.body.requestModel,
+                user:req.registeredUser
+
+            }).then(function (data) {
+                    models.scraperRequest.createScrapeRequest({
+                        scrapeRequestId:new Date().getTime(),
+                        maxPages: req.body.maxPages,
+                        maxItemsPerPage : req.body.maxItemsPerPage,
+                        model : req.body.requestModel,
+                        user:req.registeredUser
+
+                    })
+                    res.json(data);
+                }
+            ).catch(next);
+        }
+
+    },
+    getScrapeRequestByUser: function (req, res, next) {
+        console.log(req.registeredUser)
+        models.scraperRequest.getScrapeRequestByUser(req.registeredUser)
+            .then(function (data) {
+
                 res.json(data);
-            }
-        ).catch(next);
+            }).catch(next);
     },
     updateScrapeRequest: function (req, res, next) {
         models.scraperRequest.updateScrapeRequest(req.body.scrapeRequestId ,{

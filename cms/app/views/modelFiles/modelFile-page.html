@@ -12,54 +12,42 @@
                     <!--<div ng-message="required">{{"user.errors.username.required" | translate}}</div>-->
                 <!--</div>-->
             </md-input-container>
-            <!--<md-input-container class="md-block">-->
-                <!--<label translate="modelFile.fileLocation"></label>-->
-                <!--<input nv-file-select="" uploader="uploader" multiple="" type="file">-->
-            <!--</md-input-container>-->
-            <!--<md-input-container class="md-block">-->
-                <!--<button ngf-select="uploadFiles($files)" multiple-->
-                        <!--accept="image/*">Select Files</button>-->
-            <!--</md-input-container>-->
+            <md-input-container class="md-block">
+                <label translate="modelFiles.desc"></label>
+                <input  name="desc" ng-model="modelFile.desc" auto-focus ng-readonly="!isNew">
 
-            <!--<button ngf-select="uploadFiles($files)" multiple-->
-                    <!--accept="image/*">Select Files</button>-->
-            <!--<br>-->
-            <!--<br>Files:-->
-            <!--<ul>-->
-                <!--<li ng-repeat="f in files" style="font:smaller">-->
-                    <!--{{f.name}}-->
-                <!--</li>-->
-            <!--</ul>-->
-            <!--<span class="progress" ng-show="progress >= 0">-->
-        <!--<div style="width:{{progress}}%" ng-bind="progress + '%'"></div>-->
-    <!--</span>-->
-            <!--{{errorMsg}}-->
+            </md-input-container>
+
+            <md-input-container>
+
+                <button ngf-select="uploadFiles($files, $invalidFiles)" multiple
+                        ngf-max-height="1000" ngf-max-size="1MB">
+                    Select Files</button>
+                <br><br>
+                Files:
+                <ul>
+                    <li ng-repeat="f in files" style="font:smaller" name ="file">
+                        {{f.name}} {{f.$errorParam}}
+                        <span class="progress" ng-show="f.progress >= 0">
+        <div style="width:{{f.progress}}%"
+             ng-bind="f.progress + '%'"></div>
+      </span>
+                    </li>
+                    <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
+                    </li>
+                </ul>
+                {{errorMsg}}
 
 
-            <!--<md-input-container>-->
-                <!--<input  translate="modelFiles.actions.save" ng-click="saveModelFile()"></input>-->
-            <!--</md-input-container>-->
+            </md-input-container>
 
              <md-input-container>
                 <md-button class="md-raised md-primary" translate="modelFiles.actions.save" ng-click="saveModelFile()"></md-button>
             </md-input-container>
         </form>
-    <button ngf-select="uploadFiles($files, $invalidFiles)" multiple
-            ngf-max-height="1000" ngf-max-size="1MB">
-        Select Files</button>
-    <br><br>
-    Files:
-    <ul>
-        <li ng-repeat="f in files" style="font:smaller" name ="file">
-            {{f.name}} {{f.$errorParam}}
-            <span class="progress" ng-show="f.progress >= 0">
-        <div style="width:{{f.progress}}%"
-             ng-bind="f.progress + '%'"></div>
-      </span>
-        </li>
-        <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
-        </li>
-    </ul>
-    {{errorMsg}}
+
+
+
+
 
 </div>

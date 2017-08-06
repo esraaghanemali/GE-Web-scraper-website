@@ -35,7 +35,7 @@ app.use('/modelFiles', modelFilesRoutes);
 app.use('/status', statusRoutes);
 app.use('/webScraperConstants', webScraperConstantsRoutes);
 app.use('/userPackage', userPackageRoutes);
-app.use('/scrapreRequest', scrapeRequestRoutes);
+app.use('/scrapeRequest', scrapeRequestRoutes);
 app.use('/extractedData', extractedDataRoutes);
 
 

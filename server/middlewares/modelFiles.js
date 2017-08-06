@@ -3,14 +3,50 @@ const errors = require('../utils/errors');
 const constants = require('../utils/constansts');
 const utils = require('../utils');
 const Promise = require('bluebird');
+var multer = require('multer')
+var path = require('path')
+var storage = multer.diskStorage({
 
-
+    destination : function (req , file , cb) {
+        console.log(path.join(__dirname) +'/uploads')
+        cb (null ,path.join(__dirname) +'/uploads')
+    }, filename : function (req , file , cb) {
+        console.log(file)
+        var id = new Date().getTime()
+        cb(null, file.fileName+'-'+ id+path.extname(file.originalname))
+    }
+})
 module.exports = {
 
 
     saveModelFiles : function (req, res, next) {
         console.log("im in save")
-        console.log(req)
+
+        var upload = multer ({
+            storage : storage,
+
+        }).single('file')
+
+
+         upload(req,res,function (err) {
+             console.log((err))
+         })
+        console.log(upload)
+        console.log(req.body.files)
+        console.log("body name")
+console.log(req.body.fileName)
+        models.model.createModel({
+            modelId:new Date().getTime(),
+            fileName: req.body.fileName,
+            user:req.registeredUser.id,
+            desc : req.body.desc
+
+        }).then(function (modelFile) {
+                res.json(modelFile);
+            }
+        ).catch(next);
+
+
         res.json({r:5});
     },
     getModelFiles: function (req, res, next) {
@@ -42,25 +78,44 @@ module.exports = {
     },
     createModelFile: function (req, res, next) {
         console.log("i am in crea")
-        console.log(req.body.file)
+         console.log(req.body.files)
+        var upload = multer ({
+            storage : storage,
+
+        }).single('file')
+
+
+        upload(req,res,function (err) {
+            console.log((err))
+        })
         // models.model.createModel({
         //     modelId:new Date().getTime(),
         //     fileName: req.body.fileName,
         //     user:req.registeredUser.id,
+        //     desc : req.body.desc
         // }).then(function (modelFile) {
         //         res.json(modelFile);
         //     }
         // ).catch(next);
     },
     getModelFilesByUsername: function (req, res, next) {
-        models.user.find({username: req.params.username})
-                .populate('username', constants.modelFiles.defaultFields)
-                .then(function (modelFiles) {
-                    res.json(modelFiles);
-                }).catch(next);
+        models.model.getModelFilesByUsername(req.registeredUser)
+            .then(function (modelFiles) {
+                res.json(modelFiles);
+            }).catch(next);
 
     }
     ,
+    getAdminModelFiles: function (req, res, next) {
+        console.log("im in admin")
+    models.model.getAdminModelFiles()
+        .then(function (modelFiles) {
+            console.log(modelFiles)
+
+            res.json(modelFiles);
+        }).catch(next);
+
+},
     removeModeleById: function (req, res, next){
     // console.log("in remove "+req.params.packageId)
 

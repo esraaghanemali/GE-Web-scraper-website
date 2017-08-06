@@ -10,36 +10,10 @@ angular.module('webScraperCMS.models')
             return Restangular.one(route).get();
         };
 
-        userPackage.getScrapeRequestById = function (id) {
-            return Restangular.one(route).customGET(id);
+        userPackage.getScrapeRequestByUser = function () {
+            return Restangular.one(route).one('/User').get();
         };
 
-        userPackage.create = function (maxPages, maxItemsPerPage,model) {
-            return Restangular.one(route).customPOST(
-                {
-                    maxPages : maxPages,
-                    maxItemsPerPage : maxItemsPerPage,
-                    model:model
-                }
-            );
-        };
-
-
-        userPackage.update = function (id ,maxPages, maxItemsPerPage,model) {
-            return Restangular.one(route).customPUT(
-                {
-                    statusId:id,
-                    maxPages : maxPages,
-                    maxItemsPerPage : maxItemsPerPage,
-                    model:model
-                }
-            );
-        };
-
-
-        userPackage.remove = function (id) {
-            return Restangular.one(route).one(id).remove();
-        };
 
         return userPackage;
     });

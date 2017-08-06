@@ -24,7 +24,9 @@ angular.module('webScraperCMS.i18n')
       }
     }
       ,
-      userPackage: 'User Package'
+      userPackage: 'User Package',
+      Request:'Request file',
+      Models : 'My Files'
   },
     userApp: {
         Home:'Home',
@@ -79,7 +81,37 @@ angular.module('webScraperCMS.i18n')
       visitors: 'Visitors',
       offers: 'Offers Sold'
     }
-  },
+  },  extracted: {
+        listPage: {
+            title: 'Extracted Data List',
+            noData: 'No Extracted Data  yet.',
+            loadingData: 'Loading Data',
+            errorData : 'Error while loading data.'
+        },
+        actions: {
+            new: 'New Extracted Data',
+            edit: 'Edit',
+            save: 'Save',
+            addPackage: 'Add New Extracted Data.'
+        },
+        errors: {
+            // 'username.required': 'Username is required',
+            // 'firstName.required': 'First name is required',
+            // 'lastName.required': 'Last name is required',
+            // 'email.required': 'Email is required',
+            // 'password.required': 'Password is required',
+            // 'password.notMatch': 'Passwords are not match!',
+            // formNotValid: 'Please make sure all mandatory fields are filled.',
+            saveError: 'An error occurred while adding the Extracted Data. Please try again.',
+            // changePassword: 'An error occurred while changing the password. Please try again.',
+            // oldNewPassReq: 'Old password and new password are required',
+            // noMatch: 'New password does not match the retyped password',
+            // oldPassWrong: 'Old password is incorrect'
+        },
+
+        length: 'Length',
+        'save.success': 'Extracted Data saved successfully'
+    },
     userPackage: {
         listPage: {
             title: 'Packages List',
@@ -94,6 +126,38 @@ angular.module('webScraperCMS.i18n')
             addPackage: 'Add New package File'
         },
         length: 'Length'
+    },
+    request: {
+        listPage: {
+            title: 'Request List',
+            noData: 'No Requests yet. You can create one by using the button at the top.',
+            loadingData: 'Loading Data',
+            errorData : 'Error while loading data.'
+        },
+        actions: {
+            new: 'New Request',
+            edit: 'Edit',
+            save: 'Save',
+            addPackage: 'Add New Request File'
+        },
+        errors: {
+            // 'username.required': 'Username is required',
+            // 'firstName.required': 'First name is required',
+            // 'lastName.required': 'Last name is required',
+            // 'email.required': 'Email is required',
+            // 'password.required': 'Password is required',
+            // 'password.notMatch': 'Passwords are not match!',
+            // formNotValid: 'Please make sure all mandatory fields are filled.',
+            saveError: 'An error occurred while adding the request. Please try again.',
+            // changePassword: 'An error occurred while changing the password. Please try again.',
+            // oldNewPassReq: 'Old password and new password are required',
+            // noMatch: 'New password does not match the retyped password',
+            // oldPassWrong: 'Old password is incorrect'
+        },
+        maxPages: 'Max Pages',
+        maxItemsPerPage : 'Max Items Per Page',
+        length: 'Length',
+        'save.success': 'Request saved successfully'
     },
   user: {
     username: 'Username',
@@ -167,7 +231,7 @@ angular.module('webScraperCMS.i18n')
             errorData : 'Error while loading data.'
         },
         actions: {
-            new: 'New Fil',
+            new: 'New File',
             edit: 'Edit',
             save: 'Save',
             addModelFile: 'Add New Model File'

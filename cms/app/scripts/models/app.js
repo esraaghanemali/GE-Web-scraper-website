@@ -17,11 +17,13 @@ angular.module('webScraperCMS.models', [])
   });
 })
 
-    .factory('models', function(User,ModelFiles,UserPackage) {
+    .factory('models', function(User,ModelFiles,UserPackage,scrapeRequest,extractedData) {
         return {
             user: User,
             modelFiles: ModelFiles,
-            userPackage:UserPackage
+            userPackage:UserPackage,
+            scrapeRequest:scrapeRequest,
+            extractedData:extractedData
         };
     });
     // .factory('models', function(userPackage,User,ModelFiles,scrapeRequest,status,extractedData,webScraperConstant) {

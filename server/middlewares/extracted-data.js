@@ -19,9 +19,17 @@ module.exports = {
             res.json(data);
         }).catch(next);
 
+    },getExtractedDataByUser: function (req, res, next) {
+        console.log("i am in extracted data get")
+        models.extractedData.getExtractedDataByUser(req.registeredUser)
+            .then(function (data) {
+                console.log(data);
+                res.json(data);
+            }).catch(next);
     },
+
     getExtractedDataById: function (req, res, next) {
-        models.status.getExtractedDataById(req.params.extractedDataId)
+        models.extractedData.getExtractedDataById(req.params.extractedDataId)
             .then(function (data) {
                 console.log(data);
                 res.json(data);

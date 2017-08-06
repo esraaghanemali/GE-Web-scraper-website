@@ -24,7 +24,7 @@ angular.module('webScraperCMS.modelFiles', [])
                 modelFile: null
             },
             data: {
-                requiredPermission: 'modelFiles.edit',
+                requiredPermission: 'modelFiles.new',
                 child: true
             }
             ,

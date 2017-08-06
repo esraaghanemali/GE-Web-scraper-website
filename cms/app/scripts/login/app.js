@@ -12,7 +12,7 @@ angular.module('webScraperCMS.login', [])
         var deferred = $q.defer();
         // check if the user is already logged in then redirect to dashboard
         session.identity().then(function() {
-          $state.go('app.users');
+          $state.go('app.home');
           deferred.reject();
         }, deferred.resolve);
 
@@ -22,11 +22,11 @@ angular.module('webScraperCMS.login', [])
   }).state('accessDenied', {
     url: '/not-allowed',
     templateUrl: 'views/templates/accessDenied.html',
-    resolve: {
-      authorize: function(authorization) {
-        return authorization.authorize();
-      }
-    },
+    // resolve: {
+    //   authorize: function(authorization) {
+    //     return authorization.authorize();
+    //   }
+    // },
     data: {
       requiredPermission: true
     }
@@ -51,7 +51,7 @@ angular.module('webScraperCMS.login', [])
       $rootScope.returnToStateParams = undefined;
     }
     else {
-      $state.go('app.users');
+      $state.go('app.home');
     }
   };
 });

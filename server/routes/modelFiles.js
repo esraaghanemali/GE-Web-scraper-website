@@ -6,8 +6,10 @@ const router = express.Router();
 router.use(userMiddleware.checkLogin);
 
 router.get('/', middleware.getModelFiles)
-    .get('/:modelFileId', middleware.getModelFileById)
-    .get('/:username', middleware.getModelFilesByUsername);
+    .get('/model/:modelFileId', middleware.getModelFileById)
+    .get('/User/', middleware.getModelFilesByUsername)
+.get('/Admin/', middleware.getAdminModelFiles)
+
 router.post('/', middleware.createModelFile)
 router.post('/save/',middleware.saveModelFiles)
 router.delete(':/modelId/',middleware.removeModeleById)

@@ -18,6 +18,14 @@ var scrapeRequestSchema = new mongoose.Schema({
     model : {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'model'
+    },
+    user : {
+    type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+},
+    status : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'status'
     }
 });
 scrapeRequestSchema.statics.createScrapeRequest = function (Request) {
@@ -73,6 +81,32 @@ scrapeRequestSchema.statics.updateScrapeRequest = function (id, request) {
 
 
 }
+
+scrapeRequestSchema.statics.getScrapeRequestByUser = function (user) {
+    if(!user || user=='' )
+    {
+
+        return  promise.reject(errors.missingData)
+
+    }
+    var thisModel = this
+
+    return new Promise(function (resolve, reject) {
+
+            thisModel.find({user : user}).populate('model').populate('user').populate('status').then(function (scrapeRequests) {
+                // console.log(scrapeRequests)
+
+                resolve(scrapeRequests);
+            }) .catch(function (err) {
+                // console.log(err)
+                reject(errors.scrapeRequest.create)
+            });
+
+
+    })
+
+}
+
 scrapeRequestSchema.statics.removeScrapeRequestById = function (id) {
 
     if(!id || id=='' )

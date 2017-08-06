@@ -7,6 +7,8 @@ angular.module('webScraperCMS.login')
   // this function is used to add role and permission data to current user only
   var createUser = function(userData) {
     var isAdmin = userData.role === 'admin';
+      var isUser = userData.role === 'client';
+      var both = userData.role === 'client'|| 'Admin';
 
     var user = {
       isAdmin: isAdmin,
@@ -27,7 +29,20 @@ angular.module('webScraperCMS.login')
               list: isAdmin,
               view: isAdmin,
               edit: isAdmin,
-              remove: isAdmin
+              remove: both,
+              new:both,
+          },
+          models : {
+              list: both,
+              view: both,
+              edit: both,
+              remove: both
+          },
+          scrapeRequest : {
+              list: both,
+              view: both,
+              edit: both,
+              remove: both
           }
       }
     };

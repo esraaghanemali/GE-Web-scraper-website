@@ -18,7 +18,9 @@ angular.module('webScraperCMS.i18n')
       changeImage: 'تغيير',
       removeImage: 'إزالة'
     },
-      userPackage: 'حزمة المستخدم'
+      userPackage: 'حزمة المستخدم',
+      Request : 'طلب استخراج',
+      Models : 'جميع ملفاتي'
   },
     userApp: {
         Home:'الرئيسية',
@@ -104,6 +106,69 @@ Services:'خدماتنا',
             addPackage: 'إضف حزمة جديدة'
         },
         length: 'الطول'
+    },
+    extracted: {
+        listPage: {
+            title: 'قائمة الملفات المستخرجة',
+            noData: 'لا يوجد ملفات مستخرجة بعد.',
+            loadingData: 'يتم التحميل',
+            errorData : 'حدث خطأ اثناء تحميل الملفات'
+        },
+        actions: {
+            new: 'طلب جديد',
+            edit: 'تعديل',
+            save: 'حفظ',
+            addPackage: 'إضف ملفات مستخرجة جديدة'
+        },
+        errors: {
+            // 'username.required': 'Username is required',
+            // 'firstName.required': 'First name is required',
+            // 'lastName.required': 'Last name is required',
+            // 'email.required': 'Email is required',
+            // 'password.required': 'Password is required',
+            // 'password.notMatch': 'Passwords are not match!',
+            // formNotValid: 'Please make sure all mandatory fields are filled.',
+            saveError: 'حدث خطأ اثناء الطلب، رجاءاً حاول مجددا.',
+            // changePassword: 'An error occurred while changing the password. Please try again.',
+            // oldNewPassReq: 'Old password and new password are required',
+            // noMatch: 'New password does not match the retyped password',
+            // oldPassWrong: 'Old password is incorrect'
+        },
+        length: 'الطول',
+        'save.success': 'تم حفظ الملف المستخرج بنجاح'
+    }
+
+    ,request: {
+        listPage: {
+            title: 'قائمة الطلبات',
+            noData: 'لا يوجد طلبات بعد، يمكنك إضافة حزمة جديدة بالضغط على الزر فوق.',
+            loadingData: 'تحميل المعطيات',
+            errorData : 'حدث خطأ اثناء تحميل الملفات'
+        },
+        actions: {
+            new: 'طلب جديدة',
+            edit: 'تعديل',
+            save: 'حفظ',
+            addPackage: 'إضف طلب جديدة'
+        },
+        errors: {
+            // 'username.required': 'Username is required',
+            // 'firstName.required': 'First name is required',
+            // 'lastName.required': 'Last name is required',
+            // 'email.required': 'Email is required',
+            // 'password.required': 'Password is required',
+            // 'password.notMatch': 'Passwords are not match!',
+            // formNotValid: 'Please make sure all mandatory fields are filled.',
+            saveError: 'حدث خطأ اثناء الطلب، رجاءاً حاول مجددا.',
+            // changePassword: 'An error occurred while changing the password. Please try again.',
+            // oldNewPassReq: 'Old password and new password are required',
+            // noMatch: 'New password does not match the retyped password',
+            // oldPassWrong: 'Old password is incorrect'
+        },
+        maxPages: 'العدد الاعظمي للصفحات',
+        maxItemsPerPage : 'العدد الاعظمي للعناصر في الصفحة الواحدة',
+        length: 'الطول',
+        'save.success': 'تم حفظ الطلب بنجاح'
     },
   user: {
     username: 'اسم المستخدم',
