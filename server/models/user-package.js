@@ -11,16 +11,25 @@ var userPackageSchema = new mongoose.Schema({
     },
 packageName:{
     type: String,
-    defautl: 'default user'
+    defautl: 'Default'
 },
     maxPagesNumber: {
         type: Number,
-        defautl: 5
+        defautl: 20
     },
     maxItemsPerPageNumber: {
         type: Number,
         defautl: 20
+    },
+    maxRecords: {
+        type: Number,
+        defautl: 20
     }
+    ,
+    totalPrice: {
+    type: Number,
+        defautl: 0
+}
 });
 userPackageSchema.statics.createUserPackage = function (userPackage) {
     var package = this;
@@ -36,6 +45,33 @@ userPackageSchema.statics.createUserPackage = function (userPackage) {
 
     })
 };
+
+userPackageSchema.statics.createDefaultUserPackage = function () {
+    console.log("default user package")
+    console.log('-------------------')
+    var thisModel = this;
+    return this.findOne({
+        packageName: 'Default'
+    }).then(function (userPackage) {
+        if (!userPackage) {
+
+            return thisModel.createUserPackage({
+                packageId: new Date().getTime(),
+                packageName: 'Default',
+                maxPagesNumber: 50,
+                maxItemsPerPageNumber:1000,
+                maxRecords:10000,
+                totalPrice:0
+
+            });
+        }
+        return Promise.resolve();
+    }).catch(function (err) {
+        return Promise.reject(err)
+    });
+};
+
+
 userPackageSchema.statics.getPackageById = function (packageId) {
     if(! packageId || packageId === '')
         return Promise.reject(errors.missingData)
@@ -68,7 +104,12 @@ userPackageSchema.statics.updatePackage = function (packageId, package) {
     return new Promise(function (resolve, reject) {
         thisModel.getPackageById(packageId).then(function (package2) {
             console.log("findd package "+ package2)
-            thisModel.update({packageId: packageId}, {packageName: package.packageName, maxPagesNumber: package.maxPagesNumber, maxItemsPerPageNumber: package.maxItemsPerPageNumber})
+            thisModel.update({_id: packageId}, {packageName: package.packageName,
+                maxPagesNumber: package.maxPagesNumber,
+                maxItemsPerPageNumber: package.maxItemsPerPageNumber,
+                maxRecords:package.maxRecords,
+                totalPrice:package.totalPrice
+            })
                 .catch(reject);
             console.log('updated')
             resolve();
@@ -77,8 +118,6 @@ userPackageSchema.statics.updatePackage = function (packageId, package) {
         })
 
     })
-
-
 }
 userPackageSchema.statics.removePackageById = function (packageId) {
 

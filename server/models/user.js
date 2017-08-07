@@ -89,7 +89,9 @@ userSchema.statics.getUserByToken = function (token) {
       if (err) {
         return reject(err);
       } else {
-        return model.findById(decoded.id)
+        return model.findById(decoded.id).populate(   {
+            path: 'userPackage'
+        })
           .then(function (user) {
             if (!user || !user.id) {
               return reject(errors.authRequiredError);
@@ -135,7 +137,9 @@ userSchema.statics.login = function (authField, password) {
 
 userSchema.statics.createAdmin = function () {
   console.log("adminnnnnnnnnnnn")
-  var userModel = this;
+    console.log('-------------------')
+
+    var userModel = this;
   return this.findOne({
     username: 'admin'
   }).then(function (admin) {

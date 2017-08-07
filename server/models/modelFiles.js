@@ -33,13 +33,17 @@ var modelSchema = new mongoose.Schema({
     }
 });
 modelSchema.statics.createModel = function (model) {
+
     var thisModel = this;
     return new Promise(function (resolve, reject) {
-        thisModel.create(model).then(function () {
-            // console.log('created pac')
-            resolve();
+        thisModel.create(model).then(function (modelF) {
+             console.log('created pac')
+            console.log(modelF)
+            console.log("in creaed")
+            resolve(modelF);
         })
             .catch(function (err) {
+                console.log("in erroe")
                  console.log(err)
                 reject(errors.modelFiles.create)
             });
