@@ -28,6 +28,7 @@ var server = http.createServer(app);
 
 models.connect().then(function(){
   models.user.createAdmin();
+  models.userPackage.createDefaultUserPackage()
   //   models.model.createModel(
   //     {
   //         modelId:1,
