@@ -6,19 +6,19 @@
         <span class="font-normal">Home</span>
       </a>
     </li>
-    <li ui-sref-active="active">
+    <li ui-sref-active="active" ng-if="currentUser.permissions.administration">
       <a md-ink-ripple ui-sref="app.userPackages" ng-class="{'rtl': app.setting.rtl}">
         <i class="icon mdi-social-people i-20"></i>
         <span class="font-normal">packages </span>
       </a>
     </li>
-    <li ui-sref-active="active">
+    <li ui-sref-active="active" ng-if="currentUser.permissions.administration" >
       <a md-ink-ripple ui-sref="app.users" ng-class="{'rtl': app.setting.rtl}">
         <i class="icon mdi-social-people i-20"></i>
         <span class="font-normal" translate="aside.nav.users"></span>
       </a>
     </li>
-    <li ui-sref-active="active">
+    <li ui-sref-active="active" ng-if="currentUser.permissions.administration">
       <a md-ink-ripple ui-sref="app.modelFiles" ng-class="{'rtl': app.setting.rtl}">
         <i class="icon mdi-maps-beenhere i-20"></i>
         <span class="font-normal" translate="aside.nav.ModelFiles"></span>

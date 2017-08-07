@@ -12,34 +12,28 @@
                     <!--<div ng-message="required">{{"user.errors.username.required" | translate}}</div>-->
                 <!--</div>-->
             </md-input-container>
+            <md-container>
+                <button  class="md-raised md-primary" ngf-select="uploadFiles($files, $invalidFiles)" multiple>
+                    <!--<button ngf-select="uploadFiles($files, $invalidFiles)" multiple-->
+                    <!--ngf-max-height="1000" ngf-max-size="1MB">-->
+                    Select Files</button>
+                <!--<ul>-->
+                <span ng-repeat="f in files" style="font:smaller" name ="file">
+                        {{f.name}} {{f.$errorParam}}
+
+                    </span>
+
+                {{errorMsg}}
+
+
+            </md-container>
             <md-input-container class="md-block">
                 <label translate="modelFiles.desc"></label>
                 <input  name="desc" ng-model="modelFile.desc" auto-focus ng-readonly="!isNew">
 
             </md-input-container>
 
-            <md-input-container>
 
-                <button ngf-select="uploadFiles($files, $invalidFiles)" multiple
-                        ngf-max-height="1000" ngf-max-size="1MB">
-                    Select Files</button>
-                <br><br>
-                Files:
-                <ul>
-                    <li ng-repeat="f in files" style="font:smaller" name ="file">
-                        {{f.name}} {{f.$errorParam}}
-                        <span class="progress" ng-show="f.progress >= 0">
-        <div style="width:{{f.progress}}%"
-             ng-bind="f.progress + '%'"></div>
-      </span>
-                    </li>
-                    <li ng-repeat="f in errFiles" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}
-                    </li>
-                </ul>
-                {{errorMsg}}
-
-
-            </md-input-container>
 
              <md-input-container>
                 <md-button class="md-raised md-primary" translate="modelFiles.actions.save" ng-click="saveModelFile()"></md-button>

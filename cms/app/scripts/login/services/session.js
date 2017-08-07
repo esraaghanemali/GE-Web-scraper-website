@@ -49,7 +49,8 @@ angular.module('webScraperCMS.login')
               view: both,
               edit: both,
               remove: both
-          }
+          },
+          administration : isAdmin
       }
     };
 

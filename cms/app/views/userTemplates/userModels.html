@@ -183,7 +183,9 @@
             <a> <td>{{row.url}}</td> </a>
             <td>{{row.maxPages}}</td>
             <td>
-                <md-button ng-if="currentUser.permissions.extracted.remove" type="button" class="md-raised red-500"
+                <md-button ng-if="currentUser.permissions.extracted.remove"
+                           type="button"
+                           class="md-raised red-500"
                            ng-click="removeExtractedData(row)"><i
                         class="mdi mdi-content-block"></i></md-button>
             </td>

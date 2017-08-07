@@ -189,7 +189,8 @@ angular.module('webScraperCMS.i18n')
     actions: {
       new: 'New User',
       save: 'Save User',
-      changePassword: 'Change Password'
+      changePassword: 'Change Password',
+        edit:'Edit page'
     },
     deactivate: {
       title: 'Are You Sure?',
@@ -237,6 +238,8 @@ angular.module('webScraperCMS.i18n')
             save: 'Save',
             addModelFile: 'Add New Model File'
         },
+        desc:'Description',
+
         fileName: 'Model Name',
         length: 'Length',
         fileLocation : 'file Location',
@@ -250,13 +253,12 @@ angular.module('webScraperCMS.i18n')
             // 'lastName.required': 'Last name is required',
             // 'email.required': 'Email is required',
             // 'password.required': 'Password is required',
-            // 'password.notMatch': 'Passwords are not match!',
+            required: 'Please Fill Required fields!',
             request: 'error while request, please try again.',
-            saveError: 'error while deleting.',
+            saveError: 'error while saving.',
             // changePassword: 'An error occurred while changing the password. Please try again.',
             // oldNewPassReq: 'Old password and new password are required',
-            // noMatch: 'New password does not match the retyped password',
-            // oldPassWrong: 'Old password is incorrect'
+            browse: 'please select file first!',            // oldPassWrong: 'Old password is incorrect'
         },
     },
   bus: {

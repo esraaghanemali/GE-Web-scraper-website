@@ -8,10 +8,10 @@ angular.module('webScraperCMS.users')
   $scope.rePassword = '';
     $scope.userPackages = userPackages;
     if(!$scope.isNew){
-        console.log('user')
-        console.log($scope.user)
-        console.log('user pac')
-        console.log($scope.user.userPackage)
+        // console.log('user')
+        // console.log($scope.user)
+        // console.log('user pac')
+        // console.log($scope.user.userPackage)
          $scope.user.userPackage = _.find($scope.userPackages, {id: $scope.user.userPackage.id});
 
     }

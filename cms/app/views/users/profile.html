@@ -43,7 +43,7 @@
         <div class="site-heading">
           <h1>GE Web Scraper</h1>
           <hr class="small">
-          <span class="subheading">Hello Sam</span>
+          <span class="subheading">Hello {{currentUser.username}}</span>
         </div>
       </div>
     </div>
@@ -60,33 +60,69 @@
             <img src="images/a0.jpg" class="img-circle img-responsive">
           </a>
           <div class="m-b m-t-sm h2">
-            <span class="">David M.</span>
+            <span class="">{{currentUser.firstName}}.</span>
           </div>
-          <a class="btn btn-sm btn-success m-b p-h no-border">Edit</a>
+          <a ui-sref = "app.editUser" class="btn btn-sm btn-success m-b p-h no-border">Edit</a>
           <p>
-            I am designing something.
+           add new model file from the button below
           </p>
         </div>
       </div>
       <div class="list-group no-radius no-border" style="padding-right: 333px;padding-left: 333px;">
-        <a class="list-group-item">
-          <span class="pull-right badge">12</span>All Model Files
+        <a class="list-group-item" ui-sref="app.Models">
+          <span class="pull-right badge" >{{allModels}}</span>All Model Files
+        </a>
+        <a class="list-group-item" ui-sref="app.Models">
+          <span class="pull-right badge">{{requested}}</span>Requested Model Files
+        </a>
+        <a class="list-group-item" ui-sref="app.Models">
+          <span class="pull-right badge">{{extracted}}</span>Extracted Model Files
         </a>
         <a class="list-group-item">
-          <span class="pull-right badge">23</span>Requested Model Files
+          <span class="pull-right badge">
+            {{currentUser.userPackage.packageName}}</span>
+          Your Package
         </a>
-        <a class="list-group-item">
-          <span class="pull-right badge">564</span>Extracted Model Files
-        </a>
+
+        <!--<form name="savePackageForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">-->
+
+
+          <!--<md-input-container class="md-block" >-->
+            <!--<h5>Change Package</h5>-->
+            <!--<md-select name="newPackage" class="md-default-theme" style="width: 100%"-->
+                       <!--ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">-->
+              <!--<md-option ng-repeat="temptModel in temptModels" ng-value="temptModel">-->
+                <!--{{temptModel.fileName}}-->
+                <!--<p>-->
+                  <!--<small>-->
+                    <!--{{temptModel.desc}}-->
+                  <!--</small>-->
+                <!--</p>-->
+
+
+
+              <!--</md-option>-->
+            <!--</md-select>-->
+          <!--</md-input-container>-->
+
+          <!--<md-input-container>-->
+            <!--<md-button class="md-raised md-primary"-->
+                       <!--translate="request.actions.save"-->
+                       <!--ng-click="savePackage()"></md-button>-->
+          <!--</md-input-container>-->
+        <!--</form>-->
+
       </div>
       <div class="text-center b-b b-light">
-        <a href class="inline m text-color">
-          <span class="h3 block font-bold">221</span>
-          <em class="text-xs">Followers</em>
+        <a ui-sref="app.Request" class="inline m text-color">
+          <span class="text-xs">make</span>
+          <em class="h3 block font-bold">request</em>
+
         </a>
-        <a href class="inline m text-color">
-          <span class="h3 block font-bold">250</span>
-          <em class="text-xs">Following</em>
+        <a ui-sref="app.Models" class="inline m text-color">
+          <span class="text-xs">see</span>
+          <em class="h3 block font-bold">Files</em>
+
         </a>
       </div>
 
