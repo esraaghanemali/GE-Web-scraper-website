@@ -5,22 +5,25 @@ const utils = require('../utils');
 const Promise = require('bluebird');
 var multer = require('multer')
 var path = require('path')
-var storage = multer.diskStorage({
 
-    destination : function (req , file , cb) {
-        console.log(path.join(__dirname) +'/uploads')
-        cb (null ,path.join(__dirname) +'/uploads')
-    }, filename : function (req , file , cb) {
-        // console.log(file)
-        var id = new Date().getTime()
-        cb(null, file.fileName+'-'+ id+path.extname(file.originalname))
-    }
-})
 module.exports = {
 
 
     saveModelFiles : function (req, res, next) {
-        console.log("im in save")
+
+        var storage = multer.diskStorage({
+
+            destination : function (req , file , cb) {
+                // console.log(path.join(__dirname) +'/uploads/')
+                // cb (null ,path.join(__dirname) +'/uploads/'+req.registeredUser.id)
+                cb (null ,path.join(__dirname) +'/uploads')
+
+            }, filename : function (req , file , cb) {
+                // console.log(file)
+                var id = new Date().getTime()
+                cb(null, file.originalname+'-'+ id+path.extname(file.originalname))
+            }
+        })
 
         var upload = multer ({
             storage : storage,
@@ -31,40 +34,31 @@ module.exports = {
         upload(req,res,function(err) {
             if(err) {
                 console.log(err);
-                return res.end("Error uploading file.");
+                // return res.end("Error uploading file.");
             } else {
-                console.log("body");
+                // console.log("body");
+                //
+                 console.log(req.files[0]);
 
-                console.log(req.body);
-                console.log("files");
 
-                console.log(req.files);
-                // console.log(req.data);
-                req.files.forEach( function(f) {
-                    console.log(f);
-                    // and move file to final destination...
-                });
-                res.end("File has been uploaded");
+                models.model.createModel({
+                            modelId:new Date().getTime(),
+                            fileName: req.body.fileName,
+                            user:req.registeredUser.id,
+                            desc : req.body.desc,
+                            fileLocation:req.files[0].path
+                        }).then(function (modelFile) {
+                            console.log("created")
+                            console.log(modelFile)
+                        console.log("created")
+
+                            res.json(modelFile);
+                            }
+                        ).catch(next);
+
             }
         });
 
-        // console.log("im in fileName")
-        // console.log(req.body.fileName)
-
-// console.log(req.body.fileName)
-//         models.model.createModel({
-//             modelId:new Date().getTime(),
-//             fileName: req.body.fileName,
-//             user:req.registeredUser.id,
-//             desc : req.body.desc
-//
-//         }).then(function (modelFile) {
-//                 res.json(modelFile);
-//             }
-//         ).catch(next);
-
-
-        res.json({r:5});
     },
     getModelFiles: function (req, res, next) {
 
@@ -93,33 +87,8 @@ module.exports = {
                 res.json(modelFile);
             }).catch(next);
     },
-//     makeRequest : function (req, res, next) {
-//     console.log(req.body.maxPages)
-//         console.log(req.body.model)
-//     // models.model.makeRequest({
-//     //     // modelId:new Date().getTime(),
-//     //     // modelFile: req.body.model,
-//     //     user:req.registeredUser.id,
-//     //     modelId:req.body.modelId,
-//     //     maxPages : req.body.maxPages,
-//     //     maxItemsPerPage : req.body.maxItemsPerPage
-//     // }).then(function (modelFile) {
-//     //         res.json(modelFile);
-//     //     }
-//     // ).catch(next);
-// },
+
     createModelFile: function (req, res, next) {
-        // console.log("i am in crea")
-        //  console.log(req.body.files)
-        // var upload = multer ({
-        //     storage : storage,
-        //
-        // }).single('file')
-        //
-        //
-        // upload(req,res,function (err) {
-        //     console.log((err))
-        // })
         models.model.createModel({
             modelId:new Date().getTime(),
             fileName: req.body.fileName,
