@@ -1,0 +1,132 @@
+<!--<div  id="EditableFormCtrl">-->
+    <!--<form editable-form name="editableForm" onaftersave="saveUser()">-->
+        <!--<div>-->
+            <!--&lt;!&ndash; editable username (text with validation) &ndash;&gt;-->
+            <!--<span class="title">User name: </span>-->
+            <!--<span editable-text="user.name" e-name="name" onbeforesave="checkName($data)" e-required>{{ user.name || 'empty' }}</span>-->
+        <!--</div>-->
+
+        <!--<div>-->
+            <!--&lt;!&ndash; editable status (select-local) &ndash;&gt;-->
+            <!--<span class="title">Status: </span>-->
+            <!--<span editable-select="user.status" e-name="status" e-ng-options="s.value as s.text for s in statuses">-->
+        <!--{{ (statuses | filter:{value: user.status})[0].text || 'Not set' }}-->
+      <!--</span>-->
+        <!--</div>-->
+
+        <!--<div>-->
+            <!--&lt;!&ndash; editable group (select-remote) &ndash;&gt;-->
+            <!--<span class="title">Group: </span>-->
+            <!--<span editable-select="user.group" e-name="group" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">-->
+        <!--{{ showGroup() }}-->
+      <!--</span>-->
+        <!--</div>-->
+
+        <!--<div class="buttons">-->
+            <!--&lt;!&ndash; button to show form &ndash;&gt;-->
+            <!--<button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">-->
+                <!--Edit-->
+            <!--</button>-->
+            <!--&lt;!&ndash; buttons to submit / cancel form &ndash;&gt;-->
+            <!--<span ng-show="editableForm.$visible">-->
+        <!--<button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">-->
+          <!--Save-->
+        <!--</button>-->
+        <!--<button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">-->
+          <!--Cancel-->
+        <!--</button>-->
+      <!--</span>-->
+        <!--</div>-->
+    <!--</form>-->
+<!--</div>-->
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Edit User: {{currentUser.firstName}}</div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">username:</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static">
+                                <a  onaftersave="updateUsername($data)" oncancel="cancle()"
+                                    editable-text="user.username">
+                                    {{ user.username || 'empty' }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">firstName:</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static">
+                                <a  onaftersave="updatefirstName($data)"
+                                    oncancel="cancle()"
+                                    editable-text="user.firstName">
+                                    {{ user.firstName || 'empty' }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">lastName:</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static">
+                                <a  onaftersave="updatelastName($data)" oncancel="cancle()"
+                                    editable-text="user.lastName">
+                                    {{ user.lastName || 'empty' }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">phone:</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static">
+                                <a  onaftersave="updatephone($data)" oncancel="cancle()"
+                                    editable-text="user.phone">
+                                    {{ user.phone || 'empty' }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">email:</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static">
+                                <a  onaftersave="updateemail($data)" oncancel="cancle()"
+                                    editable-text="user.email">
+                                    {{ user.email || 'empty' }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">package:</label>
+                    <div >
+                        <a href="#" editable-select="user.userPackage"
+                           onshow="loadPackages()"
+
+                           onaftersave="requestPackage($data)"
+                           e-ng-options="g._id as g.packageName for g in packages">
+                            {{ showPackage() }}
+                        </a>
+
+                    </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

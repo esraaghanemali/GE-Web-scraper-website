@@ -5,7 +5,7 @@ var constants = {
     extractedData : { defautlFields : 'scrapeRequest maxPages url' },
     scrapeRequest : {defautlFields : 'maxPages maxItemsPerPage model'},
     webScraperConstants: {defautlFields : 'maxPages maxItemsPerPage model'},
-    userPackage: {defautlFields : 'packageName maxPagesNumber maxItemsPerPageNumber'}
+    userPackage: {defautlFields : 'packageName  maxRecords totalPrice'}
 };
 
 module.exports = constants;

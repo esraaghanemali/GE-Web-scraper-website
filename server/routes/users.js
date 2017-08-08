@@ -96,7 +96,10 @@ router.get('/me', middleware.getCurrentUser)
    *
    * @apiUse AuthRequiredError
    */
-  .get('/register_device', middleware.registerDevice);
+  .get('/register_device', middleware.registerDevice)
+.post('/Package/', middleware.changePackage)
+
+.post('/UpdateInfo/', middleware.updateInfo);
 
 
 module.exports = router;

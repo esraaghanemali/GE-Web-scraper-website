@@ -24,14 +24,36 @@ statusSchema.statics.createStatus = function (status) {
     return new Promise(function (resolve, reject) {
         thisModel.create(status).then(function () {
             // console.log('created pac')
-            resolve();
+            resolve(status);
         })
             .catch(function (err) {
-                // console.log('from catch')
+                 // console.log(err)
                 reject(errors.status.create)
             });
 
 })
+};
+
+statusSchema.statics.createDefaultStatus = function () {
+    console.log("default request status")
+    console.log('-------------------')
+    var thisModel = this;
+    return this.findOne({
+        statusName: 'Pending'
+    }).then(function (status) {
+        if (!status) {
+
+            return thisModel.createStatus({
+                statusId: new Date().getTime(),
+                statusName: 'Pending',
+                statusMessege: 'The request is pending, wait till the prpcess end.'
+
+            });
+        }
+        return Promise.resolve(status);
+    }).catch(function (err) {
+        return Promise.reject(err)
+    });
 };
 statusSchema.statics.getStatusById = function (statusId) {
     if(! statusId || statusId === '')
@@ -50,7 +72,22 @@ statusSchema.statics.getStatusById = function (statusId) {
         });
 };
 
+statusSchema.statics.getDefaultStatus = function () {
+     this.findOne({statusName: 'Pending'})
+        .then(function(status){
+            if(! status)
+            {
+                // console.log('not found')
+                return Promise.reject(errors.status.notFound);
+            }
+            status = status.toObject();
+            delete status.statusId;
+            // console.log(status)
+            return status;
+        });
 
+
+};
 statusSchema.statics.updateStatus = function (statusId, status) {
 
     if(!statusId || statusId==''|| !status )

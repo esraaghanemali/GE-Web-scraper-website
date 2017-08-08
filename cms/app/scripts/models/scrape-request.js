@@ -19,11 +19,11 @@ angular.module('webScraperCMS.models')
             return Restangular.one(route).one(Id).remove();
         };
 
-        scrapeRequest.new= function (model,maxPages,maxItemsPerPage) {
+        scrapeRequest.new= function (model,maxRecords) {
             return Restangular.one(route).one('Request').customPOST({
                 model: model,
-                maxPages:maxPages,
-                maxItemsPerPage:maxItemsPerPage
+                maxRecords:maxRecords,
+
             });
         };
         return scrapeRequest;

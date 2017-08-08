@@ -155,9 +155,9 @@ angular.module('webScraperCMS.userW')
         $scope.request = function (row,ev) {
             // Appending dialog to document.body to cover sidenav in docs app
             var confirm = $mdDialog.prompt()
-                .title('What is the max Pages ?')
-                .placeholder('Max Pages')
-                .ariaLabel('Max Pages')
+                .title('What is the max records ?')
+                .placeholder('Max records')
+                .ariaLabel('Max records')
                 .initialValue('')
                 // .title('What is the max Items Per Page ?')
                 // .placeholder('Max Items Per Page')
@@ -170,10 +170,9 @@ angular.module('webScraperCMS.userW')
             $mdDialog.show(confirm).then(function(result) {
                 if(result == '')
                     result=1
-                console.log(result)
-       var maxItemPerPage = 3
 
-                models.scrapeRequest.new(row,result,maxItemPerPage)
+
+                models.scrapeRequest.new(row,result)
                         .then(function () {
 
                             $scope.isLoading = false;

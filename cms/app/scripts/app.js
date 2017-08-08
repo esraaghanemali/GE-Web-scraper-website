@@ -17,6 +17,7 @@ angular.module('webScraperCMS', [
   'ngStorage',
   'ui.router',
   'ui.utils',
+  'xeditable',
   'uiGmapgoogle-maps',
   'ui.map',
   'ui.bootstrap',

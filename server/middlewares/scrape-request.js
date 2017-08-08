@@ -38,7 +38,7 @@ module.exports = {
 
         if( req.body.temptModel)
         {
-            console.log("in admin")
+            // console.log("in admin")
             models.scraperRequest.createScrapeRequest({
                 scrapeRequestId:new Date().getTime(),
                 maxPages: req.body.maxPages,
@@ -55,7 +55,7 @@ module.exports = {
         }
             else
         {
-            console.log("in user")
+            // console.log("in user")
 
             models.scraperRequest.createScrapeRequest({
                 scrapeRequestId:new Date().getTime(),
@@ -74,9 +74,9 @@ module.exports = {
 
     },
     makeRequest : function (req, res, next) {
-        console.log("in req make heeeeeeeeeeee")
-        console.log(req.body.maxPages)
-        console.log(req.body.model)
+        // console.log("in req make heeeeeeeeeeee")
+        // console.log(req.body.maxPages)
+        // console.log(req.body.model)
         models.scraperRequest.createScrapeRequest({
             scrapeRequestId:new Date().getTime(),
             maxPages: req.body.maxPages,
@@ -92,7 +92,7 @@ module.exports = {
         ).catch(next);
     },
     getScrapeRequestByUser: function (req, res, next) {
-        console.log(req.registeredUser)
+        // console.log(req.registeredUser)
         models.scraperRequest.getScrapeRequestByUser(req.registeredUser)
             .then(function (data) {
 
@@ -101,8 +101,8 @@ module.exports = {
     },
     updateScrapeRequest: function (req, res, next) {
         models.scraperRequest.updateScrapeRequest(req.body.scrapeRequestId ,{
-            maxPages: req.body.maxPages,
-            maxItemsPerPage : req.body.maxItemsPerPage,
+            // maxPages: req.body.maxPages,
+            maxRecords : req.body.maxRecords,
             model: req.body.model
 
         }).then(function (data) {
@@ -111,8 +111,8 @@ module.exports = {
         ).catch(next);
     },
     removeScrapeRequestById: function (req, res, next){
-        console.log("i am in remove request")
-        console.log(req.params.scrapeRequestId)
+        // console.log("i am in remove request")
+        // console.log(req.params.scrapeRequestId)
 
         models.scraperRequest.removeScrapeRequestById(req.params.scrapeRequestId).then(function (data) {
                 res.json(data);

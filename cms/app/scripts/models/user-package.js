@@ -8,37 +8,11 @@ angular.module('webScraperCMS.models')
             return Restangular.one(route).get();
         };
 
-        // userPackage.getPackageById = function (id) {
-        //     return Restangular.one(route).customGET(id);
-        // };
-        //
-        // userPackage.create = function (packageName, maxPagesNumber,maxItemsPerPageNumber) {
-        //     return Restangular.one(route).customPOST(
-        //         {
-        //             packageName : packageName,
-        //             maxPagesNumber : maxPagesNumber,
-        //             maxItemsPerPageNumber:maxItemsPerPageNumber
-        //         }
-        //     );
-        // };
-        //
-        //
-        // userPackage.update = function (id , packageName, maxPagesNumber,maxItemsPerPageNumber) {
-        //     return Restangular.one(route).customPUT(
-        //         {
-        //             packageId:id,
-        //             packageName : packageName,
-        //             maxPagesNumber : maxPagesNumber,
-        //             maxItemsPerPageNumber:maxItemsPerPageNumber
-        //         }
-        //     );
-        // };
-
-        //
-        // userPackage.remove = function (packageId) {
-        //     // console.log("pack id "+packageId)
-        //     return Restangular.one(route + '/' + packageId).remove();
-        // };
+        UserPackage.update = function (id) {
+            return Restangular.one(route).customPUT({
+            packageId : id
+            });
+        };
 
         return UserPackage;
     });

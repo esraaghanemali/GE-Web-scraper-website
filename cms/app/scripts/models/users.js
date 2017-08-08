@@ -16,5 +16,17 @@ angular.module('webScraperCMS.models')
       newPassword: newPass
     }, '/change_password');
   };
+    User.changePackage = function(id) {
+        return Restangular.one(route).one('Package').customPOST({
+            packageId: id,
+        });
+    };
+    User.updateInfo = function(filed,value) {
+        return Restangular.one(route).one('UpdateInfo').customPOST({
+            filed: filed,
+            value:value
+        });
+    };
+
   return User;
 });

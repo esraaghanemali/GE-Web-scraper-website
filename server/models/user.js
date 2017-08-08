@@ -4,7 +4,8 @@ var jwt = require('jsonwebtoken');
 const Promise = require('bluebird');
 const config = require('../config/config');
 const errors = require('../utils/errors');
-const models = require('./user-package')
+const userPackageModel = require('./user-package')
+// const userPackageModel = require('./user-package')
 var userSchema = new mongoose.Schema({
     userPackage : {
         type: mongoose.Schema.Types.ObjectId,
@@ -103,7 +104,117 @@ userSchema.statics.getUserByToken = function (token) {
   })
 
 };
+userSchema.statics.updateInfo = function (user,filed,value) {
+    var thisModel = this;
 
+    return new Promise(function (resolve, reject) {
+        switch (filed){
+            case'username': {
+
+                thisModel.update({
+                    _id: user._id}, {
+                    username:value
+                }).then(function (data) {
+                    resolve(data)
+
+                }).catch(function (err) {
+                    reject(err)
+                });
+                break
+            }
+            case'firstName': {
+
+                thisModel.update({
+                    _id: user._id}, {
+                    firstName:value
+                }).then(function (data) {
+                    resolve(data)
+
+                }).catch(function (err) {
+                    reject(err)
+                });
+                break
+            }
+            case'lastName': {
+
+                thisModel.update({
+                    _id: user._id}, {
+                    lastName:value
+                }).then(function (data) {
+                    resolve(data)
+
+                }).catch(function (err) {
+                    reject(err)
+                });
+                break
+            }
+            case'phone': {
+
+                thisModel.update({
+                    _id: user._id}, {
+                    phone:value
+                }).then(function (data) {
+                    resolve(data)
+
+                }).catch(function (err) {
+                    reject(err)
+                });
+                break
+            }
+            case'email': {
+
+                thisModel.update({
+                    _id: user._id}, {
+                    email:value
+                }).then(function (data) {
+                    resolve(data)
+
+                }).catch(function (err) {
+                    reject(err)
+                });
+                break
+            }
+            case'password': {
+
+                thisModel.update({
+                    _id: user._id}, {
+                    password:value
+                }).then(function (data) {
+                    resolve(data)
+
+                }).catch(function (err) {
+                    reject(err)
+                });
+                break
+            }
+
+        }
+
+
+
+
+    })
+
+}
+userSchema.statics.changePackage = function (user,packageId) {
+    var thisModel = this;
+
+    return new Promise(function (resolve, reject) {
+        userPackageModel.findOne({_id:packageId}).then(function (package) {
+            thisModel.update({
+                _id: user._id}, {
+                userPackage:package
+            }).then(function (data) {
+             resolve(data)
+
+            }).catch(function (err) {
+                reject(err)
+            });
+        })
+
+    })
+
+}
 userSchema.statics.createUser = function (user) {
   console.log(user)
   return this.create(user);

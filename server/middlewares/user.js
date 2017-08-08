@@ -46,6 +46,23 @@ module.exports = {
       }
     ).catch(next);
   },
+    changePackage: function (req, res, next) {
+        models.user.changePackage(req.registeredUser,req.body.packageId)
+            .then(function (user) {
+
+                res.json(user);
+            }
+        ).catch(next);
+    },
+    updateInfo: function (req, res, next) {
+    models.user.updateInfo(req.registeredUser,req.body.filed,req.body.value)
+        .then(function (user) {
+
+                res.json(user);
+            }
+        ).catch(next);
+},
+
   getCurrentUser: function (req, res, next) {
     res.json(req.registeredUser);
   },

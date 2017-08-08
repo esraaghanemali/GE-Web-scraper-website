@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const errors = require('../utils/errors')
-
+const  status = require('./status')
 var scrapeRequestSchema = new mongoose.Schema({
 
     scrapeRequestId: {
@@ -9,11 +9,15 @@ var scrapeRequestSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    maxPages: {
+    // maxPages: {
+    //     type: Number,
+    // },
+    // maxItemsPerPage: {
+    //     type: Number,
+    // },
+    maxRecords: {
         type: Number,
-    },
-    maxItemsPerPage: {
-        type: Number,
+        defautl: 20
     },
     model : {
         type: mongoose.Schema.Types.ObjectId,
@@ -35,13 +39,31 @@ var scrapeRequestSchema = new mongoose.Schema({
 });
 scrapeRequestSchema.statics.createScrapeRequest = function (Request) {
     var thisModel = this;
+
+
+
     return new Promise(function (resolve, reject) {
-        thisModel.create(Request).then(function () {
-            resolve();
-        })
-            .catch(function (err) {
-                reject(errors.scrapeRequest.create)
+        status.findOne({statusName: 'Pending'})
+            .then(function(status){
+                if(! status)
+                {
+                    return Promise.reject(errors.status.notFound);
+                }
+                status = status.toObject();
+                delete status.statusId;
+                // console.log(status)
+                Request.status=status
+                thisModel.create(Request).then(function () {
+                    resolve();
+                })
+                    .catch(function (err) {
+                        console.log(err)
+                        reject(errors.scrapeRequest.create)
+                    });
+                // console.log( Request.status)
             });
+
+
 
     })
 };
@@ -57,7 +79,7 @@ scrapeRequestSchema.statics.getScrapeRequestById = function (id) {
             }
             data = data.toObject();
             delete data.scrapeRequestId;
-            console.log(data)
+            // console.log(data)
             return data;
         });
 };
@@ -73,10 +95,15 @@ scrapeRequestSchema.statics.updateScrapeRequest = function (id, request) {
     var thisModel = this;
     return new Promise(function (resolve, reject) {
         thisModel.getScrapeRequestById(id).then(function (request2) {
-            console.log("findd package "+ request2)
-            thisModel.update({scrapeRequestId: id}, {maxPages: request.maxPages, maxItemsPerPage: request.maxItemsPerPage,model: request.model.modelId})
+            // console.log("findd package "+ request2)
+            thisModel.update(
+                {scrapeRequestId: id},
+                {maxRecords: request.maxRecords,
+                   model: request.model.modelId,
+                    status:request.status
+                })
                 .catch(reject);
-            console.log('updated')
+            // console.log('updated')
             resolve();
         }).catch(function (err) {
             return  reject(err)
@@ -116,7 +143,7 @@ scrapeRequestSchema.statics.removeScrapeRequestById = function (id) {
 
     if(!id || id=='' )
     {
-        console.log('error remove')
+        // console.log('error remove')
         return  Promise.reject(errors.missingData)
 
     }
@@ -125,8 +152,8 @@ scrapeRequestSchema.statics.removeScrapeRequestById = function (id) {
 
 
         thisModel.remove({ _id: id}).then(function (data) {
-            console.log(data)
-            console.log('removed')
+            // console.log(data)
+            // console.log('removed')
             resolve(data);
         })
             .catch(function (err) {

@@ -97,6 +97,12 @@ angular.module('webScraperCMS.users', [])
           child: true
       },
       resolve: {
+          user: function($rootScope, authorization) {
+              // calling authorize() here to make sure that the user is resolved after the authorization
+              return authorization.authorize().then(function() {
+                  return $rootScope.currentUser;
+              });
+          }
           // user: function($rootScope, $q, $state, $stateParams, authorization, models) {
           //     return authorization.authorize().then(function() {
           //         var deferred = $q.defer();

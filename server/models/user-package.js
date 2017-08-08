@@ -13,14 +13,14 @@ packageName:{
     type: String,
     defautl: 'Default'
 },
-    maxPagesNumber: {
-        type: Number,
-        defautl: 20
-    },
-    maxItemsPerPageNumber: {
-        type: Number,
-        defautl: 20
-    },
+    // maxPagesNumber: {
+    //     type: Number,
+    //     defautl: 20
+    // },
+    // maxItemsPerPageNumber: {
+    //     type: Number,
+    //     defautl: 20
+    // },
     maxRecords: {
         type: Number,
         defautl: 20
@@ -58,8 +58,8 @@ userPackageSchema.statics.createDefaultUserPackage = function () {
             return thisModel.createUserPackage({
                 packageId: new Date().getTime(),
                 packageName: 'Default',
-                maxPagesNumber: 50,
-                maxItemsPerPageNumber:1000,
+                // maxPagesNumber: 50,
+                // maxItemsPerPageNumber:1000,
                 maxRecords:10000,
                 totalPrice:0
 
@@ -104,9 +104,10 @@ userPackageSchema.statics.updatePackage = function (packageId, package) {
     return new Promise(function (resolve, reject) {
         thisModel.getPackageById(packageId).then(function (package2) {
             console.log("findd package "+ package2)
-            thisModel.update({_id: packageId}, {packageName: package.packageName,
-                maxPagesNumber: package.maxPagesNumber,
-                maxItemsPerPageNumber: package.maxItemsPerPageNumber,
+            thisModel.update({_id: packageId}, {
+                packageName: package.packageName,
+                // maxPagesNumber: package.maxPagesNumber,
+                // maxItemsPerPageNumber: package.maxItemsPerPageNumber,
                 maxRecords:package.maxRecords,
                 totalPrice:package.totalPrice
             })
