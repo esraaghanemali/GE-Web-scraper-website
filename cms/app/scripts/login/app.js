@@ -12,7 +12,7 @@ angular.module('webScraperCMS.login', [])
         var deferred = $q.defer();
         // check if the user is already logged in then redirect to dashboard
         session.identity().then(function() {
-          $state.go('app.home');
+          $state.go('app.Index');
           deferred.reject();
         }, deferred.resolve);
 
@@ -51,7 +51,7 @@ angular.module('webScraperCMS.login', [])
       $rootScope.returnToStateParams = undefined;
     }
     else {
-      $state.go('app.home');
+      $state.go('app.Index');
     }
   };
 });

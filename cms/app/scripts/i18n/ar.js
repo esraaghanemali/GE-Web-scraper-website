@@ -20,7 +20,11 @@ angular.module('webScraperCMS.i18n')
     },
       userPackage: 'حزمة المستخدم',
       Request : 'طلب استخراج',
-      Models : 'جميع ملفاتي'
+      Models : 'جميع ملفاتي',
+      addModel:'إضافة ملف',
+      myData : 'المعطيات المستخرجة',
+      myModels:'ملفاتي',
+      myRequests : 'طلباتي',
   },
     userApp: {
         Home:'الرئيسية',
@@ -95,6 +99,7 @@ Services:'خدماتنا',
         'save.success': 'تم حفظ الملف  بنجاح',
         'remove.success': 'تم حذف الملف  بنجاح',
         'request.success':'تم طلب الملف  بنجاح',
+        url:'الرابط التشعبي للموقع',
 
         errors: {
             // 'username.required': 'Username is required',
@@ -185,7 +190,8 @@ Services:'خدماتنا',
             // noMatch: 'New password does not match the retyped password',
             // oldPassWrong: 'Old password is incorrect'
         },
-        maxPages: 'العدد الاعظمي للصفحات',
+
+        maxRecords: 'العدد الاعظمي للعناصر',
         maxItemsPerPage : 'العدد الاعظمي للعناصر في الصفحة الواحدة',
         length: 'الطول',
         'save.success': 'تم حفظ الطلب بنجاح'

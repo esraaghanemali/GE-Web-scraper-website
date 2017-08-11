@@ -12,6 +12,36 @@
                     <!--<div ng-message="required">{{"user.errors.username.required" | translate}}</div>-->
                 <!--</div>-->
             </md-input-container>
+
+            <md-input-container class="md-block" >
+                <h5>Choose The Category</h5>
+                <md-select name="category" ng-model="modelFile.category"
+
+                           class="md-default-theme" style="width: 100%"
+                           ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">
+                    <md-option ng-repeat="category in categories"
+                               ng-value="category">
+
+                        {{category.categoryName}}
+
+
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+
+            <md-input-container class="md-block">
+                <label translate="modelFiles.url"></label>
+                <input required name="url" ng-model="modelFile.url" auto-focus ng-readonly="!isNew">
+                <!--<div ng-messages="modelFilesForm.userName.$error">-->
+                <!--<div ng-message="required">{{"user.errors.username.required" | translate}}</div>-->
+                <!--</div>-->
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label translate="modelFiles.desc"></label>
+                <input  name="desc" ng-model="modelFile.desc" auto-focus ng-readonly="!isNew">
+
+            </md-input-container>
             <md-container>
                 <button  class="md-raised md-primary" ngf-select="uploadFiles($files, $invalidFiles)" multiple>
                     <!--<button ngf-select="uploadFiles($files, $invalidFiles)" multiple-->
@@ -27,11 +57,7 @@
 
 
             </md-container>
-            <md-input-container class="md-block">
-                <label translate="modelFiles.desc"></label>
-                <input  name="desc" ng-model="modelFile.desc" auto-focus ng-readonly="!isNew">
 
-            </md-input-container>
 
 
 

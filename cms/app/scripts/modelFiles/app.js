@@ -52,6 +52,13 @@ angular.module('webScraperCMS.modelFiles', [])
                         }
                         return deferred.promise;
                     });
+                },
+                categories: function ($q, models) {
+                    var deferred = $q.defer();
+                    models.categories.getAllcategories().then(function (data) {
+                        deferred.resolve(data);
+                    }, deferred.reject);
+                    return deferred.promise;
                 }
             }
         })

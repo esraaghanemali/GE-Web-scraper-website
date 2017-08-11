@@ -1,14 +1,14 @@
 <nav ui-nav>
   <ul class="nav" ng-class="{'rtl': app.setting.rtl}">
-    <li ui-sref-active="active">
+    <li ui-sref-active="active" ng-if="currentUser.permissions.administration">
       <a md-ink-ripple ui-sref="app.home" ng-class="{'rtl': app.setting.rtl}">
-        <i class="icon mdi-social-people i-20"></i>
+        <i class="icon mdi-action-home i-20"></i>
         <span class="font-normal">Home</span>
       </a>
     </li>
     <li ui-sref-active="active" ng-if="currentUser.permissions.administration">
       <a md-ink-ripple ui-sref="app.userPackages" ng-class="{'rtl': app.setting.rtl}">
-        <i class="icon mdi-social-people i-20"></i>
+        <i class="icon mdi-av-play-shopping-bag i-20"></i>
         <span class="font-normal">packages </span>
       </a>
     </li>
@@ -20,30 +20,56 @@
     </li>
     <li ui-sref-active="active" ng-if="currentUser.permissions.administration">
       <a md-ink-ripple ui-sref="app.modelFiles" ng-class="{'rtl': app.setting.rtl}">
-        <i class="icon mdi-maps-beenhere i-20"></i>
+        <i class="icon mdi-file-folder i-20"></i>
         <span class="font-normal" translate="aside.nav.ModelFiles"></span>
       </a>
     </li>
 
-    <li ui-sref-active="active">
+    <li ui-sref-active="active"  ng-if="currentUser.permissions.administration">
       <a md-ink-ripple ui-sref="app.Index" ng-class="{'rtl': app.setting.rtl}">
-        <i class="icon mdi-maps-beenhere i-20"></i>
+        <i class="icon mdi-av-web i-20"></i>
         <span class="font-normal" translate="global.userWebsite">user website</span>
       </a>
     </li>
 
     <li ui-sref-active="active">
-      <a md-ink-ripple ui-sref="app.Request" ng-class="{'rtl': app.setting.rtl}">
-        <i class="icon mdi-maps-beenhere i-20"></i>
-        <span class="font-normal" translate="global.Request"></span>
+      <a md-ink-ripple ui-sref="app.myModels" ng-class="{'rtl': app.setting.rtl}">
+        <i class="icon mdi-file-folder i-20"></i>
+        <span class="font-normal" translate="global.myModels"></span>
+      </a>
+    </li>
+    <li ui-sref-active="active">
+      <a md-ink-ripple ui-sref="app.myRequests" ng-class="{'rtl': app.setting.rtl}">
+        <i class="icon mdi-action-backup i-20"></i>
+        <span class="font-normal" translate="global.myRequests"></span>
+      </a>
+    </li>
+    <li ui-sref-active="active">
+      <a md-ink-ripple ui-sref="app.myData" ng-class="{'rtl': app.setting.rtl}">
+        <i class="icon mdi-file-cloud-done i-20"></i>
+        <span class="font-normal" translate="global.myData"></span>
       </a>
     </li>
 
     <li ui-sref-active="active">
-      <a md-ink-ripple ui-sref="app.Models" ng-class="{'rtl': app.setting.rtl}">
-        <i class="icon mdi-maps-beenhere i-20"></i>
-        <span class="font-normal" translate="global.Models"></span>
+      <a md-ink-ripple  ui-sref="app.modelFile({ modelFileId: 'new' })" ng-class="{'rtl': app.setting.rtl}">
+        <i class="icon mdi-content-add-box i-20"></i>
+        <span class="font-normal" translate="global.addModel"></span>
       </a>
     </li>
+
+    <li ui-sref-active="active">
+      <a md-ink-ripple ui-sref="app.Request" ng-class="{'rtl': app.setting.rtl}">
+        <i class="icon mdi-content-add-box i-20"></i>
+        <span class="font-normal" translate="global.Request"></span>
+      </a>
+    </li>
+
+    <!--<li ui-sref-active="active">-->
+      <!--<a md-ink-ripple ui-sref="app.Models" ng-class="{'rtl': app.setting.rtl}">-->
+        <!--<i class="icon mdi-maps-beenhere i-20"></i>-->
+        <!--<span class="font-normal" translate="global.Models"></span>-->
+      <!--</a>-->
+    <!--</li>-->
   </ul>
 </nav>

@@ -15,16 +15,16 @@
             <!--&gt;File Name</label></div>-->
             <!--</th>-->
             <th>package Name</th>
-            <th>page Price</th>
-            <th>item per page</th>
+            <th>Max Records</th>
+            <th>Total Price</th>
             <th></th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="row in $data" ng-if="$data.length">
             <td ui-sref="app.userPackage({ userPackage: row, packageId: row.id })">{{row.packageName}}</td>
-            <td ui-sref="app.userPackage({ userPackage: row, packageId: row.id })">{{row.maxPagesNumber}}</td>
-            <td ui-sref="app.userPackage({ userPackage: row, packageId: row.id })">{{row.maxItemsPerPageNumber}}</td>
+            <td ui-sref="app.userPackage({ userPackage: row, packageId: row.id })">{{row.maxRecords}}</td>
+            <td ui-sref="app.userPackage({ userPackage: row, packageId: row.id })">{{row.totalPrice}}</td>
             <td>
                 <md-button ng-if="currentUser.permissions.userPackage.remove" type="button" class="md-raised red-500" ng-click="remove(row)"><i
                         class="mdi mdi-content-block"></i></md-button>

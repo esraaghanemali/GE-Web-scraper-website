@@ -10,11 +10,11 @@ angular.module('webScraperCMS.home', [])
             data: {
                 requiredPermission: true
             }
-            // ,
-            // resolve: {
-            //     authorize: function (authorization) {
-            //         return authorization.authorize();
-            //     }
-            // }
+            ,
+            resolve: {
+                authorize: function (authorization) {
+                    return authorization.authorize();
+                }
+            }
         })
     });

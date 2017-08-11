@@ -14,9 +14,10 @@
                 <!--<div class="md-form-group float-label"><input class="md-input" ng-model="filter.name"/> <label-->
                 <!--&gt;File Name</label></div>-->
             <!--</th>-->
-            <th>file Name</th>
-            <th>file Description</th>
-            <th>file Url</th>
+            <th>File Name</th>
+            <th>File Description</th>
+            <th>File Location</th>
+            <th>Deleted</th>
             <th>User</th>
             <th>Remove</th>
         </tr>
@@ -27,6 +28,8 @@
             <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.desc}}</td>
 
             <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.fileLocation}}</td>
+            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.deleted}}</td>
+
             <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.user.firstName}}</td>
             <td>
                 <md-button ng-if="currentUser.permissions.modelFiles.edit" type="button" class="md-raised red-500"

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('webScraperCMS.modelFiles')
-    .controller('ModelFileCtrl', function($rootScope, $scope, $filter, $state,API, models, notifyService,Upload, modelFile) {
+    .controller('ModelFileCtrl', function($rootScope, $scope, $filter, $state,API, models, notifyService,Upload, modelFile,categories) {
         $scope.modelFile = modelFile;
         $scope.isNew = angular.isUndefined($scope.modelFile.id) || $scope.modelFile.id === '';
 
@@ -11,27 +11,9 @@ angular.module('webScraperCMS.modelFiles')
 
             angular.forEach(files, function(file) {
 
-                // file.upload = Upload.upload({
-                //     url : API.apiHost +  '/modelFiles/save',
-                //
-                //     // url : '/cms/app/scripts/modelFiles/controllers/upload.php',
-                //
-                //     data: {file: file}
-                // });
-                //
-                // file.upload.then(function (response) {
-                //     // $timeout(function () {
-                //     //     file.result = response.data;
-                //     // });
-                // }, function (response) {
-                //     if (response.status > 0)
-                //         $scope.errorMsg = response.status + ': ' + response.data;
-                // }, function (evt) {
-                //     file.progress = Math.min(100, parseInt(100.0 *
-                //         evt.loaded / evt.total));
-                // });
             });
         }
+        $scope.categories = categories
 
         console.log(d)
         $scope.saveModelFile = function() {
@@ -53,7 +35,7 @@ angular.module('webScraperCMS.modelFiles')
             Upload.upload({
                 url : API.apiHost +  '/modelFiles/save',
                 // method:'POST',
-                data: {file: $scope.files , fileName : $scope.modelFile.fileName , desc: $scope.modelFile.desc}
+                data: {file: $scope.files , fileName : $scope.modelFile.fileName , desc: $scope.modelFile.desc, category: $scope.modelFile.category}
             })
 
             .then(function (response) {

@@ -1,19 +1,24 @@
 angular.module('webScraperCMS.userW')
-    .controller('RequestCtrl',function($rootScope, $scope, $filter, $state, models,temptModels,modelFiles,request, notifyService) {
+    .controller('RequestCtrl',function($rootScope, $scope, $filter, $state, models,temptModels,modelFiles,request,extractedDataTypes, notifyService) {
         $scope.requestModels = modelFiles;
         $scope.temptModels = temptModels;
 
         $scope.request = request;
+        $scope.extractedDataTypes = extractedDataTypes
 
         $scope.saveRequest = function() {
             if ($scope.isLoading) {
                 return;
             }
-            // if (!$scope.userForm.$valid) {
-            //     return notifyService.notify($filter('translate')('user.errors.formNotValid'), {
-            //         type: 'danger'
-            //     });
-            // }
+            if(!$scope.request.extractedDataType || $scope.request.extractedDataType===null )
+            {
+                var msg = 'modelFiles.errors.required';
+
+                notifyService.notify($filter('translate')(msg), {
+                    type: 'danger'
+                });
+                return;
+            }
             if( $scope.request.requestModel )
             $scope.request.requestModel = _.find($scope.request, {id: $scope.request.requestModel.id});
             if( $scope.request.temptModel )

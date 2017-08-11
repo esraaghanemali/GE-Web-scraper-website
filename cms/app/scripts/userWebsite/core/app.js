@@ -8,7 +8,12 @@ angular.module('webScraperCMS.userW', [])
     controller: 'IndexCtrl',
     data: {
       requiredPermission: true
-    }
+    },
+      resolve : {
+          authorize: function (authorization) {
+              return authorization.authorize();
+          }
+      }
   }).state('app.About', {
     url: '/GEWebScraper/about',
     templateUrl: 'views/userTemplates/about.html',
@@ -36,8 +41,13 @@ angular.module('webScraperCMS.userW', [])
       controller: 'StartCtrl',
       data: {
           requiredPermission: true
-      }
-  }).state('app.Models', {
+      },
+      resolve: {
+          authorize: function (authorization) {
+              return authorization.authorize();
+          }}
+  })
+      .state('app.Models', {
       url: '/GEWebScraper/Models',
       templateUrl: 'views/userTemplates/userModels.html',
       controller: 'UserModelsCtrl',
@@ -50,7 +60,51 @@ angular.module('webScraperCMS.userW', [])
           authorize: function (authorization) {
               return authorization.authorize();
           }}
-  }).state('app.Request', {
+  })
+
+      .state('app.myModels', {
+          url: '/GEWebScraper/myModels',
+          templateUrl: 'views/userTemplates/myModels.html',
+          controller: 'UserModelsCtrl',
+          data: {
+              requiredPermission: 'models.list',
+              child: true
+          }
+          ,
+          resolve: {
+              authorize: function (authorization) {
+                  return authorization.authorize();
+              }}
+      })
+      .state('app.myData', {
+          url: '/GEWebScraper/myData',
+          templateUrl: 'views/userTemplates/myData.html',
+          controller: 'UserModelsCtrl',
+          data: {
+              requiredPermission: 'models.list',
+              child: true
+          }
+          ,
+          resolve: {
+              authorize: function (authorization) {
+                  return authorization.authorize();
+              }}
+      })
+      .state('app.myRequests', {
+          url: '/GEWebScraper/myRequests',
+          templateUrl: 'views/userTemplates/myRequests.html',
+          controller: 'UserModelsCtrl',
+          data: {
+              requiredPermission: 'models.list',
+              child: true
+          }
+          ,
+          resolve: {
+              authorize: function (authorization) {
+                  return authorization.authorize();
+              }}
+      })
+      .state('app.Request', {
       url: '/GEWebScraper/Request',
       templateUrl: 'views/userTemplates/request.html',
       controller: 'RequestCtrl',
@@ -88,6 +142,19 @@ angular.module('webScraperCMS.userW', [])
                   deferred.resolve(modelFiles);
               }, deferred.reject);
               return deferred.promise;
+          },
+          extractedDataTypes:function ($q, models) {
+              console.log('in extracted data type')
+              var deferred = $q.defer();
+              models.extractedDataTypes.getAllExtractedDataTypes()
+                  .then(function (extractedDataTypes) {
+                  deferred.resolve(extractedDataTypes);
+              }, deferred.reject).catch(function (err) {
+                  console.log(err)
+              });
+              return deferred.promise;
+
+
           }
       }
   })

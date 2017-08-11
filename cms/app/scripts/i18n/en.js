@@ -25,8 +25,13 @@ angular.module('webScraperCMS.i18n')
     }
       ,
       userPackage: 'User Package',
-      Request:'Request file',
-      Models : 'My Files'
+      Request:'Add Request',
+      Models : 'My Files',
+      addModel : 'Add Model File',
+      myData : 'My Data',
+      myModels:'My Model Files',
+      myRequests : 'My Requests',
+
   },
     userApp: {
         Home:'Home',
@@ -154,7 +159,7 @@ angular.module('webScraperCMS.i18n')
             // noMatch: 'New password does not match the retyped password',
             // oldPassWrong: 'Old password is incorrect'
         },
-        maxPages: 'Max Pages',
+        maxRecords: 'Max Records',
         maxItemsPerPage : 'Max Items Per Page',
         length: 'Length',
         'save.success': 'Request saved successfully',
@@ -239,7 +244,7 @@ angular.module('webScraperCMS.i18n')
             addModelFile: 'Add New Model File'
         },
         desc:'Description',
-
+url:'Url',
         fileName: 'Model Name',
         length: 'Length',
         fileLocation : 'file Location',

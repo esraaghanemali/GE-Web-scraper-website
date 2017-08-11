@@ -42,7 +42,9 @@ angular.module('webScraperCMS', [
 ]).constant('_', _)
   .config(function($stateProvider, $urlRouterProvider, $localStorageProvider, $mdDateLocaleProvider) {
   $localStorageProvider.setKeyPrefix('webScraperCMS');
-  $urlRouterProvider.otherwise('/app/home');
+
+          $urlRouterProvider.otherwise('/app/GEWebScraper/index');
+
   $stateProvider.state('app', {
     abstract: true,
     url: '/app',
