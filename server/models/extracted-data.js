@@ -15,6 +15,11 @@ var extractedDataSchema = new mongoose.Schema({
     url: {
         type: String
     },
+    date :{
+        type:Date,
+        default : Date.now()
+
+    },
     scrapeRequest : {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'scrapeRequest'
@@ -62,7 +67,7 @@ extractedDataSchema.statics.getExtractedDataByUser = function (user) {
                 // console.log(requests)
                 resolve(requests);
             }) .catch(function (err) {
-                // console.log(err)
+                console.log(err)
                 reject(errors.extractedData.create)
             });
 

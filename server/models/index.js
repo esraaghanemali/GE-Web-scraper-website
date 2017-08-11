@@ -12,6 +12,9 @@ var models = {
     status : require('./status'),
     scraperRequest : require('./scrape-request'),
     extractedData : require('./extracted-data'),
+    category:require('./category'),
+    extractedDataType : require('./extractedDataType'),
+    requestType:require('./requestType'),
     webScraperConstants : require('./webScraper-constants')
 };
 

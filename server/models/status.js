@@ -88,6 +88,7 @@ statusSchema.statics.getDefaultStatus = function () {
 
 
 };
+
 statusSchema.statics.updateStatus = function (statusId, status) {
 
     if(!statusId || statusId==''|| !status )

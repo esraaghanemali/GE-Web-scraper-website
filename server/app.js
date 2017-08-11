@@ -17,6 +17,9 @@ var statusRoutes = require('./routes/status');
 var userPackageRoutes = require('./routes/user-package');
 var webScraperConstantsRoutes = require('./routes/webScraper-constants');
 var modelFilesRoutes = require('./routes/modelFiles');
+var categoriesRoutes = require('./routes/category');
+var extractedDataTypeRoutes = require('./routes/extractedDataType');
+
 
 var app = express();
 // uncomment after placing your favicon in /public
@@ -28,8 +31,6 @@ app.use(cookieParser());
 app.use(require('cors')());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-//user routes in app
 app.use('/users', usersRoutes);
 app.use('/modelFiles', modelFilesRoutes);
 app.use('/status', statusRoutes);
@@ -37,7 +38,8 @@ app.use('/webScraperConstants', webScraperConstantsRoutes);
 app.use('/userPackage', userPackageRoutes);
 app.use('/scrapeRequest', scrapeRequestRoutes);
 app.use('/extractedData', extractedDataRoutes);
-
+app.use('/categories', categoriesRoutes);
+app.use('/extractedDataTypes', extractedDataTypeRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

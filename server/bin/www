@@ -33,7 +33,17 @@ models.connect().then(function(){
         console.log(err)
     })
 
-    var d =models.status.getDefaultStatus()
+models.category.createDefaultCategory().catch(function (err) {
+    console.log(err)
+
+})
+
+    models.extractedDataType.createDefaultExtractedDataType().catch(function (err) {
+        console.log(err)
+
+    })
+
+
     // console.log(d)
   //   models.model.createModel(
   //     {

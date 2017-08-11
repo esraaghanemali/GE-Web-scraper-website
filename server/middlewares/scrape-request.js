@@ -35,7 +35,6 @@ module.exports = {
             }).catch(next);
     },
     createScrapeRequest: function (req, res, next) {
-
         if( req.body.temptModel)
         {
             // console.log("in admin")
@@ -46,6 +45,7 @@ module.exports = {
                 model : req.body.temptModel,
                 user:req.registeredUser,
                 date : new Date().getTime(),
+                extractedDataTypes :req.body.extractedDataType
 
             }).then(function (data) {
 
@@ -64,6 +64,8 @@ module.exports = {
                 model : req.body.requestModel,
                 user:req.registeredUser,
                 date : new Date().getTime(),
+                extractedDataTypes :req.body.extractedDataType
+
 
             }).then(function (data) {
 

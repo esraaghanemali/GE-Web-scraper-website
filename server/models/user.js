@@ -249,7 +249,7 @@ userSchema.statics.login = function (authField, password) {
 userSchema.statics.createAdmin = function () {
   console.log("adminnnnnnnnnnnn")
     console.log('-------------------')
-
+  
     var userModel = this;
   return this.findOne({
     username: 'admin'

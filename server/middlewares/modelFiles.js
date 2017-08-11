@@ -36,9 +36,9 @@ module.exports = {
                 console.log(err);
                 // return res.end("Error uploading file.");
             } else {
-                // console.log("body");
+                console.log("***********************************");
                 //
-                 console.log(req.files[0]);
+                 console.log(req.body.category);
 
 
                 models.model.createModel({
@@ -46,7 +46,10 @@ module.exports = {
                             fileName: req.body.fileName,
                             user:req.registeredUser.id,
                             desc : req.body.desc,
-                            fileLocation:req.files[0].path
+                            fileLocation:req.files[0].path,
+                            url : req.body.url,
+                            category: req.body.category,
+                            deleted:'No'
                         }).then(function (modelFile) {
                             console.log("created")
                             console.log(modelFile)
@@ -93,6 +96,7 @@ module.exports = {
             modelId:new Date().getTime(),
             fileName: req.body.fileName,
             user:req.registeredUser.id,
+            url : req.body.url,
             desc : req.body.desc
         }).then(function (modelFile) {
                 res.json(modelFile);

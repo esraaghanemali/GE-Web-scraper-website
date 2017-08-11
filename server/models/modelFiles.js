@@ -14,13 +14,21 @@ var modelSchema = new mongoose.Schema({
         type: String,
         required: true,
         defautl: 'default'
-    }
-    ,
+    },
+        deleted: {
+            type: String,
+            default: 'No'
+        }
+        ,
     fileLocation: {
         type: String,
-        // required: true,
+        required: true,
         defautl: 'default'
     } ,
+    url: {
+        type: String,
+        // required: true,
+    },
     desc: {
         type: String,
         // required: true,
@@ -30,6 +38,10 @@ var modelSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
+    } ,
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'category'
     }
 });
 modelSchema.statics.createModel = function (model) {
@@ -66,7 +78,7 @@ modelSchema.statics.getAdminModelFiles = function () {
         //     });
 
         users.find({role:'admin'}).then(function (admins) {
-            thisModel.find({user : {$in : admins}}).then(function (modelFiles) {
+            thisModel.find({user : {$in : admins}}).ne('deleted','Yes').then(function (modelFiles) {
                 // console.log(modelFiles)
                 resolve(modelFiles);
             }) .catch(function (err) {
@@ -85,7 +97,7 @@ modelSchema.statics.getAdminModelFiles = function () {
 modelSchema.statics.getModelFilesByUsername = function (user) {
     var thisModel = this;
     return new Promise(function (resolve, reject) {
-        thisModel.find({user : user}).then(function (modelFiles) {
+        thisModel.find({user : user}).ne('deleted','Yes').then(function (modelFiles) {
             // console.log('created pac')
             resolve(modelFiles);
         })
@@ -175,6 +187,31 @@ modelSchema.statics.getModelById = function (ModelId) {
 //     })
 // }
 
+// modelSchema.statics.removeModeleById = function (id) {
+//
+//     if(!id || id=='' )
+//     {
+//         console.log('error remove')
+//         return  Promise.reject(errors.missingData)
+//
+//     }
+//     var thisModel = this;
+//     return new Promise(function (resolve, reject) {
+//         // console.log("findd package "+ package)
+//         thisModel.remove({ _id: id}).then(function (data) {
+//             console.log(data)
+//             console.log('removed')
+//             resolve(data);
+//         })
+//             .catch(function (err) {
+//                 return  reject(err)
+//             })
+//
+//     }).catch(function (err) {
+//         return  reject(err)
+//     })
+// }
+
 modelSchema.statics.removeModeleById = function (id) {
 
     if(!id || id=='' )
@@ -185,8 +222,9 @@ modelSchema.statics.removeModeleById = function (id) {
     }
     var thisModel = this;
     return new Promise(function (resolve, reject) {
-        // console.log("findd package "+ package)
-        thisModel.remove({ _id: id}).then(function (data) {
+
+
+        thisModel.update({ _id: id},{deleted: 'Yes'}).then(function (data) {
             console.log(data)
             console.log('removed')
             resolve(data);
@@ -199,4 +237,6 @@ modelSchema.statics.removeModeleById = function (id) {
         return  reject(err)
     })
 }
+
+
 module.exports = mongoose.model('model', modelSchema, 'model');

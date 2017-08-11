@@ -177,5 +177,22 @@ module.exports = {
             code: 152,
             status: 400
         }
+        },
+    category : {
+        //code 140
+        notFound : {
+            error: 'no such category variable found',
+            code: 140,
+            status: 404
+        }, update : {
+            error: 'unable to update category',
+            code: 141,
+            status: 400
         }
+        , create : {
+            error: 'unable to create category',
+            code: 142,
+            status: 400
+        }
+    }
 };

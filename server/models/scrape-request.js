@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const errors = require('../utils/errors')
 const  status = require('./status')
+const requestType = require('./requestType')
 var scrapeRequestSchema = new mongoose.Schema({
 
     scrapeRequestId: {
@@ -53,8 +54,23 @@ scrapeRequestSchema.statics.createScrapeRequest = function (Request) {
                 delete status.statusId;
                 // console.log(status)
                 Request.status=status
-                thisModel.create(Request).then(function () {
-                    resolve();
+                thisModel.create(Request).then(function (data) {
+
+                        for(var  i =0 ; i< Request.extractedDataTypes.length;i++)
+                        {
+                            requestType.createRequestType(
+                                {
+                                    scrapeRequest: data,
+                                    extractedDataType: Request.extractedDataTypes[i]
+                                }
+                            ).catch(function (err) {
+                                console.log(err)
+                            })
+                        }
+
+
+
+                    resolve(data);
                 })
                     .catch(function (err) {
                         console.log(err)
@@ -124,20 +140,35 @@ scrapeRequestSchema.statics.getScrapeRequestByUser = function (user) {
     var thisModel = this
 
     return new Promise(function (resolve, reject) {
+        status.findOne({statusName: 'Pending'})
+            .then(function(status){
+                if(! status)
+                {
+                    return Promise.reject(errors.status.notFound);
+                }
+                status = status.toObject();
+                delete status.statusId;
 
-            thisModel.find({user : user}).populate('model').populate('user').populate('status').then(function (scrapeRequests) {
-                // console.log(scrapeRequests)
+                thisModel.find({user : user})
+                    .populate('model')
+                    .populate('user')
+                    .populate('status')
+                    .then(function (scrapeRequests) {
 
-                resolve(scrapeRequests);
-            }) .catch(function (err) {
-                // console.log(err)
-                reject(errors.scrapeRequest.create)
+                    resolve(scrapeRequests);
+                }) .catch(function (err) {
+                    console.log(err)
+                    reject(errors.scrapeRequest.create)
+                });
             });
+
+
 
 
     })
 
 }
+
 
 scrapeRequestSchema.statics.removeScrapeRequestById = function (id) {
 
@@ -148,18 +179,32 @@ scrapeRequestSchema.statics.removeScrapeRequestById = function (id) {
 
     }
     var thisModel = this;
+
+
     return new Promise(function (resolve, reject) {
 
+        status.findOne({statusName: 'Removed'})
+            .then(function(status){
+                if(! status)
+                {
+                    return Promise.reject(errors.status.notFound);
+                }
+                status = status.toObject();
+                delete status.statusId;
+                // console.log(status)
 
-        thisModel.remove({ _id: id}).then(function (data) {
-            // console.log(data)
-            // console.log('removed')
-            resolve(data);
-        })
-            .catch(function (err) {
-                return  reject(err)
-            })
 
+                thisModel.update({ _id: id},{status : status}).then(function (data) {
+                    // console.log(data)
+                    // console.log('removed')
+                    resolve(data);
+                })
+                    .catch(function (err) {
+                        return  reject(err)
+                    })
+
+                // console.log( Request.status)
+            });
 
     }).catch(function (err) {
         return  reject(err)
@@ -168,6 +213,38 @@ scrapeRequestSchema.statics.removeScrapeRequestById = function (id) {
 
 
 }
+
+
+
+// scrapeRequestSchema.statics.removeScrapeRequestById = function (id) {
+//
+//     if(!id || id=='' )
+//     {
+//         // console.log('error remove')
+//         return  Promise.reject(errors.missingData)
+//
+//     }
+//     var thisModel = this;
+//     return new Promise(function (resolve, reject) {
+//
+//
+//         thisModel.remove({ _id: id}).then(function (data) {
+//             // console.log(data)
+//             // console.log('removed')
+//             resolve(data);
+//         })
+//             .catch(function (err) {
+//                 return  reject(err)
+//             })
+//
+//
+//     }).catch(function (err) {
+//         return  reject(err)
+//     })
+//
+//
+//
+// }
 // modelSchema.statics.makeRequest = function (model,maxPages,maxItemsPerPage) {
 //
 //     if(!model )
