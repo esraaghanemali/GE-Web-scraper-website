@@ -1,16 +1,70 @@
-angular.module('webScraperCMS.home').controller('ChartCtrl', ['$scope', function($scope) {
-  $scope.plot_pie = [];
-  var series = Math.floor(Math.random() * 4) + 3;
+angular.module('webScraperCMS.home')
+    .controller('ChartCtrl', function($scope,models,categories,users,packages,extractedDataTypes) {
 
-  for (var i = 0; i < series; i++) {
-    $scope.plot_pie[i] = {
-      label: "Series" + (i + 1),
-      data: Math.floor(Math.random() * 100) + 1
-    }
-  }
+        console.log('users')
 
-  $scope.plot_line = [[1, 7.5], [2, 7.5], [3, 5.7], [4, 8.9], [5, 10], [6, 7], [7, 9], [8, 6], [9, 8], [10, 9]];
-  $scope.plot_line_1 = [[1, 9.5], [2, 9.4], [3, 9.5], [4, 9.5], [5, 9.7], [6, 9.5], [7, 9], [8, 9.9], [9, 9.6], [10, 9.3]];
-  $scope.plot_line_2 = [[1, 4.5], [2, 4.2], [3, 4.5], [4, 4.3], [5, 4.5], [6, 4.7], [7, 4.6], [8, 4.8], [9, 4.6], [10, 4.5]];
-  $scope.plot_line_3 = [[1, 14], [2, 5.7], [3, 9.6], [4, 7.8], [5, 6.6], [6, 10.5]];
-}]);
+        console.log(users)
+        //
+        // $scope.labels = ["January", "February", "March", "April",
+        //     "May", "June", "July" , "August", "September",
+        //     "October" ,"November", "December"];
+        // $scope.series = ['Requests', 'Extraced Data'];
+        // $scope.data = [
+        //     [65, 59, 80, 81, 56, 55, 40,120]
+        //     ,
+        //      [28, 48, 40, 19, 86, 27, 90,12]
+        //
+        // ];
+        // $scope.onClick = function (points, evt) {
+        //     console.log(points, evt);
+        // };
+
+        var categoryNames  = categories.map(function (x) {
+            return x._id
+        })
+        var categoryData =  categories.map(function (x) {
+            return x.files
+        })
+        //Categories precentage
+        $scope.circleLabelsCategories = categoryNames
+        $scope.circleDataCategories = categoryData
+
+
+        //extractedDataTypes precentage
+
+        var extractedDataTypeNames  = extractedDataTypes.map(function (x) {
+            return x._id
+        })
+        var extractedDataTypesData =  extractedDataTypes.map(function (x) {
+            return x.requests
+        })
+
+        $scope.circleLabelsTypes =extractedDataTypeNames
+        $scope.circleDataTypes =extractedDataTypesData;
+
+        //packages
+
+        var packagesNames  = packages.map(function (x) {
+            return x._id
+        })
+        var packagesData =  packages.map(function (x) {
+            return x.username
+        })
+        $scope.circleLabelsPackages = packagesNames
+        $scope.circleDataPackages = packagesData
+var userModels = users.models
+var userRequests = users.requests
+      var  userNames = users.users
+        var  userPackages = users.packages
+        // Simulate async data update
+        $scope.rectangleLabels = userNames
+        $scope.rectangleData = [
+            userModels,
+            userRequests,
+            userPackages
+        ];
+        $scope.series = ['Models', 'Requests','Package']
+
+
+
+    });

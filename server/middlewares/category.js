@@ -20,6 +20,7 @@ module.exports = {
         }).catch(next);
 
     },
+
     getCategoryById: function (req, res, next) {
         models.Category.getCategoryById(req.params.categoryId)
             .then(function (data) {

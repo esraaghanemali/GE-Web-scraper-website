@@ -10,6 +10,7 @@ router.get('/', middleware.getModelFiles)
     .get('/model/:modelFileId', middleware.getModelFileById)
     .get('/User/', middleware.getModelFilesByUsername)
 .get('/Admin/', middleware.getAdminModelFiles)
+router.get('/analytic/', middleware.getModelFilesGroupedByCategory)
 
 router.post('/', middleware.createModelFile)
 router.post('/save/',middleware.saveModelFiles)

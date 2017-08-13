@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const errors = require('../utils/errors')
-
+const modelFiles = require('./modelFiles')
 var categorySchema = new mongoose.Schema({
 
 
@@ -95,6 +95,39 @@ categorySchema.statics.updateCategory = function (id, value) {
 
         }).catch(function (err) {
             return  reject(err)
+
+
+    })
+
+
+}
+categorySchema.statics.getAnalyticCategories = function () {
+var result = {
+    name:[],
+    usage : []
+}
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+
+        thisModel.find({}).then(function (data) {
+            for (var i=0 ; i<data.length;i++)
+            {
+                result.name.push(data[i].categoryName)
+                modelFiles.find({category:data[i]})
+                    .then(function (modelFile) {
+
+                        console.log('models found '+modelFile.length )
+                    result.usage.push(modelFile.length)
+                })
+            }
+
+
+            resolve(result);
+        })
+            .catch(reject);
+
+    }).catch(function (err) {
+        return  reject(err)
 
 
     })

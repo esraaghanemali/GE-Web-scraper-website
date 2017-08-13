@@ -7,8 +7,10 @@ angular.module('webScraperCMS.userW', [])
     templateUrl: 'views/userTemplates/index.html',
     controller: 'IndexCtrl',
     data: {
+        title :'Home',
       requiredPermission: true
     },
+
       resolve : {
           authorize: function (authorization) {
               return authorization.authorize();
@@ -19,27 +21,48 @@ angular.module('webScraperCMS.userW', [])
     templateUrl: 'views/userTemplates/about.html',
     controller: 'AboutCtrl',
     data: {
+        title :'About',
       requiredPermission: true
     }
+      ,
+      resolve: {
+          authorize: function (authorization) {
+              return authorization.authorize();
+          }}
   }).state('app.Services', {
       url: '/GEWebScraper/Services',
       templateUrl: 'views/userTemplates/services.html',
       controller: 'ServiceCtrl',
       data: {
+          title :'Service',
+
           requiredPermission: true
       }
+      ,
+      resolve: {
+          authorize: function (authorization) {
+              return authorization.authorize();
+          }}
   }).state('app.Contact', {
       url: '/GEWebScraper/Contact',
       templateUrl: 'views/userTemplates/contact.html',
       controller: 'ContactCtrl',
       data: {
+          title :'Contact',
+
           requiredPermission: true
-      }
+      },
+      resolve: {
+          authorize: function (authorization) {
+              return authorization.authorize();
+          }}
       }).state('app.Start', {
       url: '/GEWebScraper/Start',
       templateUrl: 'views/userTemplates/startScraping.html',
       controller: 'StartCtrl',
       data: {
+          title :'Start',
+
           requiredPermission: true
       },
       resolve: {
@@ -52,6 +75,8 @@ angular.module('webScraperCMS.userW', [])
       templateUrl: 'views/userTemplates/userModels.html',
       controller: 'UserModelsCtrl',
       data: {
+          title :'Models',
+
           requiredPermission: 'models.list',
           child: true
       }
@@ -67,6 +92,8 @@ angular.module('webScraperCMS.userW', [])
           templateUrl: 'views/userTemplates/myModels.html',
           controller: 'UserModelsCtrl',
           data: {
+              title :'My Models',
+
               requiredPermission: 'models.list',
               child: true
           }
@@ -81,6 +108,8 @@ angular.module('webScraperCMS.userW', [])
           templateUrl: 'views/userTemplates/myData.html',
           controller: 'UserModelsCtrl',
           data: {
+              title :'My Data',
+
               requiredPermission: 'models.list',
               child: true
           }
@@ -95,6 +124,8 @@ angular.module('webScraperCMS.userW', [])
           templateUrl: 'views/userTemplates/myRequests.html',
           controller: 'UserModelsCtrl',
           data: {
+              title :'My Requests',
+
               requiredPermission: 'models.list',
               child: true
           }
@@ -109,6 +140,8 @@ angular.module('webScraperCMS.userW', [])
       templateUrl: 'views/userTemplates/request.html',
       controller: 'RequestCtrl',
       data: {
+          title :'Request',
+
           requiredPermission: true,
           child: true
       },

@@ -38,7 +38,7 @@ module.exports = {
     createExtractedData: function (req, res, next) {
         models.extractedData.createExtractedData({
             extractedDataId:new Date().getTime(),
-            maxPages: req.body.maxPages,
+            maxRecords: req.body.maxRecords,
             url : req.body.url,
             //todo how send request
             scrapeRequest : req.body.scrapeRequest.id

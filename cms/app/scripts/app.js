@@ -15,6 +15,7 @@ angular.module('webScraperCMS', [
   'ngSanitize',
   'ngMaterial',
   'ngStorage',
+    'chart.js',
   'ui.router',
   'ui.utils',
   'xeditable',

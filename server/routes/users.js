@@ -43,6 +43,9 @@ router.post('/login', middleware.login)
  * @apiUse EmailExistsError
  */
   .post('/', middleware.createUser);
+router.get('/analytic/', middleware.getUsersGroupedByPackages)
+router.get('/UserAnalytic/', middleware.analyseUsers)
+
 
 //the rest need to check login first !!
 router.use(middleware.checkLogin);

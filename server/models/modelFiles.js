@@ -63,7 +63,64 @@ modelSchema.statics.createModel = function (model) {
     })
 };
 
+modelSchema.statics.getModelFilesGroupedByCategory = function () {
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+            thisModel
+                .aggregate(
+                [
 
+                    {
+                        $group: {
+                            _id:"$category",
+                            files: { $push:"$fileName"}
+
+                        }
+                    }
+                ]
+            )
+                .then(function (modelFiles) {
+                    // console.log(modelFiles)
+                resolve(modelFiles);
+            }) .catch(function (err) {
+                // console.log(err)
+                reject(errors.modelFiles.create)
+            });
+
+
+
+    })
+};
+
+
+modelSchema.statics.getModelFilesGroupedByUser = function () {
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+        thisModel
+            .aggregate(
+                [
+                    {
+                        $group: {
+                            _id:"$user",
+                            files: { $push:"$fileName"}
+
+                        }
+                    }
+                ]
+            )
+            .then(function (modelFiles) {
+                console.log("modelfiles for user")
+                console.log(modelFiles)
+                resolve(modelFiles);
+            }) .catch(function (err) {
+            // console.log(err)
+            reject(errors.modelFiles.create)
+        });
+
+
+
+    })
+};
 modelSchema.statics.getAdminModelFiles = function () {
     var thisModel = this;
     return new Promise(function (resolve, reject) {

@@ -28,5 +28,12 @@ angular.module('webScraperCMS.models')
         });
     };
 
+    User.getAnalyticCategories = function () {
+        return Restangular.one(route).one('analytic').get();
+    };
+    User.getAnalyticUsers = function () {
+        return Restangular.one(route).one('UserAnalytic').get();
+    };
+
   return User;
 });

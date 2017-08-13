@@ -7,6 +7,9 @@ angular.module('webScraperCMS.models')
         extractedDataTypes.getAllExtractedDataTypes = function () {
             return Restangular.one(route).get();
         };
+        extractedDataTypes.getAnalyticCategories = function () {
+            return Restangular.one(route).one('analytic').get();
+        };
         // categories.getAdminModelFiles = function () {
         //     return Restangular.one(route).one('/Admin').get();
         // };

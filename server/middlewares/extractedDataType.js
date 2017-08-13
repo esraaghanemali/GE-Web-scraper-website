@@ -21,6 +21,28 @@ module.exports = {
         }).catch(next);
 
     },
+    getRequestsGroupedByType: function (req, res, next) {
+        models.requestType.getRequestsGroupedByType().then(
+            function(data){
+                models.extractedDataType.find({})
+                    .then(function (extractedDataTypes) {
+                    for(var i=0 ; i<data.length;i++)
+                    {
+                        var extractedDataType = extractedDataTypes
+                            .find(function (array) {
+                            return JSON.stringify(array._id)
+                                === JSON.stringify(data[i]._id)
+                        })
+                        data[i]._id=extractedDataType.type
+                        data[i].requests= data[i].requests.length
+                    }
+                    res.json(data);
+                })
+
+            }).catch(next);
+
+    },
+
     // getExtractedDataTypeById: function (req, res, next) {
     //     models.extractedDataType.getExtractedDataTypeById(req.params.extractedDataTypeId)
     //         .then(function (data) {

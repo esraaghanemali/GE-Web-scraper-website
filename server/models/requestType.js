@@ -26,4 +26,32 @@ requestTypeSchema.statics.createRequestType = function (Request) {
     })
 };
 
+requestTypeSchema.statics.getRequestsGroupedByType = function () {
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+        thisModel
+            .aggregate(
+                [
+
+                    {
+                        $group: {
+                            _id:"$extractedDataType",
+                            requests: { $push:"$scrapeRequest"}
+
+                        }
+                    }
+                ]
+            )
+            .then(function (data) {
+
+                resolve(data);
+            }) .catch(function (err) {
+            // console.log(err)
+            reject(errors.modelFiles.create)
+        });
+
+
+
+    })
+};
 module.exports = mongoose.model('requestType', requestTypeSchema, 'requestType');

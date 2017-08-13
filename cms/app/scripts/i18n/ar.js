@@ -31,6 +31,7 @@ angular.module('webScraperCMS.i18n')
         About:'من نحن',
 Services:'خدماتنا',
     Contact:'اتصل بنا',
+        Tutorial : 'دورة تعليمية',
     },
   aside: {
     profile: 'صفحتي الشخصية',

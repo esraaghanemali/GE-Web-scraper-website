@@ -83,6 +83,25 @@ module.exports = {
             res.json(modelFiles);
         }).catch(next);
     },
+    getModelFilesGroupedByCategory: function (req, res, next) {
+
+        models.model.getModelFilesGroupedByCategory().then(
+            function(modelFiles){
+                models.category.find({}).then(function (categories) {
+                    for(var i=0 ; i<modelFiles.length;i++)
+                    {
+var category = categories.find(function (array) {
+    return  JSON.stringify(array._id)
+        ===  JSON.stringify(modelFiles[i]._id)
+})
+                        modelFiles[i]._id=category.categoryName
+                        modelFiles[i].files= modelFiles[i].files.length
+                    }
+                    res.json(modelFiles);
+                })
+
+        }).catch(next);
+    },
     getModelFileById: function (req, res, next) {
         models.modelFiles.getModelFileById(req.params.modelFileId)
             .then(function (modelFile) {

@@ -100,7 +100,36 @@ scrapeRequestSchema.statics.getScrapeRequestById = function (id) {
         });
 };
 
+scrapeRequestSchema.statics.getRequestsGroupedByUser = function () {
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+        thisModel
+            .aggregate(
+                [
 
+                    {
+                        $group: {
+                            _id:"$user",
+                            requests: { $push:"$_id"}
+
+                        }
+                    }
+                ]
+            )
+            .then(function (request) {
+                // console.log("user Requets")
+                //
+                // console.log(request)
+                resolve(request);
+            }) .catch(function (err) {
+            // console.log(err)
+            reject(errors.modelFiles.create)
+        });
+
+
+
+    })
+};
 scrapeRequestSchema.statics.updateScrapeRequest = function (id, request) {
 
     if(!id || id==''|| !request )

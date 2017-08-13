@@ -9,7 +9,7 @@ var extractedDataSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    maxPages: {
+    maxRecords: {
         type: Number,
     },
     url: {

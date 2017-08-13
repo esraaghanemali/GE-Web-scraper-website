@@ -17,6 +17,9 @@ angular.module('webScraperCMS.models')
         ModelFiles.removeModelFile = function (Id) {
             return Restangular.one(route).one(Id).remove();
         };
+        ModelFiles.getAnalyticCategories = function () {
+            return Restangular.one(route).one('analytic').get();
+        };
 
         // ModelFiles.new= function (model,maxPages,maxItemsPerPage) {
         //     return Restangular.one(route).one('Request').customPOST({

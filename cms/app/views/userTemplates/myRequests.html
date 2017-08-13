@@ -78,8 +78,8 @@
             <!--</th>-->
             <th>file Name</th>
             <th>status</th>
-            <!--<th>user</th>-->
-            <th>Time</th>
+            <th>Message</th>
+            <th>Date</th>
             <th>Remove</th>
         </tr>
         </thead>
@@ -87,6 +87,8 @@
         <tr ng-repeat="row in $data" ng-if="$data.length" ui-sref="app.Models({ modelFile: row, modelId: row.id})">
             <td>{{row.model.fileName}}</td>
             <td>{{row.status.statusName}}</td>
+            <td>{{row.message}}</td>
+
             <!--<td>{{row.user.firstName}}</td>-->
             <td>{{row.date}}</td>
             <td>

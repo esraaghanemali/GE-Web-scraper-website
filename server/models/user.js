@@ -104,6 +104,35 @@ userSchema.statics.getUserByToken = function (token) {
   })
 
 };
+
+userSchema.statics.getUsersGroupedByPackages = function () {
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+        thisModel
+            .aggregate(
+                [
+
+                    {
+                        $group: {
+                            _id:"$userPackage",
+                            username: { $push:"$username"}
+
+                        }
+                    }
+                ]
+            )
+            .then(function (userPackages) {
+                // console.log(userPackages)
+                resolve(userPackages);
+            }) .catch(function (err) {
+            // console.log(err)
+            reject(errors.modelFiles.create)
+        });
+
+
+
+    })
+};
 userSchema.statics.updateInfo = function (user,filed,value) {
     var thisModel = this;
 

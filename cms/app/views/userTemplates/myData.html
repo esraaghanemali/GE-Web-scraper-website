@@ -73,9 +73,10 @@
             <!--<div class="md-form-group float-label"><input class="md-input" ng-model="filter.name"/> <label-->
             <!--&gt;File Name</label></div>-->
             <!--</th>-->
-            <th>file Name</th>
-            <th>file Url</th>
-            <th>Pages</th>
+            <th>File Name</th>
+            <th>File Url</th>
+            <th>Records</th>
+            <th>Date</th>
             <th>Remove</th>
         </tr>
         </thead>
@@ -83,7 +84,9 @@
         <tr ng-repeat="row in $data" ng-if="$data.length" ui-sref="app.Models({ modelFile: row, modelId: row.id})">
             <td>{{row.scrapeRequest.model.fileName}}</td>
             <a> <td>{{row.url}}</td> </a>
-            <td>{{row.maxPages}}</td>
+            <td>{{row.maxRecords}}</td>
+            <td>{{row.date}}</td>
+
             <td>
                 <md-button ng-if="currentUser.permissions.extracted.remove"
                            type="button"

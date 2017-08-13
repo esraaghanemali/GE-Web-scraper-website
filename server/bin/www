@@ -43,7 +43,11 @@ models.category.createDefaultCategory().catch(function (err) {
 
     })
 
-
+// models.user.getUsersGroupedByPackages().then(function (data) {
+//
+// }).catch(function (err) {
+//     console.log(err)
+// })
     // console.log(d)
   //   models.model.createModel(
   //     {

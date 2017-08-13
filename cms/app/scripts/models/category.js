@@ -7,6 +7,7 @@ angular.module('webScraperCMS.models')
         categories.getAllcategories = function () {
             return Restangular.one(route).get();
         };
+
         // categories.getAdminModelFiles = function () {
         //     return Restangular.one(route).one('/Admin').get();
         // };

@@ -45,6 +45,7 @@ router.use(usermiddleware.checkLogin);
  */
 router.get('/', middleware.getAllExtractedDataType)
 
+router.get('/analytic/', middleware.getRequestsGroupedByType)
 
 /**
  * @api {post} /users/login Login to the APP

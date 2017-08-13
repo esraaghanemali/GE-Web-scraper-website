@@ -38,6 +38,7 @@ angular.module('webScraperCMS.i18n')
         About:'About',
         Services:'Our Services',
         Contact:'Contact Us',
+        Tutorial:'Tutorials'
     },
   aside: {
     profile: 'My Profile',
