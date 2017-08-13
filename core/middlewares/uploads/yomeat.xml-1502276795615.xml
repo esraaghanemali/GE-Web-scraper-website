@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><webscraper><current_url>http://yomyat-sy.com/category/%d8%a3%d8%ae%d8%a8%d8%a7%d8%b1-%d9%85%d8%ad%d9%84%d9%8a%d8%a9</current_url><Data><data_element><title>title</title><element_selector>#b1d-layout .entry-title</element_selector></data_element><data_element><title>time</title><element_selector>#b1d-layout span</element_selector></data_element><data_element><title>content</title><element_selector>.post-excerpt</element_selector>
+<type>text</type></data_element>
+
+</Data>
+
+<Nav>
+<nav_element>.primary-menu span</nav_element></Nav>
+<type>multi_level</type>
+</webscraper>
