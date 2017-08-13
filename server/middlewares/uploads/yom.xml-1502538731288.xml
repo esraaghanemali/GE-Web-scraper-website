@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><webscraper><current_url>http://yomyat-sy.com/category/%d8%a3%d8%ae%d8%a8%d8%a7%d8%b1-%d9%85%d8%ad%d9%84%d9%8a%d8%a9</current_url><Data>
+<data_element><title>content</title>
+
+<element_selector>.entry-title a</element_selector>
+<type>text</type>
+</data_element>
+
+<data_element><title>time</title><element_selector>#b1d-layout span</element_selector><type>text</type></data_element>
+</Data>
+<Nav>
+<nav_element>
+<element_selector>li:nth-child(7) a</element_selector>
+<type>multi_level</type>
+</nav_element>
+</Nav>
+
+</webscraper>

@@ -1,0 +1,27 @@
+<webscraper>
+	<current_url>https://www.amazon.com/s/ref=s9_acss_bw_cg_gcinter_2b1_w?fst=as%3Aoff&rh=n%3A2238192011%2Cp_n_format_browse-bin%3A2740966011&bbn=2238192011&ie=UTF8&qid=1487803735&rnid=2740963011&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=merchandised-search-3&pf_rd_r=9DHMY5TS4CY132SX0DX7&pf_rd_t=101&pf_rd_p=3f43ed4a-09b0-4c3c-9022-b5812866d852&pf_rd_i=14069511011
+	</current_url>
+		<Data>
+			<data_element>
+				<title>name</title>
+				<element_selector>.s-access-title</element_selector>
+				<type>text</type>
+			</data_element>
+			<data_element>
+				<title>price</title>
+				<element_selector>.sx-price-whole</element_selector>
+				<type>text</type>
+			</data_element>
+			<data_element>
+				<title>rating</title>
+				<element_selector>.a-size-small.a-text-normal</element_selector>
+				<type>text</type>
+			</data_element>
+		</Data>
+		<Nav>
+			<nav_element>
+				<element_selector>.nav-a+ .nav-a .nav-a-content</element_selector>
+				<type>multi_level</type>
+			</nav_element>
+		</Nav>
+</webscraper>
