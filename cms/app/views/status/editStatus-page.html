@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Edit Status</div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Status Name:</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static">
+                                <a onaftersave="updateStatusName($data)" oncancel="cancle()"
+                                   editable-text="status.statusName">
+                                    {{ status.statusName || 'empty' }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Status Message:</label>
+                        <div class="col-sm-9">
+                            <p class="form-control-static">
+                                <a onaftersave="updateStatusMessage($data)"
+                                   oncancel="cancle()"
+                                   editable-text="status.statusMessage">
+                                    {{ status.statusMessage || 'empty' }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

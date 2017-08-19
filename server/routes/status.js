@@ -121,7 +121,7 @@ router.get('/:statusId', middleware.getStatusById)
  * @apiUse InvalidInputErrorExample
  * @apiUse EmailExistsError
  */
-    .post('/:statusName/statusMessege', middleware.createStatus)
+    .post('/', middleware.createStatus)
     /**
      * @api {post} /users signup with email & password
      * @apiName UserSignup
@@ -160,7 +160,7 @@ router.get('/:statusId', middleware.getStatusById)
      * @apiUse InvalidInputErrorExample
      * @apiUse EmailExistsError
      */
-    .put('/:statusId/statusName/statusName', middleware.updateStatus)
+    .post('/update', middleware.updateStatus)
 
 
     /**
@@ -190,5 +190,6 @@ router.get('/:statusId', middleware.getStatusById)
      * @apiUse AuthRequiredError
      */
     .delete('/:statusId', middleware.removeStatusById)
+    .post('/updateInfo/', middleware.updateInfo);
 
 module.exports = router;

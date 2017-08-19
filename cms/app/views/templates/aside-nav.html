@@ -24,6 +24,12 @@
         <span class="font-normal" translate="aside.nav.ModelFiles"></span>
       </a>
     </li>
+    <li ui-sref-active="active">
+      <a md-ink-ripple ui-sref="app.statuses" ng-class="{'rtl': app.setting.rtl}">
+        <i class="icon mdi-maps-beenhere i-20"></i>
+        <span class="font-normal" translate="aside.nav.status"></span>
+      </a>
+    </li>
 
     <li ui-sref-active="active"  ng-if="currentUser.permissions.administration">
       <a md-ink-ripple ui-sref="app.Index" ng-class="{'rtl': app.setting.rtl}">

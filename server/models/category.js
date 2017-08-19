@@ -7,7 +7,7 @@ var categorySchema = new mongoose.Schema({
 
     categoryName:{
         type: String,
-        defautl: 'Others'
+        default: 'Others'
     }
 
 });

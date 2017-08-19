@@ -11,12 +11,12 @@ var statusSchema = new mongoose.Schema({
     },
     statusName:{
         type: String,
-        defautl: 'pending'
+        default: 'pending'
     }
     ,
-    statusMessege:{
+    statusMessage:{
         type: String,
-        defautl: 'the file is pending'
+        default: 'the file is pending'
     }
 });
 statusSchema.statics.createStatus = function (status) {
@@ -46,7 +46,7 @@ statusSchema.statics.createDefaultStatus = function () {
             return thisModel.createStatus({
                 statusId: new Date().getTime(),
                 statusName: 'Pending',
-                statusMessege: 'The request is pending, wait till the prpcess end.'
+                statusMessage: 'The request is pending, wait till the process end.'
 
             });
         }
@@ -99,8 +99,7 @@ statusSchema.statics.updateStatus = function (statusId, status) {
     var thisModel = this;
     return new Promise(function (resolve, reject) {
         thisModel.getStatusById(statusId).then(function (status2) {
-            console.log("findd package "+ status2)
-            thisModel.update({statusId: statusId}, {statusName: status.statusName, statusMessege: status.statusMessege})
+            thisModel.update({statusId: statusId}, {statusName: status.statusName, statusMessage: status.statusMessage})
                 .catch(reject);
             console.log('updated')
             resolve();
@@ -112,29 +111,92 @@ statusSchema.statics.updateStatus = function (statusId, status) {
 
 
 }
-statusSchema.statics.removeStatusById = function (statusId) {
+statusSchema.statics.removeStatusById = function (id) {
 
-    if(!statusId || statusId=='' )
+    // if(!statusId || statusId=='' )
+    // {
+    //     console.log('error remove');
+    //     return Promise.reject(errors.missingData)
+    //
+    // }
+    // var thisModel = this;
+    // return new Promise(function (resolve, reject) {
+    //     thisModel.getStatusById(statusId).then(function (status) {
+    //         console.log("findd "+ status)
+    //         thisModel.remove({statusId: statusId})
+    //             .catch(reject);
+    //         console.log('removed')
+    //         resolve();
+    //     }).catch(function (err) {
+    //         return  reject(err)
+    //     })
+    //
+    // })
+
+
+    if(!id || id=='' )
     {
         console.log('error remove')
-        return  promise.reject(errors.missingData)
+        return Promise.reject(errors.missingData)
 
     }
     var thisModel = this;
     return new Promise(function (resolve, reject) {
-        thisModel.getPackageById(statusId).then(function (status) {
-            console.log("findd "+ status)
-            thisModel.remove({statusId: statusId})
-                .catch(reject);
+        // console.log("findd package "+ package)
+        thisModel.remove({ _id: id}).then(function (data) {
+            console.log(data)
             console.log('removed')
-            resolve();
-        }).catch(function (err) {
-            return  reject(err)
+            resolve(data);
         })
+            .catch(function (err) {
+                return  reject(err)
+            })
 
+    }).catch(function (err) {
+        return  reject(err)
     })
 
 
+},
+statusSchema.statics.updateInfo = function (status, field, value) {
+    var thisModel = this;
+
+    console.log("ID ", status._id);
+    return new Promise(function (resolve, reject) {
+        switch (field){
+            case'statusName': {
+
+                thisModel.update({
+                    _id: status._id}, {
+                    statusName:value
+                }).then(function (data) {
+                    resolve(data)
+
+                }).catch(function (err) {
+                    reject(err)
+                }).then(function(){
+                    console.log("Status Name Updated")
+                });
+                break
+            }
+            case'statusMessage': {
+
+                thisModel.update({
+                    _id: status._id}, {
+                    statusMessage:value
+                }).then(function (data) {
+                    resolve(data)
+
+                }).catch(function (err) {
+                    reject(err)
+                }).then(function(){
+                    console.log("Status Message Updated")
+                });;
+                break
+            }
+        }
+
+    })
 
 }
 

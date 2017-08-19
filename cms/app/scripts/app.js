@@ -33,91 +33,90 @@ angular.module('webScraperCMS', [
   'webScraperCMS.models',
   'webScraperCMS.login',
   'webScraperCMS.basic',
-    'webScraperCMS.userPackage',
+  'webScraperCMS.userPackage',
   'webScraperCMS.users',
   'webScraperCMS.modelFiles',
-   'webScraperCMS.home',
-    'webScraperCMS.userW',
-    'webScraperCMS.scrapeRequest',
-    'webScraperCMS.extractedData'
+  'webScraperCMS.home',
+  'webScraperCMS.userW',
+  'webScraperCMS.scrapeRequest',
+  'webScraperCMS.extractedData',
+  'webScraperCMS.status'
 ]).constant('_', _)
-  .config(function($stateProvider, $urlRouterProvider, $localStorageProvider, $mdDateLocaleProvider) {
-  $localStorageProvider.setKeyPrefix('webScraperCMS');
+    .config(function ($stateProvider, $urlRouterProvider, $localStorageProvider, $mdDateLocaleProvider) {
+        $localStorageProvider.setKeyPrefix('webScraperCMS');
+        $urlRouterProvider.otherwise('/app/home');
+        $stateProvider.state('app', {
+            abstract: true,
+            url: '/app',
+            views: {
+                '': {
+                    templateUrl: 'views/templates/layout.html'
+                },
+                'aside': {
+                    templateUrl: 'views/templates/aside.html'
+                },
+                'content': {
+                    templateUrl: 'views/templates/content.html'
+                }
+            }
+        })
 
-          $urlRouterProvider.otherwise('/app/GEWebScraper/index');
+        $mdDateLocaleProvider.formatDate = function (date) {
+            return moment(date).format('YYYY-MM-DD');
+        };
+        $mdDateLocaleProvider.parseDate = function (dateString) {
+            var m = moment(dateString, 'YYYY-MM-DD HH:mm:ss', true);
+            return m.isValid() ? m.toDate() : new Date();
+        };
+    })
+    .run(function ($rootScope, $state, $stateParams, $localStorage, $window, $document, $location, $timeout, $mdSidenav, $mdColorPalette, $anchorScroll, Fullscreen, ngTableDefaults) {
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
+        // add 'ie' classes to html
+        var isSmartDevice = function ($window) {
+            // Adapted from http://www.detectmobilebrowsers.com
+            var ua = $window.navigator.userAgent || $window.navigator.vendor || $window.opera;
+            // Checks for iOs, Android, Blackberry, Opera Mini, and Windows mobile devices
+            return (/iPhone|iPod|iPad|Silk|Android|BlackBerry|Opera Mini|IEMobile/).test(ua);
+        };
 
-  $stateProvider.state('app', {
-    abstract: true,
-    url: '/app',
-    views: {
-      '': {
-        templateUrl: 'views/templates/layout.html'
-      },
-      'aside': {
-        templateUrl: 'views/templates/aside.html'
-      },
-      'content': {
-        templateUrl: 'views/templates/content.html'
-      }
-    }
-  })
-
-  $mdDateLocaleProvider.formatDate = function(date) {
-    return moment(date).format('YYYY-MM-DD');
-  };
-  $mdDateLocaleProvider.parseDate = function(dateString) {
-    var m = moment(dateString, 'YYYY-MM-DD HH:mm:ss', true);
-    return m.isValid() ? m.toDate() : new Date();
-  };
-})
-.run(function($rootScope, $state, $stateParams, $localStorage, $window, $document, $location, $timeout, $mdSidenav, $mdColorPalette, $anchorScroll, Fullscreen, ngTableDefaults) {
-  $rootScope.$state = $state;
-  $rootScope.$stateParams = $stateParams;
-  // add 'ie' classes to html
-  var isSmartDevice = function($window) {
-    // Adapted from http://www.detectmobilebrowsers.com
-    var ua = $window.navigator.userAgent || $window.navigator.vendor || $window.opera;
-    // Checks for iOs, Android, Blackberry, Opera Mini, and Windows mobile devices
-    return (/iPhone|iPod|iPad|Silk|Android|BlackBerry|Opera Mini|IEMobile/).test(ua);
-  };
-
-  var isIE = !!navigator.userAgent.match(/MSIE/i) || !!navigator.userAgent.match(/Trident.*rv:11\./);
-  if (isIE) {
-    angular.element($window.document.body).addClass('ie');
-  }
-  if (isSmartDevice($window)) {
-    angular.element($window.document.body).addClass('smart');
-  }
-  // config
-  $rootScope.app = {
-    name: 'GE Web Scraper',
-    version: '1.0.2',
-    // for chart colors
-    color: {
-      primary: '#3f51b5',
-      info: '#2196f3',
-      success: '#4caf50',
-      warning: '#ffc107',
-      danger: '#f44336',
-      accent: '#7e57c2',
-      white: '#ffffff',
-      light: '#f1f2f3',
-      dark: '#475069'
-    },
-    setting: {
-      theme: {
-        primary: 'indigo',
-        accent: 'purple',
-        warn: 'amber'
-      },
-      asideFolded: false,
-      // rtl: false
-    },
-    search: {
-      content: '',
-      show: false
-    }
-  };
+        var isIE = !!navigator.userAgent.match(/MSIE/i) || !!navigator.userAgent.match(/Trident.*rv:11\./);
+        if (isIE) {
+            angular.element($window.document.body).addClass('ie');
+        }
+        if (isSmartDevice($window)) {
+            angular.element($window.document.body).addClass('smart');
+        }
+        // config
+        $rootScope.app = {
+            name: 'GE Web Scraper',
+            version: '1.0.2',
+            // for chart colors
+            color: {
+                primary: '#3f51b5',
+                info: '#2196f3',
+                success: '#4caf50',
+                warning: '#ffc107',
+                danger: '#f44336',
+                accent: '#7e57c2',
+                white: '#ffffff',
+                light: '#f1f2f3',
+                dark: '#475069'
+            },
+            setting: {
+                theme: {
+                    primary: 'indigo',
+                    accent: 'purple',
+                    warn: 'amber'
+                },
+                asideFolded: false,
+                // rtl: false
+            },
+            search: {
+                content: '',
+                show: false
+            }
+        };
 
   $rootScope.toggleFullscreen = function() {
     if (Fullscreen.isEnabled()) {

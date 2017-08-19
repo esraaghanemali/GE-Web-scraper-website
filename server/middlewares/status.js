@@ -31,7 +31,7 @@ module.exports = {
         models.status.createStatus({
             statusId:new Date().getTime(),
             statusName: req.body.statusName,
-            statusMessege : req.body.statusMessege
+            statusMessage : req.body.statusMessage
 
         }).then(function (data) {
                 res.json(data);
@@ -41,7 +41,7 @@ module.exports = {
     updateStatus: function (req, res, next) {
         models.status.updateStatus(req.body.statusId ,{
             statusName: req.body.statusName,
-            statusMessege : req.body.statusMessege
+            statusMessage : req.body.statusMessage
 
         }).then(function (data) {
                 res.json(data);
@@ -49,8 +49,16 @@ module.exports = {
         ).catch(next);
     },
     removeStatusById: function (req, res, next){
-            models.status.removeStatusById(req.body.statusId).then(function (data) {
+            models.status.removeStatusById(req.params.statusId).then(function (data) {
                     res.json(data);
+                }
+            ).catch(next);
+    },
+    updateInfo: function (req, res, next) {
+        models.status.updateInfo(req.body.status, req.body.field, req.body.value)
+            .then(function (status) {
+
+                    res.json(status);
                 }
             ).catch(next);
     }

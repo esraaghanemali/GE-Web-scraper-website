@@ -3,40 +3,47 @@
 angular.module('webScraperCMS.models')
     .factory('status', function(Restangular) {
         var route = 'status';
-        var userPackage = Restangular.all(route);
+        var status = Restangular.all(route);
 
 
-        userPackage.getStatus = function () {
+        status.getStatus = function () {
             return Restangular.one(route).get();
         };
 
-        userPackage.getStatusById = function (id) {
+        status.getStatusById = function (id) {
             return Restangular.one(route).customGET(id);
         };
-        userPackage.create = function (statusName, statusMessege) {
+        status.create = function (statusName, statusMessage) {
             return Restangular.one(route).customPOST(
                 {
                     statusName : statusName,
-                    statusMessege : statusMessege
+                    statusMessage : statusMessage
                 }
             );
         };
 
 
-        userPackage.update = function (id ,statusName, statusMessege) {
-            return Restangular.one(route).customPUT(
+        status.update = function (id ,statusName, statusMessage) {
+            return Restangular.one(route).one('update').customPOST(
                 {
                     statusId:id,
                     statusName : statusName,
-                    statusMessege : statusMessege
+                    statusMessage : statusMessage
                 }
             );
         };
 
-
-        userPackage.remove = function (id) {
+        status.remove = function (id) {
             return Restangular.one(route).one(id).remove();
         };
 
-        return userPackage;
+        status.updateInfo = function(field, value, status) {
+            return Restangular.one(route).one('updateInfo').customPOST({
+                field: field,
+                value: value,
+                status: status
+            });
+        };
+
+        return status;
     });

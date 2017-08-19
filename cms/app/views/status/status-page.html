@@ -1,0 +1,24 @@
+<div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
+    <div class="card-heading">
+        <h2>Add Status</h2>
+    </div>
+    <md-content layout-padding>
+
+        <form name="statusForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">
+            <md-input-container class="md-block">
+                <label translate="status.statusName"></label>
+                <input required name="statusName" ng-model="status.statusName" auto-focus>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label translate="status.statusMessage"></label>
+                <input name="statusMessage" ng-model="status.statusMessage">
+            </md-input-container>
+
+            <md-input-container>
+                <md-button class="md-raised md-primary" translate="status.actions.save"
+                           ng-click="saveStatus()"></md-button>
+            </md-input-container>
+        </form>
+
+</div>

@@ -1,29 +1,28 @@
 'use strict';
 
 angular.module('webScraperCMS.modelFiles')
-    .controller('ModelFileCtrl', function($rootScope, $scope, $filter, $state,API, models, notifyService,Upload, modelFile,categories) {
+    .controller('ModelFileCtrl', function ($rootScope, $scope, $filter, $state, API, models, notifyService, Upload, modelFile, categories) {
         $scope.modelFile = modelFile;
         $scope.isNew = angular.isUndefined($scope.modelFile.id) || $scope.modelFile.id === '';
 
-      var d =  $scope.uploadFiles = function(files, errFiles) {
+        var d = $scope.uploadFiles = function (files, errFiles) {
             $scope.files = files;
             $scope.errFiles = errFiles;
 
-            angular.forEach(files, function(file) {
+            angular.forEach(files, function (file) {
 
             });
         }
         $scope.categories = categories
 
         console.log(d)
-        $scope.saveModelFile = function() {
-          console.log("file name")
-          console.log( $scope.modelFile.fileName)
+        $scope.saveModelFile = function () {
+            console.log("file name")
+            console.log($scope.modelFile.fileName)
             if ($scope.isLoading) {
                 return;
             }
-            if(!$scope.files || $scope.files===null || !$scope.modelFile.fileName || $scope.modelFile.fileName=='')
-            {
+            if (!$scope.files || $scope.files === null || !$scope.modelFile.fileName || $scope.modelFile.fileName == '') {
                 var msg = 'modelFiles.errors.required';
 
                 notifyService.notify($filter('translate')(msg), {
@@ -33,28 +32,31 @@ angular.module('webScraperCMS.modelFiles')
             }
 
             Upload.upload({
-                url : API.apiHost +  '/modelFiles/save',
+                url: API.apiHost + '/modelFiles/save',
                 // method:'POST',
-                data: {file: $scope.files , fileName : $scope.modelFile.fileName , desc: $scope.modelFile.desc, category: $scope.modelFile.category}
+                data: {
+                    file: $scope.files,
+                    fileName: $scope.modelFile.fileName,
+                    desc: $scope.modelFile.desc,
+                    category: $scope.modelFile.category
+                }
             })
 
-            .then(function (response) {
-                    $scope.isLoading = false;
-                    notifyService.notify($filter('translate')('modelFiles.save.success'));
+                .then(function (response) {
+                        $scope.isLoading = false;
+                        notifyService.notify($filter('translate')('modelFiles.save.success'));
 // //
-if($scope.currentUser.isAdmin)
-{
+                        if ($scope.currentUser.isAdmin) {
 
-    $state.go('app.modelFiles', {}, {
-        location: 'replace'
-    });
-}
-else
-{
-    $state.go('app.Models', {}, {
-        location: 'replace'
-    });
-}
+                            $state.go('app.modelFiles', {}, {
+                                location: 'replace'
+                            });
+                        }
+                        else {
+                            $state.go('app.Models', {}, {
+                                location: 'replace'
+                            });
+                        }
 //                     console.log($scope.currentUser.isAdmin)
 //                     console.log('---------------------------------------------')
 //
@@ -62,26 +64,26 @@ else
 //         location: 'replace'
 //     });
 
-            }, function (response) {
-                if (response.status > 0)
+                    }, function (response) {
+                        if (response.status > 0)
 
-                    $scope.errorMsg = response.status + ': ' + response.data;
-                    console.log("in error")
+                            $scope.errorMsg = response.status + ': ' + response.data;
+                        console.log("in error")
 
-                console.log(response)
-                    $scope.isLoading = false;
+                        console.log(response)
+                        $scope.isLoading = false;
                         var msg = 'modelFiles.errors.saveError';
 
                         notifyService.notify($filter('translate')(msg), {
                             type: 'danger'
                         });
-            }
-            // , function (evt) {
-            //     // file.progress = Math.min(100, parseInt(100.0 *
-            //     //     evt.loaded / evt.total));
-            // }
+                    }
+                    // , function (evt) {
+                    //     // file.progress = Math.min(100, parseInt(100.0 *
+                    //     //     evt.loaded / evt.total));
+                    // }
 
-            );
+                );
 
             $scope.isLoading = true;
             // console.log( $scope.modelFile)

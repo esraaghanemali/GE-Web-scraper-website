@@ -32,88 +32,89 @@ angular.module('webScraperCMS.i18n')
       myModels:'My Model Files',
       myRequests : 'My Requests',
 
-  },
-    userApp: {
-        Home:'Home',
-        About:'About',
-        Services:'Our Services',
-        Contact:'Contact Us',
+        },
+        userApp: {
+            Home: 'Home',
+            About: 'About',
+            Services: 'Our Services',
+            Contact: 'Contact Us',
         Tutorial:'Tutorials'
-    },
-  aside: {
-    profile: 'My Profile',
-    settings: 'Settings',
-    logout: 'Logout',
-    fullscreen: 'Fullscreen',
-    fold: 'Folded aside',
-    themes: 'Theming:',
-    nav: {
-      dashboard: 'Dashboard',
-      maps: 'Maps',
-      users: 'Users',
-      buses: 'Buses',
-      ModelFiles: 'Models',
-      stops: 'Stops'
-    }
-  },
-  login: {
-    title: 'Sign in with your account',
-    username: 'Username',
-    password: 'Password',
-    keepMe: 'Keep me signed in',
-    submit: 'Login',
-    forgotPass: 'Forgot password?',
-    authField: 'Username, Email Or phone',
-    error: {
-      failed: 'Incorrect username or password!',
-      notActvive: 'Your account is inactive. Please contact your system admin.'
-    }
-  },
-  dashboard: {
-    title: 'Dashboard',
-    balance: 'Balance',
-    offers: 'Popular Offers',
-    products: 'Most Viewed Products',
-    activities: 'Activities',
-    updated: 'Updated 4 minutes',
-    widgets: {
-      products: 'Products',
-      brands: 'Brands',
-      branches: 'Brandches',
-      vouchers: 'Vouchers'
-    },
-    followers: {
-      latest: 'Latest Followers',
-      visitors: 'Visitors',
-      offers: 'Offers Sold'
-    }
-  },  extracted: {
-        listPage: {
-            title: 'Extracted Data List',
-            noData: 'No Extracted Data  yet.',
-            loadingData: 'Loading Data',
-            errorData : 'Error while loading data.'
         },
-        actions: {
-            new: 'New Extracted Data',
-            edit: 'Edit',
-            save: 'Save',
-            addPackage: 'Add New Extracted Data.'
+        aside: {
+            profile: 'My Profile',
+            settings: 'Settings',
+            logout: 'Logout',
+            fullscreen: 'Fullscreen',
+            fold: 'Folded aside',
+            themes: 'Theming:',
+            nav: {
+                dashboard: 'Dashboard',
+                maps: 'Maps',
+                users: 'Users',
+                buses: 'Buses',
+                ModelFiles: 'Models',
+                stops: 'Stops',
+                status: 'Status'
+            }
         },
-        errors: {
-            // 'username.required': 'Username is required',
-            // 'firstName.required': 'First name is required',
-            // 'lastName.required': 'Last name is required',
-            // 'email.required': 'Email is required',
-            // 'password.required': 'Password is required',
-            // 'password.notMatch': 'Passwords are not match!',
-            // formNotValid: 'Please make sure all mandatory fields are filled.',
-            saveError: 'An error occurred while adding the Extracted Data. Please try again.',
-            // changePassword: 'An error occurred while changing the password. Please try again.',
-            // oldNewPassReq: 'Old password and new password are required',
-            // noMatch: 'New password does not match the retyped password',
-            // oldPassWrong: 'Old password is incorrect'
+        login: {
+            title: 'Sign in with your account',
+            username: 'Username',
+            password: 'Password',
+            keepMe: 'Keep me signed in',
+            submit: 'Login',
+            forgotPass: 'Forgot password?',
+            authField: 'Username, Email Or phone',
+            error: {
+                failed: 'Incorrect username or password!',
+                notActvive: 'Your account is inactive. Please contact your system admin.'
+            }
         },
+        dashboard: {
+            title: 'Dashboard',
+            balance: 'Balance',
+            offers: 'Popular Offers',
+            products: 'Most Viewed Products',
+            activities: 'Activities',
+            updated: 'Updated 4 minutes',
+            widgets: {
+                products: 'Products',
+                brands: 'Brands',
+                branches: 'Brandches',
+                vouchers: 'Vouchers'
+            },
+            followers: {
+                latest: 'Latest Followers',
+                visitors: 'Visitors',
+                offers: 'Offers Sold'
+            }
+        }, extracted: {
+            listPage: {
+                title: 'Extracted Data List',
+                noData: 'No Extracted Data  yet.',
+                loadingData: 'Loading Data',
+                errorData: 'Error while loading data.'
+            },
+            actions: {
+                new: 'New Extracted Data',
+                edit: 'Edit',
+                save: 'Save',
+                addPackage: 'Add New Extracted Data.'
+            },
+            errors: {
+                // 'username.required': 'Username is required',
+                // 'firstName.required': 'First name is required',
+                // 'lastName.required': 'Last name is required',
+                // 'email.required': 'Email is required',
+                // 'password.required': 'Password is required',
+                // 'password.notMatch': 'Passwords are not match!',
+                // formNotValid: 'Please make sure all mandatory fields are filled.',
+                saveError: 'An error occurred while adding the Extracted Data. Please try again.',
+                // changePassword: 'An error occurred while changing the password. Please try again.',
+                // oldNewPassReq: 'Old password and new password are required',
+                // noMatch: 'New password does not match the retyped password',
+                // oldPassWrong: 'Old password is incorrect'
+            },
 
         length: 'Length',
         'save.success': 'Extracted Data saved successfully'
@@ -249,9 +250,9 @@ url:'Url',
         fileName: 'Model Name',
         length: 'Length',
         fileLocation : 'file Location',
-        'save.success': 'the model has been saved succefuly.',
-        'remove.success': 'the model has been remove succefuly.',
-        'request.success':'the model has been requested succefuly.',
+        'save.success': 'the model has been saved successfully.',
+        'remove.success': 'the model has been remove successfully.',
+        'request.success':'the model has been requested successfully.',
         errors: {
 
             // 'username.required': 'Username is required',
@@ -264,7 +265,8 @@ url:'Url',
             saveError: 'error while saving.',
             // changePassword: 'An error occurred while changing the password. Please try again.',
             // oldNewPassReq: 'Old password and new password are required',
-            browse: 'please select file first!',            // oldPassWrong: 'Old password is incorrect'
+            browse: 'please select file first!',
+            // oldPassWrong: 'Old password is incorrect'
         },
     },
   bus: {
@@ -391,5 +393,29 @@ url:'Url',
       nameFound: 'Category name already exists.'
     },
     'save.success': 'Category was saved successfully'
-  }
-});
+  },
+status: {
+    listPage: {
+        title: 'Statuses List',
+        noData: 'No statuses yet. You can create one by using the button at the top.',
+        loadingData: 'Loading Data',
+        errorData: 'Error while loading data.'
+    },
+    actions: {
+        new: 'New Status',
+        edit: 'Edit',
+        save: 'Save',
+        addStatus: 'Add New Starus',
+        remove: {
+            title: 'Are you sure?',
+            text: 'Are you sure you want to delete status {{statusName}}?',
+            ok: 'OK',
+            cancel: 'Cancel',
+            success: 'Status {{statusName}} was deleted successfully.',
+            error: 'An error occured while deleting status.'
+        }
+    },
+    statusName: 'Status Name',
+    statusMessage: 'Status Message',
+    'save.success': 'Status was saved successfully'
+}});

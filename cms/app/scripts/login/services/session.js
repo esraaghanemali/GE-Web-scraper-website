@@ -10,49 +10,56 @@ angular.module('webScraperCMS.login')
       var isUser = userData.role === 'client';
       var both = userData.role === 'client'|| 'Admin';
 
-    var user = {
-      isAdmin: isAdmin,
-      permissions: {
-          userPackage : {
-              list: isAdmin,
-              view: isAdmin,
-              edit: isAdmin,
-              remove: isAdmin
-          },
-        users: {
-          list: isAdmin,
-          view: isAdmin,
-          edit: isAdmin,
-            remove: isAdmin
-        },
-          modelFiles: {
-              list: isAdmin,
-              view: isAdmin,
-              edit: isAdmin,
-              remove: both,
-              new:both,
-          },
-          models : {
-              list: both,
-              view: both,
-              edit: both,
-              remove: both
-          },
-          scrapeRequest : {
-              list: both,
-              view: both,
-              edit: both,
-              remove: both
-          },
-          extracted : {
-              list: both,
-              view: both,
-              edit: both,
-              remove: both
-          },
-          administration : isAdmin
-      }
-    };
+            var user = {
+                isAdmin: isAdmin,
+                permissions: {
+                    userPackage: {
+                        list: isAdmin,
+                        view: isAdmin,
+                        edit: isAdmin,
+                        remove: isAdmin
+                    },
+                    users: {
+                        list: isAdmin,
+                        view: isAdmin,
+                        edit: isAdmin,
+                        remove: isAdmin
+                    },
+                    modelFiles: {
+                        list: isAdmin,
+                        view: isAdmin,
+                        edit: isAdmin,
+                        remove: both,
+                        new: both,
+                    },
+                    models: {
+                        list: both,
+                        view: both,
+                        edit: both,
+                        remove: both
+                    },
+                    scrapeRequest: {
+                        list: both,
+                        view: both,
+                        edit: both,
+                        remove: both
+                    },
+                    extracted: {
+                        list: both,
+                        view: both,
+                        edit: both,
+                        remove: both
+                    },
+                    status: {
+                        list: isAdmin,
+                        view: isAdmin,
+                        edit: isAdmin,
+                        remove: isAdmin,
+                        new: isAdmin,
+                    },
+                    administration : isAdmin
+                }
+            };
 
     _identity = _.assign(userData, user);
     return _identity;

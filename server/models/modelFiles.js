@@ -13,7 +13,7 @@ var modelSchema = new mongoose.Schema({
     fileName: {
         type: String,
         required: true,
-        defautl: 'default'
+        default: 'default'
     },
         deleted: {
             type: String,
@@ -23,7 +23,7 @@ var modelSchema = new mongoose.Schema({
     fileLocation: {
         type: String,
         required: true,
-        defautl: 'default'
+        default: 'default'
     } ,
     url: {
         type: String,
@@ -32,7 +32,7 @@ var modelSchema = new mongoose.Schema({
     desc: {
         type: String,
         // required: true,
-        defautl: 'Model filedescription.'
+        default: 'Model filedescription.'
     }
     ,
     user: {
@@ -214,7 +214,7 @@ modelSchema.statics.getModelById = function (ModelId) {
 //     });
 //     return Promise.all(promises).then(function(){
 //         return models.find({bus: busId})
-//             .populate('stop', constants.stop.defautlFields)
+//             .populate('stop', constants.stop.defaultFields)
 //             .then(function (stops) {
 //                 return stops;
 //             });

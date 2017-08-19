@@ -11,24 +11,24 @@ var userPackageSchema = new mongoose.Schema({
     },
 packageName:{
     type: String,
-    defautl: 'Default'
+    default: 'Default'
 },
     // maxPagesNumber: {
     //     type: Number,
-    //     defautl: 20
+    //     default: 20
     // },
     // maxItemsPerPageNumber: {
     //     type: Number,
-    //     defautl: 20
+    //     default: 20
     // },
     maxRecords: {
         type: Number,
-        defautl: 20
+        default: 20
     }
     ,
     totalPrice: {
     type: Number,
-        defautl: 0
+        default: 0
 }
 });
 userPackageSchema.statics.createUserPackage = function (userPackage) {

@@ -18,7 +18,7 @@ var scrapeRequestSchema = new mongoose.Schema({
     // },
     maxRecords: {
         type: Number,
-        defautl: 20
+        default: 20
     },
     model : {
         type: mongoose.Schema.Types.ObjectId,
