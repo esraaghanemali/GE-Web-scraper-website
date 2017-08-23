@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('webScraperCMS.userPackage')
-    .controller('UserPackagesCtrl', function ($scope,  $mdToast,$filter, $mdDialog, $state, $stateParams, NgTableParams, models) {
+    .controller('UserPackagesCtrl', function ($scope,  $mdToast,$filter, $mdDialog, $state, $stateParams, NgTableParams, models, notifyService) {
         $scope.userPackageTable = new NgTableParams({
             page: $stateParams.page || 1,
             count: $stateParams.count || 10,
@@ -45,51 +45,13 @@ angular.module('webScraperCMS.userPackage')
             $mdDialog.show(confirm).then(function () {
                 models.userPackage.remove(row.id)
                     .then(function () {
+                        notifyService.notify($filter('translate')('userPackage.remove.success'));
                         $scope.userPackage = _.filter($scope.userPackage, function (userPackage) {
                             return userPackage.id != row.id;
                         })
                         // $scope.stops.splice(index, index + 1);
                         $scope.userPackageTable.reload();
-                        $mdToast.show(
-                            $mdToast.simple()
-                                .textContent('package has been removed!')
-                                .position('bottom right')
-                                .hideDelay(3000)
-                                .theme("success-toast")
-                        );
-                    }).catch(function (err) {
-                    $mdToast.show(
-                        $mdToast.simple()
-                            .textContent('error!')
-                            .position('bottom right')
-                            .hideDelay(3000)
-                            .theme("success-toast")
-                    );
-                });
-            });
-        };
-        $scope.newUserPackage = function (event) {
-            var confirm = $mdDialog.confirm()
-                .title('Are you sure')
-                .textContent('Are you sure to delete the bus: ' + row.packageName + ' ?')
-                .ok('Delete it!')
-                .cancel('Cancel');
 
-            $mdDialog.show(confirm).then(function () {
-                models.userPackage.remove(row.id)
-                    .then(function () {
-                        $scope.userPackage = _.filter($scope.userPackage, function (userPackage) {
-                            return userPackage.id != row.id;
-                        })
-                        // $scope.stops.splice(index, index + 1);
-                        $scope.userPackageTable.reload();
-                        $mdToast.show(
-                            $mdToast.simple()
-                                .textContent('package has been removed!')
-                                .position('bottom right')
-                                .hideDelay(3000)
-                                .theme("success-toast")
-                        );
                     }).catch(function (err) {
                     $mdToast.show(
                         $mdToast.simple()
@@ -101,4 +63,4 @@ angular.module('webScraperCMS.userPackage')
                 });
             });
         };
-    })
+    });

@@ -11,7 +11,7 @@ angular.module('webScraperCMS.status')
                 return;
             }
             if (!$scope.status.statusName || $scope.status.statusMessage == '') {
-                var msg = 'status.errors.required';
+                var msg = 'user.errors.formNotValid';
 
                 notifyService.notify($filter('translate')(msg), {
                     type: 'danger'

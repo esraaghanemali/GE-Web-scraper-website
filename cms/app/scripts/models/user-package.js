@@ -1,18 +1,31 @@
 'use strict';
 
 angular.module('webScraperCMS.models')
-    .factory('UserPackage', function(Restangular) {
+    .factory('userPackage', function(Restangular) {
         var route = 'userPackage';
-        var UserPackage = Restangular.all(route);
-        UserPackage.getAllPackages = function () {
+        var userPackage = Restangular.all(route);
+        userPackage.getAllPackages = function () {
             return Restangular.one(route).get();
         };
 
-        UserPackage.update = function (id) {
+        userPackage.update = function (id) {
             return Restangular.one(route).customPUT({
             packageId : id
             });
         };
 
-        return UserPackage;
+        userPackage.remove = function (id) {
+            return Restangular.one(route).one(id).remove();
+        };
+
+        userPackage.updateInfo = function(field, value, userPackage) {
+            console.log(userPackage);
+            return Restangular.one(route).one('updateInfo').customPOST({
+                field: field,
+                value: value,
+                userPackage: userPackage
+            });
+        };
+
+        return userPackage;
     });

@@ -29,34 +29,26 @@ angular.module('webScraperCMS.userPackage', [])
             }
             ,
             resolve: {
-                userPackage: function($rootScope, $q, $state, $stateParams, authorization, models) {
-                    console.log("in resolve ")
-
-                    return authorization.authorize().then(function() {
+                userPackage: function ($rootScope, $q, $state, $stateParams, authorization, models) {
+                    return authorization.authorize().then(function () {
                         var deferred = $q.defer();
                         if (angular.isDefined($stateParams.userPackage) && $stateParams.userPackage !== null) {
-                            console.log("in first if ")
-
                             deferred.resolve($stateParams.userPackage.clone ? $stateParams.userPackage.clone() : angular.copy($stateParams.userPackage));
                         }
                         else if (angular.isUndefined($stateParams.PackageId) || $stateParams.PackageId === '' || $stateParams.PackageId === null) {
-                            console.log("in sec if ")
-                            console.log($stateParams)
-
                             $state.go('app.userPackages', {}, {
                                 location: 'replace'
                             });
                             deferred.reject();
                         }
                         else if ($stateParams.PackageId === 'new') {
-                            console.log("in new userPackage")
-                            console.log(models.user)
+                            console.log("in new userPackage");
+                            console.log(models.userPackage);
                             deferred.resolve(models.userPackage.one(''));
                         }
                         else {
-                            console.log("in last if ")
 
-                            models.userPackage.get($stateParams.PackageId).then(function(userPackage) {
+                            models.userPackage.get($stateParams.PackageId).then(function (userPackage) {
                                 deferred.resolve(userPackage);
                             }, deferred.reject);
                         }
@@ -64,5 +56,24 @@ angular.module('webScraperCMS.userPackage', [])
                     });
                 }
             }
-        })
+        }).state('app.editPackage', {
+            url: '/userPackage/editPackage/',
+            templateUrl: '../../views/userPackage/editUserPackage-page.html',
+            controller: 'EditUserPackageCtrl',
+            params: {
+                userPackage: null
+            },
+            data: {
+                requiredPermission: true,
+                child: true
+            },
+            resolve: {
+                userPackage: function ($rootScope, authorization, $stateParams) {
+                    // calling authorize() here to make sure that the user is resolved after the authorization
+                    return authorization.authorize().then(function () {
+                        return $stateParams.userPackage;
+                    });
+                }
+            }
+        });
     });

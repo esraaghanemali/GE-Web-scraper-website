@@ -195,6 +195,7 @@ router.get('/:packageId', middleware.getPackageById)
      *
      * @apiUse AuthRequiredError
      */
-    router.delete('/:packageId', middleware.removePackageById)
+    .delete('/:packageId', middleware.removePackageById)
+    .post('/updateInfo/', middleware.updateInfo);
 
 module.exports = router;

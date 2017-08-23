@@ -29,11 +29,11 @@ module.exports = {
             }).catch(next);
     },
     createPackage: function (req, res, next) {
-        models.userPackage.createPackage({
+        models.userPackage.createUserPackage({
             packageId:new Date().getTime(),
             packageName: req.body.packageName,
-            maxPagesNumber : req.body.maxPagesNumber,
-            maxItemsPerPageNumber : req.body.maxItemsPerPageNumber
+            maxRecords : req.body.maxRecords,
+            totalPrice: req.body.totalPrice
         }).then(function (data) {
                 res.json(data);
             }
@@ -58,5 +58,13 @@ module.exports = {
                 res.json(data);
             }
         ).catch(next);
+    },
+    updateInfo: function (req, res, next) {
+        models.userPackage.updateInfo(req.body.userPackage, req.body.field, req.body.value)
+            .then(function (userPackage) {
+
+                    res.json(userPackage);
+                }
+            ).catch(next);
     }
 }

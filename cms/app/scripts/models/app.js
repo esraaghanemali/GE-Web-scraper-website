@@ -17,11 +17,11 @@ angular.module('webScraperCMS.models', [])
   });
 })
 
-    .factory('models', function(User,ModelFiles,UserPackage,scrapeRequest,extractedData,Categories,ExtractedDataTypes, status) {
+    .factory('models', function(User,ModelFiles,userPackage,scrapeRequest,extractedData,Categories,ExtractedDataTypes, status) {
         return {
             user: User,
             modelFiles: ModelFiles,
-            userPackage:UserPackage,
+            userPackage:userPackage,
             scrapeRequest:scrapeRequest,
             categories : Categories,
             extractedDataTypes: ExtractedDataTypes,

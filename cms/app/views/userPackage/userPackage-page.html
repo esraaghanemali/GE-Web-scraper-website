@@ -1,25 +1,29 @@
-<form name="userPackageForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">
-    <div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
-        <div class="card-heading">
-            <h2>Package Page</h2>
-        </div>
-        <md-content layout-padding>
+<div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
+    <div class="card-heading">
+        <h2>Add Package</h2>
+    </div>
+    <md-content layout-padding>
+
+        <form name="userPackageForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">
             <md-input-container class="md-block">
                 <label translate="userPackage.packageName"></label>
-                <input required name="packageName" ng-model="userPackage.packageName" auto-focus ng-readonly="!isNew">
-                <div ng-messages="userPackageForm.packageName.$error">
-                    <div ng-message="required">{{"packageName.errors.packageName.required" | translate}}</div>
-                </div>
+                <input required name="packageName" ng-model="userPackage.packageName" auto-focus>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label translate="userPackage.maxRecords"></label>
+                <input required type="number" name="maxRecords" ng-model="userPackage.maxRecords">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label translate="userPackage.totalPrice"></label>
+                <input required type="number" name="totalPrice" ng-model="userPackage.totalPrice">
             </md-input-container>
 
             <md-input-container>
-                <md-button class="md-raised md-primary" translate="userPackage.actions.save" ng-click="saveUserPackage()"></md-button>
+                <md-button class="md-raised md-primary" translate="userPackage.actions.save"
+                           ng-click="saveUserPackage()"></md-button>
             </md-input-container>
+        </form>
 
-            <!--<md-input-container>-->
-                <!--<md-button ng-if="isNew" class="md-raised md-primary" translate="Save Issue" ng-click="saveIssue()"></md-button>-->
-                <!--<md-button ng-if="!isNew" class="md-raised md-primary" translate="Update Issue" ng-click="saveIssue()"></md-button>-->
-            <!--</md-input-container>-->
-        </md-content>
-    </div>
-</form>
+</div>

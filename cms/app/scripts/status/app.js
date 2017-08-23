@@ -28,10 +28,10 @@ angular.module('webScraperCMS.status', [])
             }
             ,
             resolve: {
-                status: function($rootScope, $q, $state, $stateParams, authorization, models) {
-                    return authorization.authorize().then(function() {
+                status: function ($rootScope, $q, $state, $stateParams, authorization, models) {
+                    return authorization.authorize().then(function () {
                         var deferred = $q.defer();
-                     if (angular.isDefined($stateParams.status) && $stateParams.status !== null) {
+                        if (angular.isDefined($stateParams.status) && $stateParams.status !== null) {
                             deferred.resolve($stateParams.status.clone ? $stateParams.status.clone() : angular.copy($stateParams.status));
                         }
                         else if (angular.isUndefined($stateParams.statusId) || $stateParams.statusId === '' || $stateParams.statusId === null) {
@@ -41,11 +41,12 @@ angular.module('webScraperCMS.status', [])
                             deferred.reject();
                         }
                         else if ($stateParams.statusId === 'new') {
-
+                            console.log("in new status");
+                            console.log(models.status);
                             deferred.resolve(models.status.one(''));
                         }
                         else {
-                            models.status.get($stateParams.statusId).then(function(user) {
+                            models.status.get($stateParams.statusId).then(function (user) {
                                 deferred.resolve(user);
                             }, deferred.reject);
                         }
@@ -65,9 +66,9 @@ angular.module('webScraperCMS.status', [])
                 child: true
             },
             resolve: {
-                status: function($rootScope, authorization, $stateParams) {
+                status: function ($rootScope, authorization, $stateParams) {
                     // calling authorize() here to make sure that the user is resolved after the authorization
-                    return authorization.authorize().then(function() {
+                    return authorization.authorize().then(function () {
                         return $stateParams.status;
                     });
                 }

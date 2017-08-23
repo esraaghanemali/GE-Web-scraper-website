@@ -53,9 +53,6 @@ angular.module('webScraperCMS.status')
 
                         $scope.isLoading = false;
                         notifyService.notify($filter('translate')('status.actions.remove.success'));
-                        $state.go('app.statuses', {}, {
-                            location: 'replace'
-                        });
 
                         $scope.status = _.filter($scope.status, function (status) {
                             return status.id != row.id;
