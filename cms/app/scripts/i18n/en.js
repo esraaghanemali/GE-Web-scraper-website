@@ -5,7 +5,7 @@ angular.module('webScraperCMS.i18n')
         global: {
             userWebsite: 'User Website',
             loadingData: 'Loading data...',
-            errorData: 'An error occured. Please try again.',
+            errorData: 'An error occurred. Please try again.',
             actions: {
                 back: 'Go Back'
             },
@@ -54,7 +54,8 @@ angular.module('webScraperCMS.i18n')
                 buses: 'Buses',
                 ModelFiles: 'Models',
                 stops: 'Stops',
-                status: 'Status'
+                status: 'Status',
+                extractedDataType: 'Extracted Data Types'
             }
         },
         login: {
@@ -387,7 +388,7 @@ angular.module('webScraperCMS.i18n')
                     ok: 'OK',
                     cancel: 'Cancel',
                     success: 'category {{categoryName}} was deleted successfully.',
-                    error: 'An error occured while deleting category.',
+                    error: 'An error occurred while deleting category.',
                     used: 'Category {{categoryName}} is used in other maps'
                 }
             },
@@ -410,18 +411,42 @@ angular.module('webScraperCMS.i18n')
                 new: 'New Status',
                 edit: 'Edit',
                 save: 'Save',
-                addStatus: 'Add New Starus',
+                addStatus: 'Add New Status',
                 remove: {
                     title: 'Are you sure?',
                     text: 'Are you sure you want to delete status {{statusName}}?',
                     ok: 'OK',
                     cancel: 'Cancel',
                     success: 'Status {{statusName}} was deleted successfully.',
-                    error: 'An error occured while deleting status.'
+                    error: 'An error occurred while deleting status.'
                 }
             },
             statusName: 'Status Name',
             statusMessage: 'Status Message',
             'save.success': 'Status was saved successfully'
+        },
+        extractedDataTypes: {
+            listPage: {
+                title: 'Extracted Data Types List',
+                noData: 'No data types yet. You can create one by using the button at the top.',
+                loadingData: 'Loading Data',
+                errorData: 'Error while loading data.'
+            },
+            actions: {
+                new: 'New Data Type',
+                edit: 'Edit',
+                save: 'Save',
+                addDataType: 'Add New DataType',
+                remove: {
+                    title: 'Are you sure?',
+                    text: 'Are you sure you want to delete dataType {{dataTypeName}}?',
+                    ok: 'OK',
+                    cancel: 'Cancel',
+                    success: 'Data type {{dataTypeName}} was deleted successfully.',
+                    error: 'An error occurred while deleting data type.'
+                }
+            },
+            dataTypeName: 'Data Type Name',
+            'save.success': 'Data type was saved successfully'
         }
     });

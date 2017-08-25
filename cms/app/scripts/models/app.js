@@ -24,9 +24,9 @@ angular.module('webScraperCMS.models', [])
             userPackage:userPackage,
             scrapeRequest:scrapeRequest,
             categories : Categories,
-            extractedDataTypes: ExtractedDataTypes,
             extractedData:extractedData,
-            status:status
+            status:status,
+            extractedDataType: ExtractedDataTypes
         };
     });
     // .factory('models', function(userPackage,User,ModelFiles,scrapeRequest,status,extractedData,webScraperConstant) {

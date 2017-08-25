@@ -179,7 +179,7 @@ angular.module('webScraperCMS.userW', [])
           extractedDataTypes:function ($q, models) {
               console.log('in extracted data type')
               var deferred = $q.defer();
-              models.extractedDataTypes.getAllExtractedDataTypes()
+              models.extractedDataType.getAllExtractedDataTypes()
                   .then(function (extractedDataTypes) {
                   deferred.resolve(extractedDataTypes);
               }, deferred.reject).catch(function (err) {

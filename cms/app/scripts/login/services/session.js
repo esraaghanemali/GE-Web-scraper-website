@@ -57,6 +57,13 @@ angular.module('webScraperCMS.login')
                         remove: isAdmin,
                         new: isAdmin,
                     },
+                    extractedDataTypes: {
+                        list: isAdmin,
+                        view: isAdmin,
+                        edit: isAdmin,
+                        remove: isAdmin,
+                        new: isAdmin,
+                    },
                     administration : isAdmin
                 }
             };

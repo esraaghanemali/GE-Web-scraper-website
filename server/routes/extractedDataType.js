@@ -190,6 +190,6 @@ router.get('/analytic/', middleware.getRequestsGroupedByType)
  *
  * @apiUse AuthRequiredError
  */
-// .delete('/:statusId', middleware.removeStatusById)
+ .delete('/:typeId', middleware.removeTypeById)
 
 module.exports = router;

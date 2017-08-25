@@ -40,7 +40,8 @@ angular.module('webScraperCMS', [
   'webScraperCMS.userW',
   'webScraperCMS.scrapeRequest',
   'webScraperCMS.extractedData',
-  'webScraperCMS.status'
+  'webScraperCMS.status',
+  'webScraperCMS.extractedDataTypes'
 ]).constant('_', _)
     .config(function ($stateProvider, $urlRouterProvider, $localStorageProvider, $mdDateLocaleProvider) {
         $localStorageProvider.setKeyPrefix('webScraperCMS');

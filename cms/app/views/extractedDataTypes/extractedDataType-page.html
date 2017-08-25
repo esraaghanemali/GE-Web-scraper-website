@@ -1,0 +1,19 @@
+<div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
+    <div class="card-heading">
+        <h2>Add Data Type</h2>
+    </div>
+    <md-content layout-padding>
+
+        <form name="extractedDataTypesForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">
+            <md-input-container class="md-block">
+                <label translate="extractedDataTypes.dataTypeName"></label>
+                <input required name="dataTypeName" ng-model="extractedDataType.dataType" auto-focus>
+            </md-input-container>
+
+            <md-input-container>
+                <md-button class="md-raised md-primary" translate="extractedDataTypes.actions.save"
+                           ng-click="saveExtractedDataType()"></md-button>
+            </md-input-container>
+        </form>
+
+</div>

@@ -16,7 +16,7 @@ module.exports = {
             limit: limit,
             projection: constants.extractedDataType.defaultFields
         }).then(function(data){
-            // console.log(data)
+            console.log(data)
             res.json(data);
         }).catch(next);
 
@@ -52,7 +52,7 @@ module.exports = {
     // },
     createExtractedDataType: function (req, res, next) {
         models.extractedDataType.createExtractedDataType({
-            type: req.body.type,
+            type: req.body.dataType
         }).then(function (data) {
                 res.json(data);
             }
@@ -66,15 +66,11 @@ module.exports = {
                 res.json(data);
             }
         ).catch(next);
+    },
+    removeTypeById: function (req, res, next){
+        models.extractedDataType.removeTypeById(req.params.typeId).then(function (data) {
+                res.json(data);
+            }
+        ).catch(next);
     }
-    // ,
-    // removeExtractedDataTypeById: function (req, res, next){
-    //     // console.log("in remove "+req.params.packageId)
-    //
-    //     models.userPackage.removePackageById(req.params.packageId).then(function (data) {
-    //         // console.log("the id "+req.params.packageId)
-    //             res.json(data);
-    //         }
-    //     ).catch(next);
-    // }
 }

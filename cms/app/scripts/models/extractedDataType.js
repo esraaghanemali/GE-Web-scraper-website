@@ -10,16 +10,9 @@ angular.module('webScraperCMS.models')
         extractedDataTypes.getAnalyticCategories = function () {
             return Restangular.one(route).one('analytic').get();
         };
-        // categories.getAdminModelFiles = function () {
-        //     return Restangular.one(route).one('/Admin').get();
-        // };
-        // categories.getUserModelFiles = function () {
-        //     return Restangular.one(route).one('/User').get();
-        // };
-        //
-        // categories.removeModelFile = function (Id) {
-        //     return Restangular.one(route).one(Id).remove();
-        // };
+        extractedDataTypes.remove = function (id) {
+            return Restangular.one(route).one(id).remove();
+        };
 
         return extractedDataTypes;
     });
