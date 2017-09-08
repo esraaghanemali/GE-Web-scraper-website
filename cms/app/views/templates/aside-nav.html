@@ -1,5 +1,7 @@
 <nav ui-nav>
   <ul class="nav" ng-class="{'rtl': app.setting.rtl}">
+
+    
     <li ui-sref-active="active" ng-if="currentUser.permissions.administration">
       <a md-ink-ripple ui-sref="app.home" ng-class="{'rtl': app.setting.rtl}">
         <i class="icon mdi-action-home i-20"></i>

@@ -67,16 +67,21 @@ console.log('in the process'+i)
 
                             exportWrapper.exportData(type)
                                 .then(function (exportWrapperResult) {
+                                    console.log('type is : '+ exportWrapperResult.type)
+                                    // console.log('content')
+                                    // console.log( exportWrapperResult.content)
                                     var fileNmae =global.coreRoot+ '/uploads/extractedData'+ new Date().getTime()
                                     writeFileWrapper.writeFile(exportWrapperResult.type,
                                         exportWrapperResult.content,fileNmae)
                                         .then(function (currentfileNmae)
                                         {
-                                     // urls.push(currentfileNmae)
-                                            extractedData.createExtractedData(
+                                    //  urls.push(currentfileNmae)
+                                     sendMail.sendFileEmail(request,currentfileNmae).then(function(res)
+                                     {
+                                                extractedData.createExtractedData(
                                                 {
                                                     extractedDataId :  new Date().getTime(),
-                                                    maxRecords:4,
+                                                    maxRecords:global.finalData.length,
                                                     url:currentfileNmae,
                                                     date:new Date().getTime(),
                                                     scrapeRequest:request
@@ -110,6 +115,48 @@ console.log('in the process'+i)
                                             }).catch(function (err) {
                                                 console.log(err)
                                             })
+                                         console.log('send email')
+                                     }).catch(function(err)
+                                     {
+                                         console.log(err)
+                                     })
+                                            // extractedData.createExtractedData(
+                                            //     {
+                                            //         extractedDataId :  new Date().getTime(),
+                                            //         maxRecords:4,
+                                            //         url:currentfileNmae,
+                                            //         date:new Date().getTime(),
+                                            //         scrapeRequest:request
+                                            //     }
+                                            // ).then(function (data) {
+                                            //     console.log('data saved')
+
+                                            //     requests.updateScrapeRequest(request._id,
+                                            //         'message','the request finishe processing you can get your data.')
+                                            //         .then(function (data) {
+                                            //             status.getStatusByName('Finished')
+                                            //                 .then(function (data) {
+                                            //                     requests.changeScrapeRequestStatus(request._id,data)
+                                            //                         .then(function () {
+                                            //                             serialProcessing(i+1,arrayofRequests)
+
+                                            //                         }).catch(function (err) {
+                                            //                         console.log(err)
+
+                                            //                     })
+
+                                            //                 }).catch(function (err) {
+                                            //                 console.log(err)
+
+                                            //             })
+
+                                            //         }).catch(function (err) {
+                                            //         console.log(err)
+                                            //     })
+
+                                            // }).catch(function (err) {
+                                            //     console.log(err)
+                                            // })
 
                                         }).catch(function (err) {
                                         console.log(err)

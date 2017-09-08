@@ -1,80 +1,29 @@
 
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid"  style="margin-right: 47px;margin-left: 47px;">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" ui-sref="app.Start">Start GE Web Scraper</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a ui-sref="app.Index" translate="userApp.Home"></a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.About"  translate="userApp.About"></a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.Services"  translate="userApp.Services"></a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.Contact"  translate="userApp.Contact"></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../../images/img/post-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading">
-                        <h1>Man must explore, and this is exploration at its greatest</h1>
-                        <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                        <span class="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+      <div id="nav" ng-include="'views/userTemplates/nav.html'"></div>
 
     <!-- Post Content -->
     <article>
         <div class="container">
+
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <h2 class="section-heading">The Saas Web Scraper </h2>
-                    <p>
-                        Our Cloud service offers the best rates and results for data scraping and extraction purposes. We make it easy and affordable to get you up and running instantly. Simply create a login for our Cloud Service, create your sitemap in our FREE Chrome Extension, copy and paste your sitemap in our Cloud Service, and let it run. We also offer our services making your sitemaps should you need the assistance.
-                    </p>
-                   <p>
-                       Our pricing is simple, after creating your logon you can purchase blocks of pages to be extracted. Our service will let you test your sitemaps for free, so you will not be charged while testing. After you purchase your pages, you can submit your sitemap for scraping. You can even set it to run on a regular schedule! Each page that your sitemap traverses will deduct one page credit from your balance. Below is our pricing for purchasing blocks of page credits.
-                   </p>
-                    <ui>
-                        <li>
-                            100,000 page credits - $50
-                        </li>
-                    </ui>
+                   
                     <h2 class="section-heading">The Chrome Extention</h2>
                     <p>
                         Using our extension you can create a plan (sitemap) how a web site should be traversed and what should be extracted. Using these sitemaps the Web Scraper will navigate the site accordingly and extract all data. Scraped data later can be exported as CSV.
                     </p>
 
 
-                    <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+                    <p>
+                      Easy & graphic app interface: 
+                      Open a website of your choice and start clicking around. It’s that easy! You don’t need to code at all. 
+                          </p>
 
+                    <p>
+                    Our machine learning relationship engine does the magic for you. 
+                    We screen the page and understand the hierarchy of elements. You'll see the data pulled in seconds.        </p>
                     <a href="#">
                         <img class="img-responsive" src="../../images/img/post-sample-image.jpg" alt="">
                     </a>
@@ -85,6 +34,26 @@
                     <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
 
                     <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+                <h2 class="section-heading">The Saas Web Scraper </h2>
+                    <p>
+                        Our Cloud service offers the best rates and results for data scraping and
+                         extraction purposes. We make it easy and affordable to get you up and 
+                         running instantly. Simply create a login for our Cloud Service, create your sitemap in our FREE Chrome Extension, copy and paste your sitemap in our Cloud Service, and let it run. We also offer our services making your sitemaps should you need the assistance.
+                    </p>
+                   <p>
+                       Our pricing is simple, after creating your logon you can purchase blocks of pages to be extracted. Our service will let you test your sitemaps for free, so you will not be charged while testing. After you purchase your pages, you can submit your sitemap for scraping. You can even set it to run on a regular schedule! Each page that your sitemap traverses will deduct one page credit from your balance. Below is our pricing for purchasing blocks of page credits.
+                   </p>
+                  <p>
+                      Get data from millions of pages.
+                       Enter thousands of links and keywords that ParseHub will automatically search through. 
+                  </p>
+                     <p>
+                   Use our REST API. Get data in Excel and JSON ....
+                  </p>
+                                     <p>
+            Stay focused on your product and leave the infrastructure maintenance to us. 
+                  </p>
+              
                 </div>
             </div>
         </div>
@@ -93,38 +62,4 @@
     <hr>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="nav" ng-include="'views/userTemplates/footer.html'"></div>

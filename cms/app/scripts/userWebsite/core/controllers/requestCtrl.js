@@ -37,7 +37,7 @@ angular.module('webScraperCMS.userW')
 
                 $scope.isLoading = false;
                 notifyService.notify($filter('translate')('request.save.success'));
-                $state.go('app.Models', {}, {
+                $state.go('app.myRequests', {}, {
                     location: 'replace'
                 });
             }, function(err) {

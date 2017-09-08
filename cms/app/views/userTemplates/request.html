@@ -1,6 +1,6 @@
 <div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
     <div class="card-heading">
-        <h2>Make Requst</h2>
+        <h1>Make Requst</h1>
     </div>
 
     <md-content layout-padding>
@@ -8,9 +8,8 @@
 
 
             <md-input-container class="md-block" >
-              <h5>Choose from Templete Files</h5>
                 <md-select name="temptModel" ng-model="request.temptModel" class="md-default-theme" style="width: 100%"
-                           placeholder="Select Templete"
+                           placeholder="Choose from Templete Files"
 
                            ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">
                     <md-option ng-repeat="temptModel in temptModels" ng-value="temptModel">
@@ -29,9 +28,9 @@
 
 
             <md-input-container class="md-block" >
-                <h5>Choose from your files</h5>
+               
                 <md-select name="requestModel" ng-model="request.requestModel" class="md-default-theme" style="width: 100%"
-                         placeholder="Select Model"
+                         placeholder="Choose from your files"
                            ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">
                     <md-option ng-repeat="requestModel in requestModels" ng-value="requestModel">
 
@@ -48,7 +47,7 @@
             </md-input-container>
 
             <md-input-container class="md-block" >
-                <h5>Choose The Type Of The Data</h5>
+               
                 <md-select name="extractedDataType"
                            required=""
                            ng-model="request.extractedDataType"
@@ -87,3 +86,4 @@
 </div>
 
 
+  <div id="nav" ng-include="'views/userTemplates/footer.html'"></div>

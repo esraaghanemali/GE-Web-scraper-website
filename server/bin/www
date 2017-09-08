@@ -35,6 +35,12 @@ models.connect().then(function(){
 
 models.category.createDefaultCategory().catch(function (err) {
     console.log(err)
+    models.userPackage.getDefaultUserPackage().then(function(res){
+      console.log('res')
+console.log(res)
+    }).catch(function (err) {
+        console.log(err)
+    })
 
 })
 

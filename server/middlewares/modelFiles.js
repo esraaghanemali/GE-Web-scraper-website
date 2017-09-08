@@ -64,11 +64,32 @@ module.exports = {
 
     },
     getModelFiles: function (req, res, next) {
-
-
         var limit = Number(req.query.limit);
         limit = isNaN(limit) ? 10 : limit;
-        var offset = Number(req.query.skip);
+        var offset = Number(req.query.offset);
+        offset = isNaN(offset) ? 0 : offset;
+        models.model.getList({
+            skip: offset,
+            limit: limit,
+            populate: [
+                {
+                  
+                     path: 'category'
+                      
+                },
+                {
+ path: 'user'
+                }
+            ],
+            projection: constants.model.defaultFields
+        }).then(function(modelFiles){
+            res.json(modelFiles);
+        }).catch(next);
+    },
+       getLimitModelFilesByUsername: function (req, res, next) {
+        var limit = Number(req.query.limit);
+        limit = isNaN(limit) ? 10 : limit;
+        var offset = Number(req.query.offset);
         offset = isNaN(offset) ? 0 : offset;
         models.model.getList({
             skip: offset,
@@ -123,6 +144,10 @@ var category = categories.find(function (array) {
         ).catch(next);
     },
     getModelFilesByUsername: function (req, res, next) {
+        console.log('by user')
+          console.log(req.params.offset)
+                    console.log(req.params.limit)
+
         models.model.getModelFilesByUsername(req.registeredUser)
             .then(function (modelFiles) {
                 res.json(modelFiles);

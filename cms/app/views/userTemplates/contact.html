@@ -1,52 +1,4 @@
-
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid"  style="margin-right: 47px;margin-left: 47px;">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" ui-sref="app.Start">Start GE Web Scraper</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a ui-sref="app.Index" translate="userApp.Home"></a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.About"  translate="userApp.About"></a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.Services"  translate="userApp.Services"></a>
-                    </li>
-                    <li>
-                        <a ui-sref="app.Contact"  translate="userApp.Contact"></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../../images/img/contact-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>Contact Us</h1>
-                        <hr class="small">
-                        <span class="subheading">Have questions? We have answers.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+  <div id="nav" ng-include="'views/userTemplates/nav.html'"></div>
 
     <!-- Main Content -->
     <div class="container">
@@ -100,38 +52,5 @@
     <hr>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <div id="nav" ng-include="'views/userTemplates/footer.html'"></div>
+

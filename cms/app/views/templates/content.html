@@ -14,11 +14,35 @@
     <!-- / -->
     <!-- Common tools -->
     <ul class="nav nav-sm navbar-tool" ng-hide="$state.current.data.child" ng-class="{'pull-left': app.setting.rtl, 'pull-right': !app.setting.rtl}">
+           <li>
+                    <a ui-sref="app.Index" translate="userApp.Home"></a>
+                </li>
+                <!--<li>
+                    <a ui-sref="app.About"  translate="userApp.About"></a>
+                </li>-->
+                <li>
+                    <a ui-sref="app.Services"  translate="userApp.Services"></a>
+                </li>
+                   <li>
+                    <a ui-sref="app.Start"  translate="userApp.Start"></a>
+                </li>
+                     <li>
+                    <a ui-sref="app.Pricing"  translate="userApp.Pricing"></a>
+                </li>
+                <li>
+                    <a ui-sref="app.Tutorial"  translate="userApp.Tutorial"></a>
+                </li>
+                <li>
+                    <a ui-sref="app.Contact"  translate="userApp.Contact"></a>
+                </li>
+              
       <li>
         <a md-ink-ripple ng-click="app.search.show = true;">
           <i class="mdi-action-search i-24"></i>
+
         </a>
       </li>
+      
     </ul>
     <div class="pull-right" ui-view="navbar@"></div>
     <!-- / -->

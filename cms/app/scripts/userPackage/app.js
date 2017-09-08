@@ -50,8 +50,11 @@ angular.module('webScraperCMS.userPackage', [])
                         }
                         else if ($stateParams.PackageId === 'new') {
                             console.log("in new userPackage")
-                            console.log(models.user)
+                            console.log(models.userPackage)
+                                                        console.log(models.user)
+
                             deferred.resolve(models.userPackage.one(''));
+                              console.log(deferred.resolve(models.userPackage.one('')))
                         }
                         else {
                             console.log("in last if ")

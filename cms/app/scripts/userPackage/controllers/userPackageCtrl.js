@@ -3,8 +3,8 @@
 angular.module('webScraperCMS.userPackage')
     .controller('UserPackageCtrl', function ($rootScope, $scope, $filter, $state, models, notifyService, userPackage) {
         $scope.isNew =angular.isUndefined(userPackage.id) || userPackage.id == null || userPackage.id == '';
-        $scope.userPackage = $scope.isNew ? {} : userPackage;
-
+        // $scope.userPackage = $scope.isNew ? {} : userPackage;
+$scope.userPackage = userPackage
         $scope.saveUserPackage = function () {
             if ($scope.isLoading) {
                 return;
@@ -17,13 +17,13 @@ angular.module('webScraperCMS.userPackage')
             $scope.isLoading = true;
             console.log('user pac')
 
-            console.log($scope.userPackage)
-          // return  $scope.userPackage.save().then(function (newPackage) {
-          //
-          //       $state.go('app.userPackages', {}, {
-          //           location: 'replace'
-          //       });
-          //   });
+            console.log(userPackage)
+          return  $scope.userPackage.save().then(function (newPackage) {
+          
+                $state.go('app.userPackages', {}, {
+                    location: 'replace'
+                });
+            });
         }
 
     });

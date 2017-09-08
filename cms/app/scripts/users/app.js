@@ -20,6 +20,8 @@ angular.module('webScraperCMS.users', [])
     templateUrl: 'views/users/profile.html',
     controller: 'ProfileCtrl',
     data: {
+        child: true,
+        title:'Profile',
       requiredPermission: true
     },
     resolve: {
@@ -52,27 +54,33 @@ angular.module('webScraperCMS.users', [])
               location: 'replace'
             });
           }
-          else
-            if (angular.isDefined($stateParams.user) && $stateParams.user !== null) {
-            deferred.resolve($stateParams.user.clone ? $stateParams.user.clone() : angular.copy($stateParams.user));
-          }
-          else if (angular.isUndefined($stateParams.userId) || $stateParams.userId === '' || $stateParams.userId === null) {
-            $state.go('app.users', {}, {
-              location: 'replace'
-            });
-            deferred.reject();
-          }
-          else if ($stateParams.userId === 'new') {
+            else if ($stateParams.userId === 'new') {
             console.log("in new user")
               console.log(models.user)
 
               deferred.resolve(models.user.one(''));
           }
-          else {
-            models.user.get($stateParams.userId).then(function(user) {
-              deferred.resolve(user);
-            }, deferred.reject);
-          }
+          // else
+          //   if (angular.isDefined($stateParams.user) && $stateParams.user !== null) {
+          //   deferred.resolve($stateParams.user.clone ? $stateParams.user.clone() : angular.copy($stateParams.user));
+          // }
+          // else if (angular.isUndefined($stateParams.userId) || $stateParams.userId === '' || $stateParams.userId === null) {
+          //   $state.go('app.users', {}, {
+          //     location: 'replace'
+          //   });
+          //   deferred.reject();
+          // }
+          // else if ($stateParams.userId === 'new') {
+          //   console.log("in new user")
+          //     console.log(models.user)
+
+          //     deferred.resolve(models.user.one(''));
+          // }
+          // else {
+          //   models.user.get($stateParams.userId).then(function(user) {
+          //     deferred.resolve(user);
+          //   }, deferred.reject);
+          // }
           return deferred.promise;
         });
       },

@@ -6,7 +6,7 @@ if(type==3)
 {
     try{
 content.pipe(fs.createWriteStream(fileName+'.csv'))
-        cb({ code:1, msg: 'yes' })
+        cb({ code:1, msg: fileName+'.csv' })
 
     }catch(err)
     {
@@ -20,7 +20,7 @@ if(type==4)
 {
     try{
 content.getReadStream().pipe(fs.createWriteStream(fileName+'.xlsx'));
-        cb({ code:1, msg: 'finish' })
+        cb({ code:1, msg:fileName+'.xlsx' })
 
     }catch(err)
     {
@@ -32,11 +32,11 @@ else
 
 
     if (type == 2) {
-        fs.writeFile(fileName+'.json', content, (err) => {
+        fs.writeFile(fileName, content, (err) => {
             if (err) {
                 cb({ code: 0, msg: err })
             }
-            cb({ code:1, msg: 'yes xml saved' })
+            cb({ code:1, msg: fileName})
         });
     }
     else if (type == 1)
@@ -45,7 +45,7 @@ else
             if (err) {
                 cb({ code: 0, msg: err })
             }
-            cb({ code:1, msg: 'yes xml saved' })
+            cb({ code:1, msg: fileName+'.xml' })
         });
     }
 
