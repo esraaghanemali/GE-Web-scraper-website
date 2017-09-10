@@ -134,31 +134,30 @@ var result = {
 
 
 }
-// categorySchema.statics.removeCategoryById = function (statusId) {
-//
-//     if(!statusId || statusId=='' )
-//     {
-//         console.log('error remove')
-//         return  promise.reject(errors.missingData)
-//
-//     }
-//     var thisModel = this;
-//     return new Promise(function (resolve, reject) {
-//         thisModel.getPackageById(statusId).then(function (status) {
-//             console.log("findd "+ status)
-//             thisModel.remove({statusId: statusId})
-//                 .catch(reject);
-//             console.log('removed')
-//             resolve();
-//         }).catch(function (err) {
-//             return  reject(err)
-//         })
-//
-//     })
-//
-//
-//
-// }
+categorySchema.statics.removeCategoryById = function (categoryId) {
+
+    if(!categoryId || categoryId=='' )
+    {
+        console.log('error remove')
+        return  promise.reject(errors.missingData)
+
+    }
+    var thisModel = this;
+    return new Promise(function (resolve, reject) {
+        thisModel.getCategoryById(categoryId).then(function (status) {
+            thisModel.remove({_id: categoryId})
+                .catch(reject);
+            console.log('removed')
+            resolve();
+        }).catch(function (err) {
+            return  reject(err)
+        })
+
+    })
+
+
+
+}
 
 
 module.exports = mongoose.model('category', categorySchema, 'category');

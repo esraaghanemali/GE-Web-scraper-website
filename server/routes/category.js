@@ -189,6 +189,6 @@ router.get('/:categoryId', middleware.getCategoryById)
      *
      * @apiUse AuthRequiredError
      */
-    // .delete('/:statusId', middleware.removeStatusById)
+    .delete('/:categoryId', middleware.removeCategoryById)
 
 module.exports = router;

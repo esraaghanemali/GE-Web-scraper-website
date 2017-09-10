@@ -23,7 +23,7 @@ angular.module('webScraperCMS.models', [])
             modelFiles: ModelFiles,
             userPackage:userPackage,
             scrapeRequest:scrapeRequest,
-            categories : Categories,
+            category : Categories,
             extractedData:extractedData,
             status:status,
             extractedDataType: ExtractedDataTypes

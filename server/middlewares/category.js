@@ -22,7 +22,7 @@ module.exports = {
     },
 
     getCategoryById: function (req, res, next) {
-        models.Category.getCategoryById(req.params.categoryId)
+        models.category.getCategoryById(req.params.categoryId)
             .then(function (data) {
                 res.json(data);
             }).catch(next);
@@ -45,5 +45,11 @@ module.exports = {
             }
         ).catch(next);
     },
+    removeCategoryById: function (req, res, next){
+        models.category.removeCategoryById(req.params.categoryId).then(function (data) {
+                res.json(data);
+            }
+        ).catch(next);
+    }
  
 }

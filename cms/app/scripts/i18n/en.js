@@ -55,7 +55,8 @@ angular.module('webScraperCMS.i18n')
                 ModelFiles: 'Models',
                 stops: 'Stops',
                 status: 'Status',
-                extractedDataType: 'Extracted Data Types'
+                extractedDataType: 'Extracted Data Types',
+                categories: 'Categories'
             }
         },
         login: {
@@ -370,7 +371,7 @@ angular.module('webScraperCMS.i18n')
             'save.success': 'Map was saved successfully'
         },
         category: {
-            name: 'Name',
+            categoryName: 'Category Name',
             listPage: {
                 title: 'Categories',
                 noData: 'No Categories yet. You can create one by using the button at the top.'
@@ -382,12 +383,12 @@ angular.module('webScraperCMS.i18n')
             actions: {
                 new: 'New Category',
                 save: 'Save Category',
-                delete: {
+                remove: {
                     title: 'Are you sure?',
                     text: 'Are you sure you want to delete category {{categoryName}}?',
                     ok: 'OK',
                     cancel: 'Cancel',
-                    success: 'category {{categoryName}} was deleted successfully.',
+                    success: 'Category {{categoryName}} was deleted successfully.',
                     error: 'An error occurred while deleting category.',
                     used: 'Category {{categoryName}} is used in other maps'
                 }

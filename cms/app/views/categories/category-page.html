@@ -1,0 +1,19 @@
+<div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
+    <div class="card-heading">
+        <h2>Add Category</h2>
+    </div>
+    <md-content layout-padding>
+
+        <form name="categoriesForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">
+            <md-input-container class="md-block">
+                <label translate="category.categoryName"></label>
+                <input required name="categoryName" ng-model="category.categoryName" auto-focus>
+            </md-input-container>
+
+            <md-input-container>
+                <md-button class="md-raised md-primary" translate="category.actions.save"
+                           ng-click="saveCategory()"></md-button>
+            </md-input-container>
+        </form>
+
+</div>
