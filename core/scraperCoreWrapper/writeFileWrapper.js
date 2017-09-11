@@ -21,7 +21,7 @@ module.exports =
                     if(result.code==1)
                     {
 
-                            resolve(fileName)
+                            resolve(result.msg)
                         // console.log(result.msg)
 
                     }

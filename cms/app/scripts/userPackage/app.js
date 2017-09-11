@@ -45,6 +45,7 @@ angular.module('webScraperCMS.userPackage', [])
                             console.log("in new userPackage");
                             console.log(models.userPackage);
                             deferred.resolve(models.userPackage.one(''));
+                              console.log(deferred.resolve(models.userPackage.one('')))
                         }
                         else {
 

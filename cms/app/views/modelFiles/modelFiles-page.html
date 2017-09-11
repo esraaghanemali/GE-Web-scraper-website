@@ -16,23 +16,28 @@
             <!--</th>-->
             <th>File Name</th>
             <th>File Description</th>
-            <th>File Location</th>
+            <th>Category</th>
+            <th>Website Url          </th>
+              <th>User</th>
             <th>Deleted</th>
-            <th>User</th>
+          
             <th>Remove</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="row in $data" ng-if="$data.length" >
-            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.fileName}}</td>
-            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.desc}}</td>
+            <td >{{row.fileName}}</td>
+            <td >{{row.desc}}</td>
 
-            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.fileLocation}}</td>
-            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.deleted}}</td>
+            <td>{{row.category.categoryName}}</td>
+         
+<td >{{row.url}}</td>
 
-            <td ui-sref="app.modelFiles({ modelFile: row, modelId: row.id})">{{row.user.firstName}}</td>
+            <td >{{row.user.firstName}}</td>
+               <td >{{row.deleted}}</td>
             <td>
-                <md-button ng-if="currentUser.permissions.modelFiles.edit" type="button" class="md-raised red-500"
+                <md-button ng-if="currentUser.permissions.modelFiles.edit" type="button" 
+                class="md-raised red-500"
                            ng-click="remove(row)"><i
                         class="mdi mdi-content-block"></i></md-button>
             </td>
@@ -49,3 +54,5 @@
         </tbody>
     </table>
 </div>
+
+  <div id="nav" ng-include="'views/userTemplates/footer.html'"></div>

@@ -70,7 +70,20 @@ userPackageSchema.statics.createDefaultUserPackage = function () {
         return Promise.reject(err)
     });
 };
+userPackageSchema.statics.getDefaultUserPackage = function () {
+    var thisModel = this;
+    return this.findOne({
+        packageName: 'Default'
+    }).then(function (userPackage) {
+// console.log('found')
+// console.log(userPackage)
+        return Promise.resolve(userPackage);
+    }).catch(function (err) {
+        console.log('not')
 
+        return Promise.reject(err)
+    });
+};
 
 userPackageSchema.statics.getPackageById = function (packageId) {
     if (!packageId || packageId === '')

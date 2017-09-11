@@ -1,42 +1,36 @@
 
 var nodemailer = require('nodemailer');
 var fs = require('fs')
-// mailer.SMTP = {
-//     host: 'www.gmail.com',
-//     port:587,
-//     use_authentication: true,
-//     user: 'esraa.ghanem.ali@gmail.com',
-//     pass: 'esraa 9874123456'
-// };
-// var transporter = mailer.createTransport({
-//     service: 'Gmail',
-//     auth: {
-//         user: 'esraa.ghanem.ali@gmail.com',
-//         pass: 'esraa 9874123456'
-//     }
-// });
 var smtpTransport = require('nodemailer-smtp-transport');
-
+// var parseXlsx = require('excel');
 var transport = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
+     port: 465,
     auth: {
-        user: 'esraa.ghanem.ali@gmail.com',
-        pass: 'esraaAli9874123456'
+        user: 'ge.webscraper@gmail.com',
+        pass: 'gewebscraperwebsite'
     }
 }));
 module.exports = {
     sendFileEmail: function (request,filePath) {
+                console.log('in send data')
+
         return new Promise(function (resolve, reject) {
-            fs.readFile(filePath, function (err, data) {
-var userMail = request.user.email
+
+
+               var userMail = request.user.email
                 var username = request.user.firstName
+                                // var username = 'esraa'
+
                 transport.sendMail({
-                    from: 'esraa.ghanem.ali@gmail.com',
+                    from: 'ge.webscraper@gmail.com',
                     to: userMail,
-                    subject: 'youe Data!',
-                    body: 'hello '+username+', thank you for using our service,' +
-                    'We are pleased to work with you, ou can find your data in the attachment',
-                    attachments: [{'filename': 'attachment.txt', 'content': data}]
+                    subject: 'your Data.',
+                    text: 'Hello '+username+', thank you for using our service,' +
+                    'We are pleased to work with you, you can find your data in the attachment',
+
+                    attachments: [{filename: 'Result', path: filePath}],
+                      
 
                 }, function(err, success) {
                         if (err) {
@@ -44,19 +38,8 @@ var userMail = request.user.email
                         }
 resolve()});
 
-                // mailer.send_mail({
-                //     sender: 'esraa.ghanem.ali@gmail.com',
-                //     to: userMail,
-                //     subject: 'Attachment!',
-                //     body: 'mail content...',
-                //     attachments: [{'filename': 'attachment.txt', 'content': data}]
-                // }), function(err, success) {
-                //     if (err) {
-                //         console.log(err)
-                //     }
-                //
-                // }
-            });
+    
+           
         })
 
     }

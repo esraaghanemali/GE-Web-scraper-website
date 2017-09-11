@@ -135,7 +135,7 @@ modelSchema.statics.getAdminModelFiles = function () {
         //     });
 
         users.find({role:'admin'}).then(function (admins) {
-            thisModel.find({user : {$in : admins}}).ne('deleted','Yes').then(function (modelFiles) {
+            thisModel.find({user : {$in : admins}}).ne('deleted','Yes').populate('category').then(function (modelFiles) {
                 // console.log(modelFiles)
                 resolve(modelFiles);
             }) .catch(function (err) {
@@ -154,7 +154,7 @@ modelSchema.statics.getAdminModelFiles = function () {
 modelSchema.statics.getModelFilesByUsername = function (user) {
     var thisModel = this;
     return new Promise(function (resolve, reject) {
-        thisModel.find({user : user}).ne('deleted','Yes').then(function (modelFiles) {
+        thisModel.find({user : user}).ne('deleted','Yes').populate('category').then(function (modelFiles) {
             // console.log('created pac')
             resolve(modelFiles);
         })

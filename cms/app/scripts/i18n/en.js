@@ -38,7 +38,9 @@ angular.module('webScraperCMS.i18n')
             About: 'About',
             Services: 'Our Services',
             Contact: 'Contact Us',
-            Tutorial: 'Tutorials'
+        Tutorial:'Tutorials',
+        Start:'How Start',
+        Pricing:'Pricing'
         },
         aside: {
             profile: 'My Profile',
@@ -253,7 +255,7 @@ angular.module('webScraperCMS.i18n')
                 addModelFile: 'Add New Model File'
             },
             desc: 'Description',
-            url: 'Url',
+url:'The Url Of WebSite To Extract Data From',
             fileName: 'Model Name',
             length: 'Length',
             fileLocation: 'file Location',

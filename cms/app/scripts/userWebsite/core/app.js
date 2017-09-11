@@ -78,7 +78,7 @@ angular.module('webScraperCMS.userW', [])
           title :'Models',
 
           requiredPermission: 'models.list',
-          child: true
+        //   child: true
       }
       ,
       resolve: {
@@ -88,14 +88,14 @@ angular.module('webScraperCMS.userW', [])
   })
 
       .state('app.myModels', {
-          url: '/GEWebScraper/myModels',
+          url: '/GEWebScraper/myModels?page&count',
           templateUrl: 'views/userTemplates/myModels.html',
           controller: 'UserModelsCtrl',
           data: {
               title :'My Models',
 
               requiredPermission: 'models.list',
-              child: true
+            //   child: true
           }
           ,
           resolve: {
@@ -111,7 +111,23 @@ angular.module('webScraperCMS.userW', [])
               title :'My Data',
 
               requiredPermission: 'models.list',
-              child: true
+            //   child: true
+          }
+          ,
+          resolve: {
+              authorize: function (authorization) {
+                  return authorization.authorize();
+              }}
+      })
+         .state('app.Tutorial', {
+          url: '/GEWebScraper/Tutorial',
+          templateUrl: 'views/userTemplates/tutorial.html',
+        //   controller: 'UserModelsCtrl',
+          data: {
+              title :'Tutorials',
+
+        requiredPermission:true,
+            //   child: true
           }
           ,
           resolve: {
@@ -127,7 +143,7 @@ angular.module('webScraperCMS.userW', [])
               title :'My Requests',
 
               requiredPermission: 'models.list',
-              child: true
+            //   child: true
           }
           ,
           resolve: {

@@ -9,7 +9,7 @@ angular.module('webScraperCMS.home', [])
              controller: 'ChartCtrl',
             data: {
                 requiredPermission: true,
-                title :'Home'
+                title :'Admin Home'
             }
             ,
             resolve: {

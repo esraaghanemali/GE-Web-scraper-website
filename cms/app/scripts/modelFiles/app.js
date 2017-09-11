@@ -8,7 +8,8 @@ angular.module('webScraperCMS.modelFiles', [])
             templateUrl: 'views/modelFiles/modelFiles-page.html',
             controller: 'ModelFilesCtrl',
             data: {
-                requiredPermission: 'modelFiles.list'
+                requiredPermission: 'modelFiles.list',
+                title: 'Models'
             }
             ,
             resolve: {

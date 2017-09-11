@@ -32,6 +32,8 @@ angular.module('webScraperCMS.i18n')
 Services:'خدماتنا',
     Contact:'اتصل بنا',
         Tutorial : 'دورة تعليمية',
+        Start:'ابدأ',
+        Pricing: 'التسعير'
     },
   aside: {
     profile: 'صفحتي الشخصية',
@@ -100,10 +102,10 @@ Services:'خدماتنا',
         'save.success': 'تم حفظ الملف  بنجاح',
         'remove.success': 'تم حذف الملف  بنجاح',
         'request.success':'تم طلب الملف  بنجاح',
-        url:'الرابط التشعبي للموقع',
+        url:' .الرابط التشعبي للموقع المراد استخراج البيانات منه',
 
         errors: {
-            // 'username.required': 'Username is required',
+            'modelName.required': 'يجب ادخال اسم ملف النموذج',
             // 'firstName.required': 'First name is required',
             // 'lastName.required': 'Last name is required',
             // 'email.required': 'Email is required',

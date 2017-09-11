@@ -10,8 +10,18 @@ angular.module('webScraperCMS.models')
         ModelFiles.getAdminModelFiles = function () {
             return Restangular.one(route).one('/Admin').get();
         };
-        ModelFiles.getUserModelFiles = function () {
+        // ModelFiles.getUserModelFiles = function (query) {
+        //     console.log(query)
+        //     return Restangular.one(route).one('/User').one(query.offset).one(query.limit).get();
+        // };
+        
+         ModelFiles.getUserModelFiles = function (query) {
+            console.log(query)
             return Restangular.one(route).one('/User').get();
+        };
+        
+        ModelFiles.getMyModels = function (query) {
+            return Restangular.one(route).one('/User').one(query).get();
         };
 
         ModelFiles.removeModelFile = function (Id) {

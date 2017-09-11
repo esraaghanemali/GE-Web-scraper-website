@@ -1,6 +1,6 @@
 <div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">
     <div class="card-heading">
-        <h2>Add Model File</h2>
+        <h1>Add Model File</h1>
     </div>
     <md-content layout-padding>
 
@@ -8,15 +8,16 @@
             <md-input-container class="md-block">
                 <label translate="modelFiles.fileName"></label>
                 <input required name="fileName" ng-model="modelFile.fileName" auto-focus ng-readonly="!isNew">
-                <!--<div ng-messages="modelFilesForm.userName.$error">-->
-                    <!--<div ng-message="required">{{"user.errors.username.required" | translate}}</div>-->
-                <!--</div>-->
+                <div ng-messages="modelFilesForm.fileName.$error">
+                    <div ng-message="required">{{"modelFiles.errors.modelName.required" | translate}}</div>
+                </div>
             </md-input-container>
 
             <md-input-container class="md-block" >
-                <h5>Choose The Category</h5>
+               
                 <md-select name="category" ng-model="modelFile.category"
-
+ placeholder="Choose The Category"
+ required
                            class="md-default-theme" style="width: 100%"
                            ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">
                     <md-option ng-repeat="category in categories"
@@ -32,22 +33,25 @@
 
             <md-input-container class="md-block">
                 <label translate="modelFiles.url"></label>
-                <input required name="url" ng-model="modelFile.url" auto-focus ng-readonly="!isNew">
+                <input required name="url" ng-model="modelFile.url"  ng-readonly="!isNew">
                 <!--<div ng-messages="modelFilesForm.userName.$error">-->
                 <!--<div ng-message="required">{{"user.errors.username.required" | translate}}</div>-->
                 <!--</div>-->
             </md-input-container>
             <md-input-container class="md-block">
                 <label translate="modelFiles.desc"></label>
-                <input  name="desc" ng-model="modelFile.desc" auto-focus ng-readonly="!isNew">
+                <input  name="desc" ng-model="modelFile.desc"  ng-readonly="!isNew">
 
             </md-input-container>
-            <md-container>
-                <button  class="md-raised md-primary" ngf-select="uploadFiles($files, $invalidFiles)" multiple>
+            
+            <md-input-container style="width:100%">
+                <md-button  class="md-raised md-primary" ngf-select="uploadFiles($files, $invalidFiles)" multiple>
                     <!--<button ngf-select="uploadFiles($files, $invalidFiles)" multiple-->
                     <!--ngf-max-height="1000" ngf-max-size="1MB">-->
-                    Select Files</button>
-                <!--<ul>-->
+                    Select Files</md-button>
+
+
+              
                 <span ng-repeat="f in files" style="font:smaller" name ="file">
                         {{f.name}} {{f.$errorParam}}
 
@@ -56,14 +60,14 @@
                 {{errorMsg}}
 
 
-            </md-container>
-
-
+            </md-input-container>
 
 
              <md-input-container>
-                <md-button class="md-raised md-primary" translate="modelFiles.actions.save" ng-click="saveModelFile()"></md-button>
+                <md-button class="md-raised md-primary" translate="modelFiles.actions.save" 
+                ng-click="saveModelFile()"></md-button>
             </md-input-container>
+          
         </form>
 
 
@@ -71,3 +75,4 @@
 
 
 </div>
+  <div id="nav" ng-include="'views/userTemplates/footer.html'"></div>

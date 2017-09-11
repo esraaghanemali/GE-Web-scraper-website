@@ -284,18 +284,24 @@ userSchema.statics.createAdmin = function () {
     username: 'admin'
   }).then(function (admin) {
     if (!admin) {
-
-      return userModel.createUser({
+var defaultPackage = userPackageModel.getDefaultUserPackage().then(function(Defauktpackage)
+{
+  return userModel.createUser({
         username: 'admin',
-        email: 'admin@admin.com',
+        email: 'esraa.ghanem.ali@gmail.com',
         password: '123456',
         firstName: 'Admin',
         lastName: 'Admin',
         role: 'admin',
         phone: '123456789',
         isActive: true,
-          userPackage:'5981ed63aee770324ec6fa1b'
+          userPackage:Defauktpackage
       });
+}).catch(function(err)
+{
+  Promise.reject();
+})
+    
     }
     return Promise.resolve();
   });

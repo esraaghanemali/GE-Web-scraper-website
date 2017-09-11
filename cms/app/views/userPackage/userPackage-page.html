@@ -13,6 +13,9 @@
             <md-input-container class="md-block">
                 <label translate="userPackage.maxRecords"></label>
                 <input required type="number" name="maxRecords" ng-model="userPackage.maxRecords">
+				<div ng-messages="userPackageForm.packageName.$error">
+	                    <div ng-message="required">{{"packageName.errors.packageName.required" | translate}}</div>
+	            </div>
             </md-input-container>
 
             <md-input-container class="md-block">
@@ -26,4 +29,11 @@
             </md-input-container>
         </form>
 
-</div>
+
+            <!--<md-input-container>-->
+                <!--<md-button ng-if="isNew" class="md-raised md-primary" translate="Save Issue" ng-click="saveIssue()"></md-button>-->
+                <!--<md-button ng-if="!isNew" class="md-raised md-primary" translate="Update Issue" ng-click="saveIssue()"></md-button>-->
+            <!--</md-input-container>-->
+        </md-content>
+    </div>
+ <div id="nav" ng-include="'views/userTemplates/footer.html'"></div>

@@ -1,56 +1,5 @@
 
 
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-  <div class="container-fluid"  style="margin-right: 47px;margin-left: 47px;">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        Menu <i class="fa fa-bars"></i>
-      </button>
-      <a class="navbar-brand" href="index.html">Start GE Web Scraper</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a ui-sref="app.Index" translate="userApp.Home"></a>
-        </li>
-        <li>
-          <a ui-sref="app.About"  translate="userApp.About"></a>
-        </li>
-        <li>
-          <a ui-sref="app.Services"  translate="userApp.Services"></a>
-        </li>
-        <li>
-          <a ui-sref="app.Contact"  translate="userApp.Contact"></a>
-        </li>
-        <li>
-        </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container -->
-</nav>
-
-<header class="intro-header" style="background-image: url('../../images/img/home-bg.jpg')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="site-heading">
-          <h1>GE Web Scraper</h1>
-          <hr class="small">
-          <span class="subheading">Hello {{currentUser.username}}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-
 <div class="row row-sm">
   <div class="col-sm-12">
     <div class="panel panel-card">
@@ -71,13 +20,13 @@
         </div>
       </div>
       <div class="list-group no-radius no-border" style="padding-right: 333px;padding-left: 333px;">
-        <a class="list-group-item" ui-sref="app.Models">
+        <a class="list-group-item" ui-sref="app.myModels">
           <span class="pull-right badge" >{{allModels}}</span>All Model Files
         </a>
-        <a class="list-group-item" ui-sref="app.Models">
+        <a class="list-group-item" ui-sref="app.myRequests">
           <span class="pull-right badge">{{requested}}</span>Requested Model Files
         </a>
-        <a class="list-group-item" ui-sref="app.Models">
+        <a class="list-group-item" ui-sref="app.myData">
           <span class="pull-right badge">{{extracted}}</span>Extracted Model Files
         </a>
         <a class="list-group-item">
@@ -86,43 +35,17 @@
           Your Package
         </a>
 
-        <!--<form name="savePackageForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">-->
-
-
-          <!--<md-input-container class="md-block" >-->
-            <!--<h5>Change Package</h5>-->
-            <!--<md-select name="newPackage" class="md-default-theme" style="width: 100%"-->
-                       <!--ng-class="{'pull-right': app.setting.rtl, 'pull-left': !app.setting.rtl}">-->
-              <!--<md-option ng-repeat="temptModel in temptModels" ng-value="temptModel">-->
-                <!--{{temptModel.fileName}}-->
-                <!--<p>-->
-                  <!--<small>-->
-                    <!--{{temptModel.desc}}-->
-                  <!--</small>-->
-                <!--</p>-->
-
-
-
-              <!--</md-option>-->
-            <!--</md-select>-->
-          <!--</md-input-container>-->
-
-          <!--<md-input-container>-->
-            <!--<md-button class="md-raised md-primary"-->
-                       <!--translate="request.actions.save"-->
-                       <!--ng-click="savePackage()"></md-button>-->
-          <!--</md-input-container>-->
-        <!--</form>-->
+        
 
       </div>
       <div class="text-center b-b b-light">
         <a ui-sref="app.Request" class="inline m text-color">
-          <span class="text-xs">make</span>
-          <em class="h3 block font-bold">request</em>
+          <span class="text-xs">Make</span>
+          <em class="h3 block font-bold">Request</em>
 
         </a>
         <a ui-sref="app.Models" class="inline m text-color">
-          <span class="text-xs">see</span>
+          <span class="text-xs">See</span>
           <em class="h3 block font-bold">Files</em>
 
         </a>
@@ -132,87 +55,6 @@
   </div>
 
 </div>
-<a ui-sref="app.modelFile({ modelFileId: 'new' })" md-ink-ripple class="md-btn md-fab md-fab-bottom-right pos-fix blue"><i class="mdi-action-account-balance-wallet i-24"></i></a>
 
 <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center">
-          <li>
-            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-            </a>
-          </li>
-        </ul>
-        <p class="copyright text-muted">Scraping &copy; Your Website 2017</p>
-      </div>
-    </div>
-  </div>
-</footer>
-<!--<form name="userForm" ng-class="{'rtl': app.setting.rtl}" novalidate disable-on-loading="isLoading">-->
-  <!--<div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">-->
-    <!--<div class="card-heading">-->
-      <!--<h2 translate="user.editPage.myProfile"></h2>-->
-    <!--</div>-->
-    <!--<md-content layout-padding>-->
-      <!--<md-input-container class="md-block">-->
-        <!--<label translate="user.username"></label>-->
-        <!--<input required name="userName" ng-model="user.username" auto-focus readonly="true">-->
-      <!--</md-input-container>-->
-      <!--<md-input-container class="md-block">-->
-        <!--<label translate="user.email"></label>-->
-        <!--<input required name="userEmail" ng-model="user.email">-->
-        <!--<div ng-messages="userForm.userEmail.$error">-->
-          <!--<div ng-message="required">{{"user.errors.email.required" | translate}}</div>-->
-        <!--</div>-->
-      <!--</md-input-container>-->
-      <!--<md-input-container>-->
-        <!--<md-button class="md-raised md-primary" translate="user.actions.save" ng-click="saveUser()"></md-button>-->
-      <!--</md-input-container>-->
-    <!--</md-content>-->
-  <!--</div>-->
-<!--</form>-->
-  <!--<div layout="column" class="card" ng-class="{'rtl': app.setting.rtl}">-->
-    <!--<div class="card-heading">-->
-      <!--<h2 translate="user.editPage.changePassword"></h2>-->
-    <!--</div>-->
-    <!--<md-content layout-padding>-->
-      <!--<md-input-container class="md-block">-->
-        <!--<label translate="user.oldPassword"></label>-->
-        <!--<input name="userOldPassword" type="password" ng-model="oldPassword">-->
-      <!--</md-input-container>-->
-      <!--<md-input-container class="md-block">-->
-        <!--<label translate="user.newPassword"></label>-->
-        <!--<input name="userNewPassword" type="password" ng-model="newPassword">-->
-      <!--</md-input-container>-->
-      <!--<md-input-container class="md-block">-->
-        <!--<label translate="user.rePassword"></label>-->
-        <!--<input name="userRePassword" type="password" ng-model="rePassword">-->
-      <!--</md-input-container>-->
-      <!--<md-input-container>-->
-        <!--<md-button class="md-raised md-primary" translate="user.actions.changePassword" ng-click="changePassword()"></md-button>-->
-      <!--</md-input-container>-->
-    <!--</md-content>-->
-  <!--</div>-->
-<!--&lt;!&ndash; </form> &ndash;&gt;-->
+  <div id="nav" ng-include="'views/userTemplates/footer.html'"></div>

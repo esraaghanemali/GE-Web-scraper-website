@@ -27,9 +27,13 @@ angular.module('webScraperCMS.userW')
 
                 var offset = (params.page() - 1) * params.count();
                 return models.modelFiles.getUserModelFiles(
+                    // {
+                    //       offset: offset,
+                    // limit: params.count()
+                    // }
                 ).then(function(modelFiles) {
                     $scope.isLoading = false;
-                    params.total(modelFiles.count);
+                    params.total(modelFiles.length);
                     return modelFiles;
                 }, function(err) {
                     $scope.isLoading = false;
@@ -60,8 +64,7 @@ angular.module('webScraperCMS.userW')
                 console.log(models.modelFiles)
 
                 var offset = (params.page() - 1) * params.count();
-                return models.scrapeRequest.getScrapeRequestByUser(
-                ).then(function(modelFiles) {
+                return models.scrapeRequest.getScrapeRequestByUser(    ).then(function(modelFiles) {
                     $scope.isLoading = false;
                     params.total(modelFiles.count);
                     return modelFiles;
@@ -126,7 +129,7 @@ angular.module('webScraperCMS.userW')
 
                         $scope.isLoading = false;
                         notifyService.notify($filter('translate')('modelFiles.remove.success'));
-                        $state.go('app.Models', {}, {
+                        $state.go('app.myModels', {}, {
                             location: 'replace'
                         });
 
@@ -208,7 +211,7 @@ angular.module('webScraperCMS.userW')
 
                         $scope.isLoading = false;
                         notifyService.notify($filter('translate')('request.remove.success'));
-                        $state.go('app.Models', {}, {
+                        $state.go('app.myRequests', {}, {
                             location: 'replace'
                         });
 
@@ -245,7 +248,7 @@ angular.module('webScraperCMS.userW')
 
                         $scope.isLoading = false;
                         notifyService.notify($filter('translate')('request.remove.success'));
-                        $state.go('app.Models', {}, {
+                        $state.go('app.myData', {}, {
                             location: 'replace'
                         });
 

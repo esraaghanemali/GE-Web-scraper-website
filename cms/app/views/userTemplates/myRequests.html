@@ -1,57 +1,8 @@
 
 
 <!-- Navigation -->
+  <!--<div id="nav" ng-include="'views/userTemplates/nav.html'"></div>-->
 
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid"  style="margin-right: 47px;margin-left: 47px;">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                Menu <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" ui-sref="app.Start">Start GE Web Scraper</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a ui-sref="app.Index" translate="userApp.Home"></a>
-                </li>
-                <li>
-                    <a ui-sref="app.About"  translate="userApp.About"></a>
-                </li>
-                <li>
-                    <a ui-sref="app.Services"  translate="userApp.Services"></a>
-                </li>
-                <li>
-                    <a ui-sref="app.Contact"  translate="userApp.Contact"></a>
-                </li>
-                <li>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
-<!-- Page Header -->
-<!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('../../images/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>GE Web Scraper</h1>
-                    <hr class="small">
-                    <span class="subheading">Amazing Web Scraping Tool</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 
 
 
@@ -68,8 +19,10 @@
                    translate="request.actions.new"
                    ui-sref="app.Request({ requestId: 'new' })"></md-button>
     </div>
-    <table ng-table="requestedFilesTable" class="table table-striped table-vmiddle table-hover table-condensed"
-           ng-class="{'rtl': app.setting.rtl}" template-pagination="views/templates/ng-table-pager-template.html">
+    <table ng-table="requestedFilesTable" 
+    class="table table-striped table-vmiddle table-hover table-condensed"
+           ng-class="{'rtl': app.setting.rtl}" 
+           template-pagination="views/templates/ng-table-pager-template.html">
         <thead>
         <tr>
             <!--<th>-->
@@ -84,7 +37,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="row in $data" ng-if="$data.length" ui-sref="app.Models({ modelFile: row, modelId: row.id})">
+        <tr ng-repeat="row in $data" ng-if="$data.length" 
+       >
             <td>{{row.model.fileName}}</td>
             <td>{{row.status.statusName}}</td>
             <td>{{row.message}}</td>
@@ -92,7 +46,8 @@
             <!--<td>{{row.user.firstName}}</td>-->
             <td>{{row.date}}</td>
             <td>
-                <md-button ng-if="currentUser.permissions.modelFiles.remove" type="button" class="md-raised red-500"
+                <md-button ng-if="currentUser.permissions.modelFiles.remove"
+                 type="button" class="md-raised red-500"
                            ng-click="removeRequest(row)"><i
                         class="mdi mdi-content-block"></i></md-button>
             </td>
@@ -114,38 +69,4 @@
 
 
 <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    <li>
-                        <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                        </a>
-                    </li>
-                </ul>
-                <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
-            </div>
-        </div>
-    </div>
-</footer>
+  <div id="nav" ng-include="'views/userTemplates/footer.html'"></div>
